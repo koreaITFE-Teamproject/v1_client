@@ -1,0 +1,67 @@
+.option_bar {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.option_bar button {
+  padding: 10px 20px; 
+}
+
+.all {
+  width: 200px; 
+  border-radius: 4px;
+}
+
+.sub {
+  width: 400px; 
+  border-radius: 4px;
+}
+
+.like {
+  width: 400px; 
+  border-radius: 4px;
+}
+
+
+/* postTable(게시글 목록 요소 스타일) */
+table {
+  width: 70%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+th:nth-child(1) {
+  width: 10%;
+}
+
+th:nth-child(2) {
+  width: 50%;
+}
+
+th:nth-child(3),
+th:nth-child(4) {
+  width: 20%;
+}
