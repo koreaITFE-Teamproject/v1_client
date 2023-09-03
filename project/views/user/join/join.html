@@ -6,14 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/user_join/style.css">
+    <!-- <link rel="stylesheet" href="/user_join/style.css"> -->
     <script src="https://kit.fontawesome.com/7a79c7be2a.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="/user_join/userJoin.js"></script>
+    <script src="/project/js/user/userJoin.js"></script>
+    <script src="/project/js/common/common.js"></script>
 </head>
 
 <body>
-    <!-- <header></header> -->
+    <header id="header"></header>
 
     <main>
         <article class="user-join-wrap">
@@ -87,7 +88,9 @@
                         <td>
                             <input type="text" class="user-email-input">
                             <span>@</span>
+                            <input type="text" class="custom-input">
                             <select name="" id="select-email-option">
+                                <option value="none">==선택==</option>
                                 <option value="userInput">직접입력</option>
                                 <option value="google.com">google.com</option>
                                 <option value="naver.com">naver.com</option>
@@ -123,6 +126,7 @@
                         </td>
                     </tr>
 
+                    <!-- 본인인증 -->
                     <tr class="user-id-check">
                         <td>
                             <span class="required">*</span>본인인증
@@ -138,7 +142,7 @@
         </article>
     </main>
 
-    <!-- <footer></footer> -->
+    <footer id="footer"></footer>
 </body>
 
 </html>
