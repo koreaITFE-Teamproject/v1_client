@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .container {
+            background-color: #F6E3CE;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap
+        }
+
+        .FindLoginbox {
+            width: 1100px;
+            height: 850px;
+            background-color: white;
+            border-radius: 80px;
+
+        }
+
+        p {
+            font-size: 250%;
+            display: flex;
+            flex-direction: row;
+            margin-left: 70px;
+        }
+
+        .id {
+            margin-top: 160px;
+        }
+
+        .idBar {
+            margin-right: 290px;
+        }
+
+        input {
+            border: 1px solid black;
+            margin: 40px;
+            height: 70px;
+            width: 700px;
+            font-size: 36px;
+        }
+
+        button {
+            width: 200px;
+            height: 60px;
+            border-radius: 10px;
+            font-size: 23px;
+            margin-left:25px;
+            background-color: burlywood;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="FindLoginbox">
+            <p class="id">아이디는</p>
+            <input type="text" class="idBar" placeholder="회원아이디">
+            <p class="text">입니다.</p>
+            <button class="password">비밀번호 찾기</button>
+            <button class="check">확인</button>
+        </div>
+    </div>
+</body>
+
+</html>

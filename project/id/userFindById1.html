@@ -14,26 +14,66 @@
 
         .container {
             background-color: #F6E3CE;
-            height: 100vh;
             text-align: center;
-            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap
         }
 
-        .FindLoginbox {
+        .find_login_box {
             width: 1100px;
             height: 850px;
             background-color: white;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translateX(-50%) translateY(-50%);
             border-radius: 80px;
-            text-align: center;
-            float: left;
         }
 
+        .find_login_box_inner {
+            margin-top: 20%;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+
+        .row{
+            margin-left: 10%;
+        }
+
+        .row > button{
+            width: 100px;
+            height: 50px;
+            background-color: burlywood;
+            border-radius: 10px;
+            font-size: 120%
+        }
+
+        .row > input{
+            width: 630px;
+            height: 46px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            font-size: 120%
+        }
+
+        .row > .email_bar{
+            width: 300px;
+        }
+
+        .row > .number_receive{
+            width: 132px;
+        }
+
+        .center{
+            width: 100%;
+            text-align: center;
+        }
+
+        /* 
         .name {
-            display: inline-block;
             width: 80px;
             height: 50px;
             background-color: burlywood;
@@ -44,8 +84,7 @@
             font-size: 120%
         }
 
-        .name1 {
-            display: inline-block;
+        .nameBar {
             width: 630px;
             height: 46px;
             margin-top: 150px;
@@ -58,7 +97,6 @@
         }
 
         .email {
-            display: inline-block;
             width: 80px;
             height: 50px;
             background-color: burlywood;
@@ -69,8 +107,7 @@
             font-size: 120%
         }
 
-        .email1 {
-            display: inline-block;
+        .emailBar {
             width: 300px;
             height: 46px;
             border-radius: 10px;
@@ -80,8 +117,7 @@
             font-size: 120%;
         }
 
-        .Numberreceive {
-            display: inline-block;
+        .NumberReceive {
             width: 80px;
             height: 50px;
             background-color: burlywood;
@@ -92,8 +128,7 @@
             font-size: 100%;
         }
 
-        .Numberreceive1 {
-            display: inline-block;
+        .NumberReceiveBar {
             width: 630px;
             height: 46px;
             border-radius: 10px;
@@ -102,8 +137,8 @@
             top: 50%;
             font-size: 120%
         }
-        .check{
-            display: inline-block;
+
+        .check {
             width: 180px;
             height: 50px;
             background-color: burlywood;
@@ -111,30 +146,30 @@
             font-size: 120%;
             text-align: center;
             margin: 350px;
-      
-        
-        }
+        } */
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="FindLoginbox">
-            <div>
-                <button class="name">이름</button> <input type="text" class="name1">
-            </div>
-            <br>
-            <div>
-                <button class="email">이메일</button> 
-                <input type="text" class="email1" placeholder="이메일"> @ <input type="text" class="email1" placeholder="이메일"> 
-                <button class="Numberreceive">인증번호받기</button>
-            </div>
-            <br>
-            <div>
-                <input type="number" class="Numberreceive1" placeholder="인증번호 6자리 숫자 입력">
-            </div>
-            <div>
-                <button class="check">확인</button>
+        <div class="find_login_box">
+            <div class="find_login_box_inner">
+                <div class="row">
+                    <button class="name">이름</button> <input type="text" class="nameBar">
+                </div>
+                <div class="row">
+                    <button class="email">이메일</button>
+                    <input type="text" class="email_bar" placeholder="이메일"> @ <input type="text" class="email_bar"
+                        placeholder="이메일">
+                    <button class="number_receive">인증번호받기</button>
+                </div>
+                <div class="row">
+                    <button class="name">인증번호</button> 
+                    <input type="number" class="number_receive_bar" placeholder="인증번호 6자리 숫자 입력">
+                </div>
+                <div class="row center">
+                    <button class="check">확인</button>
+                </div>
             </div>
         </div>
     </div>
