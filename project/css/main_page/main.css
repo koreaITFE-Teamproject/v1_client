@@ -1,0 +1,58 @@
+.recomm {
+    height: 50px;
+    width: 300px;
+    border: 3px solid black;
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 분야별 칼럼 분류제외한 itemMenu_bar */
+.coumn_bar {
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* 분야별 칼럼 분류제외한 itemMenu_bar */
+.recomm_bar {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    margin-bottom: 10pox;
+    justify-content: center;
+
+}
+
+/* 분야별 칼럼 분류를 제외한 3가지 item div */
+.bar_item {
+    border: 3px solid black;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px;
+
+}
+
+/* 분야별 칼럼 분류 item div */
+.class_item {
+    border: 3px solid black;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px;
+}
+
+.class_frame {
+    padding: 20px;
+}
+
+/* 마우스 호버 시 포인터 모양으로 변경 */
+.bar_item:hover, .class_item:hover {
+    cursor: pointer; 
+}
