@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.user-join-wrap {
+    width: 50%;
+    margin: 10px auto;
+}
+
+.user-join-wrap>p {
+    font-weight: bold;
+}
+
+.user-join-wrap .brief {
+    margin: 5px 0;
+}
+
+/* 필수 작성 표시 */
+.required {
+    color: red;
+}
+
+/* 유효성 검사 실패 시 텍트스 */
+.validation-message {
+    display: none;
+    align-items: center;
+    color: red;
+    padding: 0 0 10px 20px;
+}
+
+.user-join-wrap table {
+    width: 100%;
+    border-collapse: 0;
+    border-spacing: 0;
+    border-top: 2px solid #125C2E;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.user-join-wrap table tr {
+    height: 90px;
+    font-size: 16px;
+}
+
+.user-join-wrap table td:not(:nth-child(3)) {
+    border-top: 1px solid #CCCCCC;
+}
+
+/* table input 공통 */
+.user-join-wrap table input {
+    width: 100%;
+    height: 60px;
+    font-size: 20px;
+    border: 1px solid;
+    padding: 0 10px;
+}
+
+.user-join-wrap table tr td:first-child {
+    width: 20%;
+    text-align: center;
+    border-right: 1px solid #CCCCCC;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #F3F7F4;
+}
+
+.user-join-wrap table tr td:nth-child(2) {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr;
+    padding: 10px 20px;
+    height: 90px;
+}
+
+.user-join-wrap .user-login-id td:nth-child(2),
+.user-join-wrap .user-nickname td:nth-child(2),
+.user-join-wrap .user-address td:nth-child(2) {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 8fr 2fr;
+    padding: 10px 20px;
+    height: 90px;
+}
+
+/* 버튼 공통 */
+.user-join-wrap-btn:not(#user-join-btn) {
+    border: 1px solid #125C2E;
+    border-left: 0px;
+    background-color: white;
+    cursor: pointer;
+    height: 60px;
+    font-size: 1.1rem;
+}
+
+.user-join-wrap-btn:not(#user-join-btn):hover {
+    background-color: #e2e2e2;
+}
+
+/* 우편번호 찾기 */
+
+/* 아이디 */
+
+/* 비밀번호 */
+.user-join-wrap .user-login-pw td:nth-child(2) {
+    display: flex;
+}
+
+.user-join-wrap .user-login-pw td:nth-child(2) i {
+    padding: 0 20px;
+    font-size: 30px;
+}
+
+.user-join-wrap .user-login-pw td:nth-child(2) #show-eyes {
+    display: none;
+}
+
+/* 비밀번호 확인 */
+
+/* 이름 */
+
+/* 닉네임 */
+
+/* 이메일 */
+.user-join-wrap .user-email td:nth-child(2) {
+    display: grid;
+    grid-template-columns: 4fr 1fr 4fr;
+}
+
+.user-join-wrap .user-email-input {
+    width: 100%;
+}
+
+.user-join-wrap .user-email span {
+    text-align: center;
+    font-size: 1.4em;
+}
+
+.user-join-wrap .user-email #select-email-option {
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    border: 1px solid;
+    font-size: 1.1rem;
+}
+
+/* 전화번호 */
+.user-join-wrap .user-phone-number td:last-child {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-join-wrap .user-phone-number input {
+    width: 30%;
+}
+
+/* 주소 */
+
+/* 본인인증 */
+
+/* 가입 버튼 */
+.user-join-wrap #user-join-btn {
+    margin: 50px 10px;
+    float: right;
+    width: 20%;
+    height: 56px;
+    background-color: white;
+    border: 1px solid;
+    font-size: 1.1rem;
+}
+
+.user-join-wrap #user-join-btn:hover {
+    background-color: #125C2E;
+    color: white;
+}
