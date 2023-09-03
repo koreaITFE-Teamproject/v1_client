@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/user_join/style.css">
+    <script src="https://kit.fontawesome.com/7a79c7be2a.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="/user_join/userJoin.js"></script>
+</head>
+
+<body>
+    <!-- <header></header> -->
+
+    <main>
+        <article class="user-join-wrap">
+            <p class="brief"><span class="required">*</span>표시는 필수 기입항목입니다.</p>
+            <table>
+                <tbody>
+                    <!-- 아이디 -->
+                    <tr class="user-login-id">
+                        <td>
+                            <span class="required">*</span>아이디
+                        </td>
+                        <td>
+                            <input type="text" class="user-login-id-input">
+                            <button id="login-id-duplicate-check-btn" class="user-join-wrap-btn">중복확인</button>
+                        </td>
+                        <td class="validation-message"></td>
+                    </tr>
+
+                    <!-- 비밀번호 -->
+                    <tr class="user-login-pw">
+                        <td>
+                            <span class="required">*</span>비밀번호
+                        </td>
+                        <td>
+                            <input type="password" class="user-login-pw-input">
+                            <i id="show-eyes" class="fa-solid fa-eye" style="color: #474747;"></i>
+                            <i id="hide-eyes" class="fa-solid fa-eye-slash" style="color: #474747;"></i>
+                        </td>
+                        <td class="validation-message"></td>
+                    </tr>
+
+                    <!-- 비밀번호 확인 -->
+                    <tr class="user-login-pw-ck">
+                        <td>
+                            <span class="required">*</span>비밀번호 확인
+                        </td>
+                        <td>
+                            <input type="password" class="user-login-pw-ck-input">
+                        </td>
+                        <td class="validation-message"></td>
+                    </tr>
+
+                    <!-- 이름 -->
+                    <tr class="user-name">
+                        <td>
+                            <span class="required">*</span>이름
+                        </td>
+                        <td>
+                            <input type="text" class="user-name-input">
+                        </td>
+                        <td class="validation-message"></td>
+                    </tr>
+
+                    <!-- 닉네임 -->
+                    <tr class="user-nickname">
+                        <td>
+                            <span class="required">*</span>닉네임
+                        </td>
+                        <td>
+                            <input type="text" class="user-nickname-input">
+                            <button id="nickname-duplicate-check-btn" class="user-join-wrap-btn">중복확인</button>
+                        </td>
+                        <td class="validation-message"></td>
+                    </tr>
+
+                    <!-- 이메일 -->
+                    <tr class="user-email">
+                        <td>
+                            <span class="required">*</span>이메일
+                        </td>
+                        <td>
+                            <input type="text" class="user-email-input">
+                            <span>@</span>
+                            <select name="" id="select-email-option">
+                                <option value="userInput">직접입력</option>
+                                <option value="google.com">google.com</option>
+                                <option value="naver.com">naver.com</option>
+                                <option value="naver.com">nate.com</option>
+                                <!-- <option value="">카카오</option> -->
+                            </select>
+                        </td>
+                        <td class="validation-message"></td>
+                    </tr>
+
+                    <!-- 전화번호 -->
+                    <tr class="user-phone-number">
+                        <td>
+                            전화번호
+                        </td>
+                        <td>
+                            <input type="text" class="user-phone-number-input">
+                            <span>-</span>
+                            <input type="text" class="user-phone-number-input">
+                            <span>-</span>
+                            <input type="text" class="user-phone-number-input">
+                        </td>
+                    </tr>
+
+                    <!-- 주소 -->
+                    <tr class="user-address">
+                        <td>
+                            주소
+                        </td>
+                        <td>
+                            <input type="text" class="user-address-input">
+                            <button id="find-postal-code-btn" class="user-join-wrap-btn">우편번호로 찾기</button>
+                        </td>
+                    </tr>
+
+                    <tr class="user-id-check">
+                        <td>
+                            <span class="required">*</span>본인인증
+                        </td>
+                        <td>
+                            <input type="text" class="user-id-check-input">
+                        </td>
+                        <td class="validation-message"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="user-join-btn" class="user-join-wrap-btn">회원가입</button>
+        </article>
+    </main>
+
+    <!-- <footer></footer> -->
+</body>
+
+</html>
