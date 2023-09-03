@@ -7,14 +7,51 @@
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <style>
-        .main_div{
-            background-color: #F6E3CE;
-        }
         .recomm{
             height: 50px;
             width: 300px;
             border: 3px solid black;
             text-align: center;
+            margin-top: 20px;
+        }
+        /* 분야별 칼럼 분류제외한 itemMenu_bar */
+        .coumn_bar{
+            height: 200px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        /* 분야별 칼럼 분류제외한 itemMenu_bar */
+        .recomm_bar{
+            display: flex;
+            align-items: center;
+            height: 100px;
+            margin-bottom: 10pox;
+            justify-content: center; 
+
+        }
+        /* 분야별 칼럼 분류를 제외한 3가지 item div */
+        .bar_item{
+            border: 3px solid black;
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 100px;
+            
+        }
+        /* 분야별 칼럼 분류 item div */
+        .class_item{
+            border: 3px solid black;
+            width: 200px;
+            height: 100px;         
+            text-align: center;
+            vertical-align: middle;
+            line-height: 100px;
+        }
+        .class_frame{
+         padding: 20px;   
         }
     </style>
     <script>
@@ -27,44 +64,58 @@
     <div class="main_div">
         <div class="recomm" id="recomm_coumn">추천 칼럼</div>
         <div class="coumn_bar">
-            <div>칼럼제목</div>
-            <div>칼럼제목</div>
-            <div>칼럼제목</div>
-            <div>칼럼제목</div>
-            <div>칼럼제목</div>
+            <div class="bar_item">칼럼 제목</div>
+            <div class="bar_item">칼럼 제목</div>
+            <div class="bar_item">칼럼 제목</div>
+            <div class="bar_item">칼럼 제목</div>
+            <div class="bar_item">칼럼 제목</div>
         </div>
         <div class="recomm" id="recomm_book">추천 책</div>
         <div class="coumn_bar">
-            <div>추천 책</div>
-            <div>추천 책</div>
-            <div>추천 책</div>
-            <div>추천 책</div>
-            <div>추천 책</div>
+            <div class="bar_item">추천 책 이미지</div>
+            <div class="bar_item">추천 책 이미지</div>
+            <div class="bar_item">추천 책 이미지</div>
+            <div class="bar_item">추천 책 이미지</div>
+            <div class="bar_item">추천 책 이미지</div>
         </div>    
         <div class="recomm" id="recomm_class">분야별 컬럼 분류</div>
-            <div>
-                <div>추천 토론방</div>
-                <div>추천 토론방</div>
-                <div>추천 토론방</div>
-                <div>추천 토론방</div>
-                <div>추천 토론방</div>
-                <div>추천 토론방</div>
-                <div>추천 토론방</div>
-                <div>추천 토론방</div>
-                <div>추천 토론방</div>
-                <div>추천 토론방</div>
-                <div>추천 토론방</div>
-                <div>추천 토론방</div>
-                <div>추천 토론방</div>
-                <div>추천 토론방</div>
+            <div class="class_frame">
+                <div class="recomm_bar">
+                    <div class="class_item">국내 소설</div>
+                    <div class="class_item">해외 소설</div>
+                    <div class="class_item">시/에세이</div>
+                    <div class="class_item">인문</div>
+                <div class="class_item">가정/육아</div>
             </div>
+            <div class="recomm_bar">
+                <div class="class_item">요리</div>
+                <div class="class_item">건강</div>
+                <div class="class_item">취미/실용</div>
+                <div class="class_item">경제/경영</div>
+                <div class="class_item">자기계발</div>
+            </div>
+            <div class="recomm_bar">
+                <div class="class_item">정치/사회</div>
+                <div class="class_item">역사/문화</div>
+                <div class="class_item">종교</div>
+                <div class="class_item">예술/대중문화</div>
+                <div class="class_item">기술 공학</div>
+            </div>
+            <div class="recomm_bar">
+                <div class="class_item">외국어</div>
+                <div class="class_item">여행</div>
+                <div class="class_item">컴퓨터/IT</div>
+                <div class="class_item">잡지</div>
+                <div class="class_item">만화</div>
+            </div>
+        </div>
         <div class="recomm" id="recomm_discussRoom">추천 토론방</div>
         <div class="coumn_bar">
-            <div>추천 토론방</div>
-            <div>추천 토론방</div>
-            <div>추천 토론방</div>
-            <div>추천 토론방</div>
-            <div>추천 토론방</div>
+            <div class="bar_item">토론방 이름</div>
+                <div class="bar_item">토론방 이름</div>
+                <div class="bar_item">토론방 이름</div>
+                <div class="bar_item">토론방 이름</div>
+                <div class="bar_item">토론방 이름</div>
         </div>
     </div>
 </body>
