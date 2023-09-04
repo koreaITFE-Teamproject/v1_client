@@ -38,6 +38,23 @@
             align-items: flex-start;
         }
 
+        .low>div {
+            width: 100px;
+            height: 50px;
+            background-color: burlywood;
+            border-radius: 10px;
+            font-size: 120%;
+            border: 1px solid black;          
+        }
+
+        .low>input {
+            width: 630px;
+            height: 46px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            font-size: 120%;
+        }
+
         .row {
             margin-left: 10%;
         }
@@ -52,16 +69,6 @@
 
         }
 
-
-
-        .row>input {
-            width: 880px;
-            height: 70px;
-            border-radius: 10px;
-            font-size: 120%
-        }
-
-
         h1 {
             text-align: center;
             font-size: 50px;
@@ -75,11 +82,11 @@
         <div class="find_login_box">
             <h1>관리자 로그인</h1>
             <div class="find_login_box_inner">
-                <div class="row">
-                    <input type="text" placeholder="아이디" class="id_bar">
+                <div class="low">
+                    <div>아이디</div><input type="text" class="id_bar">
                 </div>
-                <div class="row">
-                    <input type="text" placeholder="비밀번호" class="pw_bar">
+                <div class="low">
+                    <div>비밀번호</div><input type="password" class="pw_bar">
                 </div>
                 <div class="row">
                     <button>로그인</button>
