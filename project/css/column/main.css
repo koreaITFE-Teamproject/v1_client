@@ -11,7 +11,9 @@
 .option_bar button {
   padding: 10px 20px; 
   background-color: antiquewhite;
+  cursor : pointer;
 }
+
 
 .all {
   width: 200px; 
