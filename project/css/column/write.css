@@ -1,0 +1,11 @@
+button {
+  background-color: #F6E3CE;
+  height: 40px;
+  width: 80px;
+  border-radius: 2px;
+}
+
+#column{
+  height: 40px;
+  width: 100px;
+}
