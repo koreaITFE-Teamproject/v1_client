@@ -1,0 +1,81 @@
+/* div 공통 */
+div {
+    border-radius: 10px;
+}
+
+/* input 요소 */
+input {
+    padding: 10px;
+    display: inline-block;
+}
+
+/* body(메인 배경) */
+body {
+    background: #f6e3ce;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    /* 가로 중앙 정렬 */
+    align-items: center;
+    /* 세로 중앙 정렬 */
+    height: 100vh;
+    /* 화면 높이만큼 설정하여 본문을 화면 가운데로 배치 */
+
+}
+
+/* 컨텐츠 제일 바깥 div */
+.main_div {
+    /* 위치 구분하려고 한 border */
+    /* border: 3px solid black;  */
+    padding: 50px 100px;
+    background-color: white;
+
+}
+
+/* main_div 안의 내용들 div */
+.contents {
+    /* 위치 구분하려고 한 border */
+    border: 3px solid black;
+    padding: 5px;
+    width: 600px;
+
+}
+
+/* 이름, 아이디 등 구분하는 div */
+.division_name {
+    display: inline-block;
+    border: 3px solid black;
+    padding: 10px;
+    background-color: #f6e3ce;
+    text-align: center;
+}
+
+/* 비밀번호 변경 문구 */
+h1 {
+    text-align: center;
+}
+
+/* 확인 버튼 div */
+#ck_button {
+    width: 400px;
+    padding: 15px;
+    text-align: center;
+    display: inline-block;
+
+}
+
+/* 확인 버튼 위치 가운데로 */
+#ck_button_outdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 새비밀번호 text div 크기 맞춤 */
+#newpw_input{
+    width: 120px;
+}
+
+/* input 크기 디자인 맞춤 */
+input{
+    width: 60%;
+}
