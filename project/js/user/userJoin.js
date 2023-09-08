@@ -1,11 +1,3 @@
-// 성별 (미정)
-// 나이 (미정)
-// 가입 날짜
-// 비번 표시 (추가)
-// 글자 수 15제한 (예정)
-// 비밀번호 대소문자 (예정)
-// 중복 확인을 해야지 회원가입 가능하도록
-
 $(function () {
 
     // 테스트용 생성자 --------
@@ -32,226 +24,312 @@ $(function () {
     console.log(users);
     // 테스트용 --------
 
-    var checkDuplicate = [false, false];
-    var $loginValidMsg = $(".user-login-id .validation-message");
-    var $nicknameValidMsg = $(".user-nickname .validation-message");
-    var $loginId = $(".user-login-id-input");       // *user-login-id-input
-    var $loginPw = $(".user-login-pw-input");       // *user-login-pw-input
-    var $loginPwCh = $(".user-login-pw-ck-input");  // *user-login-pw-ck-input
-    var $name = $(".user-name-input");              // *user-name-input
-    var $nickname = $(".user-nickname-input");      // *user-nickname-input
-    var $email = $(".user-email-input");            // *user-email-input
-    var $phoneNum = $(".user-phone-number-input")   // user-phone-number-input
-    var $address = $(".user-address-input");        // user-address-input
-    var $idCheck = $(".user-id-check-input");       // *user-id-check-input
-    var $userJoinBtn = $("#user-join-btn");         // user-join-btn
-
-    // 각각의 input 변경 시
-    $(".user-join-wrap td>input").change(function () {
-        // 공백검사
-        var idx = $(this).parent().parent().index();
-
-        if (idx == 6 || idx == 7) {
-            return;
-        }
-        if (idx == 8) {
-            idx = 11;
-        }
-        isEmpty($(".user-join-wrap input").eq(idx));
-    });
-
-    // 아이디 부분 중복확인
-    $("#login-id-duplicate-check-btn").click(function () {
-        if (isInputBlank($loginId)) {
-            return true;
-        }
-        isAvailable($loginId, "아이디");                                    // 사용가능한 아이디인가?
-    });
-
-    // 닉네임 중복 체크
-    $("#nickname-duplicate-check-btn").click(function () {
-        if (isInputBlank($nickname)) {
-            return true;
-        }
-        isAvailable($nickname, "닉네임");                                    // 사용가능한 닉네임인가?
-    });
 
 
-    // 비밀번호 보이기 - 숨기기
-    $("#show-eyes").hide();
-    // 비밀번호 보이기
-    $("#hide-eyes").click(function () {                                       // 비밀번호 보이기
-        $loginPw.attr("type", "text");                                      // 패스워드 타입 변경 -> password <> text
-        $(this).hide();
-        $("#show-eyes").show();
-    });
 
-    // 비밀번호 숨기기
-    $("#show-eyes").click(function () {                                       // 비밀번호 숨기기
-        $loginPw.attr("type", "password");                                  // 패스워드 타입 변경 -> text <> password
-        $(this).hide();
-        $("#hide-eyes").show();
-    });
+    // [*아이디, *비밀번호, *비밀번호 확인, *이름, *닉네임, *이메일, 전화번호, 주소, *본인인증]
+    // [0        1         2              3      4       5        7        8     9      ]
+    var inputs = [$(".user-login-id-input"), $(".user-login-pw-input"), $(".user-login-pw-ck-input"), $(".user-name-input"),
+    $(".user-nickname-input"), $(".user-email-input"), $(".user-phone-number-input"), $(".user-address-input"), $(".user-id-check-input")];
 
-    // 비밀번호 - 비밀번호 확인 일치하는가?
-    $loginPw.add($loginPwCh).change(function () {
-        if ($loginPw.val() == $loginPwCh.val()) {
-            $loginPwCh.css("border", "1px solid black");
-            $loginPwCh.parent().next().hide();
-        } else {
-            $loginPwCh.css("border", "1px solid red");
-            $loginPwCh.parent().next().css("color", "red");
-            $loginPwCh.parent().next().css("display", "grid");
-            $loginPwCh.parent().next().text("*비밀번호가 일치하지 않습니다.");
+    var $joinBtn = $("#user-join-btn");         // 회원가입 버튼
+
+    // 정규식 패턴
+    const spacePattern = /\s/;                            // 공백 체크
+    const idRegex = /^[A-Za-z0-9]{7,15}$/;                // id, [A~Z, a~z, 0~9] {글자수 7~20 사이}
+    const pwRegex = /^[A-Za-z0-9.,\/?!@#$%^&*]{10,30}$/;  // pw, [A~Z, a~z, 0~9, 특수문자(.,/?!@#$%^&*)] {글자수 10~30 사이}
+    const nameRegex = /^[가-힣A-Za-z]{2,10}$/;            // name, [한글(가~힣), A~Z, a~z] {글자수 2~10 사이}
+    const nicknameRegex = /^[가-힣A-Za-z0-9]{2,15}$/;     // nickname, [한글(가~힣), A~Z, a~z, 0~9] {글자수 2~15 사이}
+    const emailRegex = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;     // 이메일 형식 확인
+    const pnRegex = /^[0-9]{3}-[0-9]{4}-[0-9]{4}$/       // pn, ooo-oooo-oooo 형태와 일치해야함 (숫자로만 구성)
+
+
+    // 작성한 입력란의 내용이 바뀔 시
+    $(".user-join-wrap>div>div>div:nth-child(2)>input").change(function () {
+        var idx = 0;
+        var val = $(this).val().trim();           // 입력값 양옆 공백 제거
+        var msg = $(this).parent().next();        // 해당 인풋 부모의 다음 형제 (확인 메시지 출력 -> .validation-message)
+
+        for (var input of inputs) {
+            if ($(this).is(input)) {
+                isValid(input, val, msg, idx);
+            }
+            idx++;
         }
     });
 
-    // 이메일 체크 (직접입력일때)
-    var userEmail;
-    $(".custom-input").hide();
+    // 비밀번호, 비밀번호 확인 같은지 체크
+    $(".user-login-pw-ck-input").change(function () {
+        isSamePw($(this), $(this).parent().next());
+    });
+
+    // 이메일 옵션 바꿀 시
+    var userEmail = "";      // 이메일
+    $(".user-email-input").change(function () {
+        userEmail = `${$(".user-email-input").val()}@${$("#select-email-option").val()}`;
+        isValid(inputs[5], $(this).val(), $(this).parent().next(), 5);
+    });
+
     $("#select-email-option").change(function () {
         if ($(this).val() == "userInput") {
             $(".custom-input").show();
+            userEmail = `${$(".user-email-input").val()}@${$(this).val()}`;
         } else {
             $(".custom-input").hide();
             $(".custom-input").val("");
             userEmail = `${$(".user-email-input").val()}@${$(this).val()}`;
         }
+        isValid(inputs[5], $(this).val(), $(this).parent().next(), 5);
     });
 
+    // 이메일 직접입력란 값 바뀔 시
     $(".custom-input").change(function () {
         userEmail = `${$(".user-email-input").val()}@${$(".custom-input").val()}`;
+        isValid(inputs[5], $(this).val(), $(this).parent().next(), 5);
     });
 
-    // 전화번호 체크 (3 4 4, 한 칸이라도 비거나 전부 있어야함)
 
-    // 주소 체크
+    // 전화번호 입력 시
+    var phoneNumber = "";            // 전화번호
+    $(".user-phone-number-input").change(function () {
+        var phoneNumbers = [];  // 각각의 입력란의 번호를 담는 배열
+        var msg = $(this).parent().next();
+        $(".user-phone-number-input").each(function () {
+            phoneNumbers.push($(this).val());
+        });
 
-    // 본인인증
+        phoneNumber = `${phoneNumbers[0]}-${phoneNumbers[1]}-${phoneNumbers[2]}`;
 
-    // 회원가입 버튼 누를 시 (아이디, 비밀번호, 비번확인, 이름, 닉네임, 이메일, 본인인증) 멤버 추가
-    $userJoinBtn.click(function () {
-        console.log(userEmail);
-        console.log(checkDuplicate);
+        if (phoneNumber.length == 2) {
+            $(".user-phone-number-input").each(function () {
+                successCss($(this), msg);
+            });
+
+            return true;
+        }
+
+        isValid(inputs[6], $(this).val(), msg, 6);
+    });
+
+
+    // 중복 확인 버튼 클릭 시 
+    var checkDuplicate = [false, false];
+    $("#login-id-duplicate-check-btn").click(function () {
+        if (isValid($(this).prev(), $(this).prev().val(), $(this).parent().next(), 4)) { return; }
+
+        if (isDuplicate($(this).prev(), $(this).prev().val(), $(this).parent().next(), 0)) { return; }
+    });
+
+    $("#nickname-duplicate-check-btn").click(function () {
+        if (isValid($(this).prev(), $(this).prev().val(), $(this).parent().next(), 4)) { return; }
+
+        if (isDuplicate($(this).prev(), $(this).prev().val(), $(this).parent().next(), 4)) { return; }
+    });
+
+
+    $joinBtn.click(function () {
+        var isTrue = false;
+
         if (!confirm("가입하시겠습니까?")) {
             return alert("취소합니다.");
         }
 
-        // 공백 확인
-        if (checkAllBlank()) {
-            return alert("빈칸이 있는지 확인해주세요.");
+        var idx = 0;
+        for (var input of inputs) {
+            if (idx !== 6) {
+                var val = input.val().trim();
+                var msg = input.parent().next();
+                isValid(input, val, msg, idx) ? isTrue = true : isTrue;
+            }
+            idx++;
         }
-        // var user1 = new User(id++, "testId01", "testPw01", "testName01", "testNickname01", "test01@test.com", "010 1234 5671", "대전");
+        if (isTrue) { return alert("작성한 정보를 다시 확인해주세요."); }
 
-        var regex = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
-        if (!regex.test(userEmail)) {
-            return alert("이메일 형식을 다시 확인해주세요.");
-        }
-
-        // 중복확인 했는지
+        // 중복 확인 눌렀는지
         for (var val of checkDuplicate) {
             if (val == false) {
                 return alert("중복확인을 해주세요");
             }
         }
 
-        var newUser = new User(id++, $loginId.val(), $loginPw.val(), $name.val(), $nickname.val(), "test" + id + "@test.com", "010 1234 0000", $address.val());
-        users.push(newUser);
         checkDuplicate[0] = false;
         checkDuplicate[1] = false;
-        $(".user-join-wrap input").val("");
-        alert("가입이 완료 되었습니다.");
+
+        var newUser = new User(id++, inputs[0].val(), inputs[1].val(), inputs[3].val(), inputs[4].val(), userEmail, phoneNumber, inputs[7].val());
+        users.push(newUser);
+        console.log(users);
+
+        alert("가입이 완료되었습니다.");
     });
 
 
 
+    /* =====함수===== */
 
-    // 함수
 
-    // 필수 작성란 공백 검사
-    function checkAllBlank() {
-        var isFaild = false;
+    // 유효성 검사
+    function isValid($this, val, msg, idx) {
 
-        !isEmpty($loginId) == true ? isFaild = true : isFaild;        // 아이디 공백 여부
-        !isEmpty($loginPw) == true ? isFaild = true : isFaild;        // 비밀번호 공백 여부
-        !isEmpty($loginPwCh) == true ? isFaild = true : isFaild;      // 비밀번호 확인 공백 여부
-        !isEmpty($name) == true ? isFaild = true : isFaild;           // 이름 공백 여부
-        !isEmpty($nickname) == true ? isFaild = true : isFaild;       // 닉네임 공백 여부
-        !isEmpty($email) == true ? isFaild = true : isFaild;          // 이메일 공백 여부
-        !isEmpty($idCheck) == true ? isFaild = true : isFaild;        // 본인인증 공백 여부
-
-        return isFaild;
-    }
-
-    // 각각의 인풋 공백 검사
-    function isInputBlank($this) {
-        if (!isEmpty($this)) {
-            return true;
+        // 공백 확인
+        if (idx < 6 || idx == 8) {
+            if (isEmpty($this, val, msg)) { return true; }
         }
-        $this.css("border", "1px solid black");
-        $this.parent().next().hide();
+
+        // 비밀번호, 비밀번호 확인 체크
+        if (idx == 2) {
+            if (isSamePw($this, msg)) { return true; }
+        }
+
+
+        /* 정규식 검사 */
+        if (idx < 5 && idx != 2) {                              // 길이가 정해져 있는 input의 정규식 패턴 검사
+            if (checkMsgPattern($this, val, msg)) { return true; }
+        } else if (idx === 5) {                                  // 이메일 정규식 패턴 검사
+            if (!emailRegex.test(userEmail)) {                  // 실패 시
+                msg.text("*이메일 형식을 확인해주세요. ex) test@test.com")
+                failCss($this, msg);
+                return true;
+            }
+            successCss($this, msg);                             // 성공 시
+        } else if (idx === 6) {                                 // 전화번호 정규식 패턴 검사
+            if (!pnRegex.test(phoneNumber)) {                   // 실패 시
+                msg.text("*전화번호 형식을 확인해주세요. ex) OOO-OOOO-OOOO")
+                failCss($this, msg);
+                return true;
+            }
+            successCss($this, msg);                             // 성공 시
+        }
+
         return false;
     }
 
     // 공백 확인
-    function isEmpty(val) {
-        if (val.val().trim()) {
-            val.css("border", "1px solid black");
-            val.parent().next().css("color", "black");
-            val.parent().next().hide();
+    function isEmpty($this, val, msg) {
+
+        if (!val || spacePattern.test(val)) {
+            msg.text("*빈칸을 채워주세요.");
+            failCss($this, msg);
             return true;
         }
-        val.css("border", "1px solid red");
-        val.parent().next().css("color", "red");
-        val.parent().next().css("display", "grid");
-        val.parent().next().text("*빈칸을 채워주세요.");
+        successCss($this, msg);
         return false;
     }
 
-    // idAvailable true 중복확인 시 사용가능할 때
-    function isAvailable(val, userType) {
-        if (isDuplicate(val, userType)) {
+    // 비밀번호, 비밀번호 확인 검사
+    function isSamePw($this, msg) {
+        if (inputs[1].val() === $this.val()) {
+            return successCss($this, msg);
+        }
+        failCss($this, msg);
+        msg.text("비밀번호가 일치하지 않습니다.");
+        return true;
+    }
 
+    // 길이가 정해져 있는 input의 정규식 패턴 검사
+    function checkMsgPattern($this, val, msg) {
+
+        var userInfo = $this.parent().prev().text();    // 해당 인풋 부모의 이전 형제 (id, pw, name, nickname 같은 유저 정보 입력란 이름)
+
+        // 길이 제한 있는 input의 min, max 따로 가져오기  // 길이 제한 틀릴 시 글씨 제한 수를 나타내기 위함
+        var msgLength = {
+            min: 0,
+            max: 0,
+        }
+
+        if ($this.is(inputs[0])) {
+            msgLength.min = 7;
+            msgLength.max = 20;
+        } else if ($this.is(inputs[1])) {
+            msgLength.min = 10;
+            msgLength.max = 30;
+        } else if ($this.is(inputs[3])) {
+            msgLength.min = 2;
+            msgLength.max = 10;
+        } else if ($this.is(inputs[4])) {
+            msgLength.min = 2;
+            msgLength.max = 14;
+        }
+
+        // 정규식 검사
+        if ($this.is(inputs[0]) && idRegex.test(val)) {                 // 아이디: 07 ~ 20, 한글x, 대소영o, 숫자o
+            successCss($this, msg);
+        } else if ($this.is(inputs[1]) && pwRegex.test(val)) {          // 비  번: 10 ~ 30, 한글x, 대소영o, 숫자o, 특수문자(.,/?!@#$%^&*)o, 
+            successCss($this, msg)
+        } else if ($this.is(inputs[3]) && nameRegex.test(val)) {        // 이  름: 02 ~ 10, 한글o, 대소영o, 숫자x
+            successCss($this, msg)
+        } else if ($this.is(inputs[4]) && nicknameRegex.test(val)) {    // 닉네임: 02 ~ 14, 한글o, 대소영o, 숫자o
+            successCss($this, msg)
+        } else {                                                        // 아닐 시
+            failText(msg, userInfo, msgLength)
+            failCss($this, msg);
             return true;
         }
-        if (userType == "아이디") {
-            checkDuplicate[0] = true;
-            $loginValidMsg.css("display", "grid");
-            $loginValidMsg.css("color", "green");
-            $loginValidMsg.text(`*사용 가능한 ${userType} 입니다.`);
-        } else {
-            checkDuplicate[1] = true;
-            $nicknameValidMsg.css("display", "grid");
-            $nicknameValidMsg.css("color", "green");
-            $nicknameValidMsg.text(`*사용 가능한 ${userType} 입니다.`);
-        }
-
         return false;
     }
 
-    // 중복 확인
-    function isDuplicate(val, userType) {
-        for (var i = 0; i < users.length; i++) {
-            if (userType === "아이디") {
-                if (users[i].loginId === $loginId.val()) {
-                    checkDuplicate[0] = false;
-                    $loginId.css("border", "1px solid red");
-                    $loginValidMsg.css("display", "grid");
-                    $loginValidMsg.css("color", "red");
-                    $loginValidMsg.text(`*사용할 수 없는 ${userType} 입니다.`);
-                    return true;
-                }
-            } else if (users[i].nickname === $nickname.val()) {
-                checkDuplicate[1] = false;
-                $nickname.css("border", "1px solid red");
-                $nicknameValidMsg.css("display", "grid");
-                $nicknameValidMsg.css("color", "red");
-                $nicknameValidMsg.text(`*사용할 수 없는 ${userType} 입니다.`);
+    // 정규식 검사 실패 메시지 출력 함수
+    function failText(msg, userInfo, msgLength) {
+        var message = `${userInfo} 길이제한: ${msgLength.min} ~ ${msgLength.max}`
+        if (userInfo === "*아이디") {
+            msg.text(`${message}, 한글x, 특수문자x`);
+        } else if (userInfo === "*비밀번호") {
+            msg.text(`${message}, 한글x, 특수문자 (.,/?!@#$%^&*) 허용`);
+        } else if (userInfo === "*이름") {
+            msg.text(`${message}, 숫자x`);
+        } else if (userInfo === "*닉네임") {
+            msg.text(`${message}`);
+        }
+    }
+
+    // 중복 검사
+    function isDuplicate($this, val, msg, idx) {
+        var userInfo = idx === 0 ? "아이디" : "닉네임";
+        var dupIdx = idx === 0 ? 0 : 1;
+
+        for (var user of users) {
+            // 사용 불가 시
+            if ((idx === 0 && user.loginId === val) || (idx === 4 && user.nickname === val)) {
+                msg.text(`*사용할 수 없는 ${userInfo} 입니다.`);
+                failCss($this, msg);
+                checkDuplicate[dupIdx] = false;
                 return true;
             }
-
         }
+
+        // 사용 가능 시
+        msg.css({ "display": "grid", rightMsgStyle });
+        msg.text(`*사용 가능한 ${userInfo} 입니다.`);
+        checkDuplicate[dupIdx] = true;
+
         return false;
     }
+
+
+
+    /* ===== css style 변경 ===== */
+    var wrongStyle = { "border": "2px solid red" };     // input 스타일
+    var rightStyle = { "border": "1px solid black" };   // input 스타일
+    var wrongMsgStyle = {                               // validation-message 스타일
+        "display": "grid",
+        "color": "red",
+    };
+    var rightMsgStyle = {                               // validation-message 스타일
+        "display": "none",
+        "color": "green",
+    };
+
+    // 유효성 검사 성공 시
+    function successCss($this, msg) {
+        $this.css(rightStyle);
+        msg.css(rightMsgStyle);
+        msg.hide();
+    }
+
+    // 유효성 검사 실패 시
+    function failCss($this, msg) {
+        $this.css(wrongStyle);
+        msg.css(wrongMsgStyle);
+    }
+
 
 });

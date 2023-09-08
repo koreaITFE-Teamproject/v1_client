@@ -6,12 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/project/css/">
-    <style>
-        .user-join-wrap {
-            background-color: #F6E3CE;
-        }
-    </style>
+    <link rel="stylesheet" href="/project/css/user/userJoin.css">
     <script src="https://kit.fontawesome.com/7a79c7be2a.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="/project/js/user/userJoin.js"></script>
@@ -22,75 +17,64 @@
     <header id="header"></header>
 
     <main>
-        <article class="user-join-wrap">
-            <p class="brief"><span class="required">*</span>표시는 필수 기입항목입니다.</p>
-            <table>
-                <tbody>
+        <form action="#">
+            <article class="user-join-wrap">
+                <p class="brief"><span class="required">*</span>표시는 필수 기입항목입니다.</p>
+                <div>
                     <!-- 아이디 -->
-                    <tr class="user-login-id">
-                        <td>
-                            <span class="required">*</span>아이디
-                        </td>
-                        <td>
-                            <input type="text" class="user-login-id-input">
+                    <div class="user-login-id">
+                        <div><span class="required">*</span>아이디</div>
+                        <div>
+                            <input type="text" class="user-login-id-input" maxlength="20">
                             <button id="login-id-duplicate-check-btn" class="user-join-wrap-btn">중복확인</button>
-                        </td>
-                        <td class="validation-message"></td>
-                    </tr>
+                        </div>
+                        <div type="button" class="validation-message"></div>
+                    </div>
 
                     <!-- 비밀번호 -->
-                    <tr class="user-login-pw">
-                        <td>
-                            <span class="required">*</span>비밀번호
-                        </td>
-                        <td>
-                            <input type="password" class="user-login-pw-input">
-                            <i id="show-eyes" class="fa-solid fa-eye" style="color: #474747;"></i>
-                            <i id="hide-eyes" class="fa-solid fa-eye-slash" style="color: #474747;"></i>
-                        </td>
-                        <td class="validation-message"></td>
-                    </tr>
+                    <div class="user-login-pw">
+                        <div><span class="required">*</span>비밀번호</div>
+                        <div>
+                            <input type="password" class="user-login-pw-input" maxlength="30">
+                            <!-- <i id="show-eyes" class="fa-solid fa-eye" style="color: #474747;"></i> -->
+                            <!-- <i id="hide-eyes" class="fa-solid fa-eye-slash" style="color: #474747;"></i> -->
+                        </div>
+                        <div class="validation-message"></div>
+                    </div>
 
                     <!-- 비밀번호 확인 -->
-                    <tr class="user-login-pw-ck">
-                        <td>
-                            <span class="required">*</span>비밀번호 확인
-                        </td>
-                        <td>
+                    <div class="user-login-pw-ck">
+                        <div><span class="required">*</span>비밀번호 확인</div>
+                        <div>
                             <input type="password" class="user-login-pw-ck-input">
-                        </td>
-                        <td class="validation-message"></td>
-                    </tr>
+                        </div>
+                        <div class="validation-message"></div>
+                    </div>
 
                     <!-- 이름 -->
-                    <tr class="user-name">
-                        <td>
-                            <span class="required">*</span>이름
-                        </td>
-                        <td>
-                            <input type="text" class="user-name-input">
-                        </td>
-                        <td class="validation-message"></td>
-                    </tr>
+                    <div class="user-name">
+                        <div><span class="required">*</span>이름</div>
+                        <div>
+                            <input type="text" class="user-name-input" maxlength="10">
+                        </div>
+                        <div class="validation-message"></div>
+                    </div>
 
                     <!-- 닉네임 -->
-                    <tr class="user-nickname">
-                        <td>
-                            <span class="required">*</span>닉네임
-                        </td>
-                        <td>
-                            <input type="text" class="user-nickname-input">
-                            <button id="nickname-duplicate-check-btn" class="user-join-wrap-btn">중복확인</button>
-                        </td>
-                        <td class="validation-message"></td>
-                    </tr>
+                    <div class="user-nickname">
+                        <div><span class="required">*</span>닉네임</div>
+                        <div>
+                            <input type="text" class="user-nickname-input" maxlength="14">
+                            <button type="button" id="nickname-duplicate-check-btn" class="user-join-wrap-btn">중복확인</button>
+                        </div>
+                        <!-- <div class="warning-message">닉네임은 변경할 수 없습니다.</div> -->
+                        <div class="validation-message"></div>
+                    </div>
 
                     <!-- 이메일 -->
-                    <tr class="user-email">
-                        <td>
-                            <span class="required">*</span>이메일
-                        </td>
-                        <td>
+                    <div class="user-email">
+                        <div><span class="required">*</span>이메일</div>
+                        <div>
                             <input type="text" class="user-email-input">
                             <span>@</span>
                             <input type="text" class="custom-input">
@@ -99,55 +83,52 @@
                                 <option value="userInput">직접입력</option>
                                 <option value="google.com">google.com</option>
                                 <option value="naver.com">naver.com</option>
-                                <option value="naver.com">nate.com</option>
+                                <option value="nate.com">nate.com</option>
                                 <!-- <option value="">카카오</option> -->
                             </select>
-                        </td>
-                        <td class="validation-message"></td>
-                    </tr>
+                        </div>
+                        <div class="validation-message"></div>
+                    </div>
 
                     <!-- 전화번호 -->
-                    <tr class="user-phone-number">
-                        <td>
-                            전화번호
-                        </td>
-                        <td>
-                            <input type="text" class="user-phone-number-input">
+                    <div class="user-phone-number">
+                        <div>전화번호</div>
+                        <div class="input-numbers">
+                            <!-- 각 input 패턴 적용 -->
+                            <input type="text" class="user-phone-number-input" maxlength="3">
                             <span>-</span>
-                            <input type="text" class="user-phone-number-input">
+                            <input type="text" class="user-phone-number-input" maxlength="4">
                             <span>-</span>
-                            <input type="text" class="user-phone-number-input">
-                        </td>
-                    </tr>
+                            <input type="text" class="user-phone-number-input" maxlength="4">
+                        </div>
+                        <div class="validation-message"></div>
+                    </div>
 
                     <!-- 주소 -->
-                    <tr class="user-address">
-                        <td>
-                            주소
-                        </td>
-                        <td>
+                    <div class="user-address">
+                        <div>주소</div>
+                        <div>
                             <input type="text" class="user-address-input">
-                            <button id="find-postal-code-btn" class="user-join-wrap-btn">우편번호로 찾기</button>
-                        </td>
-                    </tr>
+                            <button type="button" id="find-postal-code-btn" class="user-join-wrap-btn">우편번호로 찾기</button>
+                        </div>
+                        <div class="validation-message"></div>
+                    </div>
 
                     <!-- 본인인증 -->
-                    <tr class="user-id-check">
-                        <td>
-                            <span class="required">*</span>본인인증
-                        </td>
-                        <td>
+                    <div class="user-id-check">
+                        <div> <span class="required">*</span>본인인증</div>
+                        <div>
                             <input type="text" class="user-id-check-input">
-                        </td>
-                        <td class="validation-message"></td>
-                    </tr>
-                </tbody>
-            </table>
-            <button id="user-join-btn" class="user-join-wrap-btn">회원가입</button>
-        </article>
+                        </div>
+                        <div class="validation-message"></div>
+                    </div>
+                </div>
+                <button type="submit" id="user-join-btn" class="user-join-wrap-btn">회원가입</button>
+            </article>
+        </form>
     </main>
 
-    <footer id="footer"></footer>
+    <!-- <footer id="footer"></footer> -->
 </body>
 
 </html>
