@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 부트스트랩 아이콘 링크 연결 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <!-- 탬플릿을 어떻게 연결할껀지 봐야 이 페이지는 마무리 될듯. -->
+    <style>
+        div{
+            display: inline-block;
+            
+        }
+        .top_div{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 40px;
+        }
+        .chat_q_list{
+            display: flex;
+            flex-direction: column; 
+            border: 3px solid black;
+            margin: 10px;
+        }
+        .main_div {
+            display: flex;
+            flex-direction: row;
+            border: 3px solid black;
+            margin: 10px 10px;
+        }
+        .chat_q{
+            border: 3px solid black;
+            margin: 10px 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .chat_talk{
+            border: 3px solid black;
+            width: 90%;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            // 마우스 모양 변경
+            $('.x_icon').mouseover(function(){
+                $(this).css('cursor', 'pointer');  
+            })
+            $('.chat_q').mouseover(function(){
+                $(this).css('cursor', 'pointer');  
+            })
+            
+            // 1:1 고객상담페이지 클릭시 작동되는 코드
+            $('#one_by_one').on('click', function(){
+                alert('고객상담센터')
+                // 고객 상담페이지로 연결되게 수정해야함.
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="top_div">
+        <div class="page_title">CHAT BOT 상담</div>
+        <div class="x_icon"><i class="bi bi-x"></i></div>
+    </div>
+    <div class="main_div">
+        <div class="chat_q_list">
+            <div class="chat_q">챗봇 질문 1</div>
+            <div class="chat_q">챗봇 질문 2</div>
+            <div class="chat_q">챗봇 질문 3</div>
+            <div class="chat_q">챗봇 질문 4</div>
+            <div class="chat_q">챗봇 질문 5</div>
+            <div class="chat_q" id="one_by_one">1:1 고객상담</div>
+        </div>
+        <div class="chat_talk">
+            <!-- API가 들어올 자리 -->
+            
+        </div>
+    </div>
+
+</body>
+</html>
