@@ -9,20 +9,6 @@ input {
     display: inline-block;
 }
 
-/* body(메인 배경) */
-body {
-    background: #f6e3ce;
-    padding: 20px 50px;
-    display: flex;
-    justify-content: center;
-    /* 가로 중앙 정렬 */
-    align-items: center;
-    /* 세로 중앙 정렬 */
-    height: 100vh;
-    /* 화면 높이만큼 설정하여 본문을 화면 가운데로 배치 */
-
-}
-
 /* 컨텐츠 제일 바깥 div */
 .main_div {
     /* 위치 구분하려고 한 border */

@@ -66,4 +66,21 @@ $(document).ready(function () {
         //DB 연결하고 나면 인증번호가 틀리면 틀렸다고 뜨고 맞으면 맞았다고 뜨게 수정
     });
 
+    // 이메일 체크 (직접입력일때)
+    var userEmail;
+    $(".custom-input").hide();
+    $("#select-email-option").change(function () {
+        if ($(this).val() == "userInput") {
+            $(".custom-input").show();
+        } else {
+            $(".custom-input").hide();
+            $(".custom-input").val("");
+            userEmail = `${$(".user-email-input").val()}@${$(this).val()}`;
+        }
+    });
+
+    $(".custom-input").change(function () {
+        userEmail = `${$(".user-email-input").val()}@${$(".custom-input").val()}`;
+    });
+
 })
