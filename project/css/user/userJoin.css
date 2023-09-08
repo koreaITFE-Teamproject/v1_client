@@ -79,7 +79,7 @@ button {
     margin: 0 40px 0 0;
 }
 
-/* 윺효성 검사 메시지 */
+/* 유효성 검사 메시지 */
 .validation-message {
     grid-column: 2 / 3;
     font-size: 12px;
