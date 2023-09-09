@@ -1,6 +1,22 @@
+.layouts{
+  display: inline-flex;
+  margin: 5px;
+}
+
 button {
   background-color: #F6E3CE;
   height: 40px;
   width: 80px;
   border-radius: 2px;
+  margin-left: 5px;
+}
+.name {
+  height: 40px;
+  width: 250px;
+  margin-left: 5px;
+}
+
+#column {
+  width: 120px;
+  margin-left: 5px;
 }
