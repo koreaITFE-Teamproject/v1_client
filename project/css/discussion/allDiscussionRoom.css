@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.discussion-rooms-article {
+    margin: 20px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+/* 토론방 선택 */
+.select-discussion-rooms {
+    width: 100%;
+    padding: 20px 0;
+    border: 1px solid;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.select-discussion-rooms>button {
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: #F6E3CE;
+    width: 30%;
+    height: 50px;
+}
+
+.select-discussion-rooms>button:hover {
+    background-color: #dacbbc;
+}
+
+
+
+/* 토론방 타이틀 모음 */
+.room-title-wrap>ul {
+    display: grid;
+    grid-template-columns: 1fr 6fr 3fr;
+    grid-auto-rows: minmax(40px, auto);
+    margin-top: 30px;
+    border: 1px solid;
+    border-bottom: 0px;
+}
+
+.room-title-wrap>ul>li {
+    height: 100%;
+    display: grid;
+    align-items: center;
+    text-align: center;
+}
+
+.room-title-wrap>ul>li:not(:last-child) {
+    border-right: 1px solid;
+}
+
+/* 토론방 목록 */
+.discussion-rooms-list {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid;
+}
+
+/* 스트롤바 없애기, 기능은 유지 */
+/* ::-webkit-scrollbar {
+    display: none !important;
+} */
+
+/* 스크롤바 width 설정 */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* 스크롤바 트랙 배경색 설정 */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* 스크롤바 핸들 배경색 설정 */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* 스크롤바 핸들 호버 배경색 설정 */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.user-rooms-wrap>ul {
+    display: grid;
+    grid-template-columns: 1fr 6fr 3fr;
+    grid-auto-rows: minmax(40px, auto);
+}
+
+.user-rooms-wrap>ul:hover {
+    background-color: #dddddd;
+}
+
+.user-rooms-wrap>ul>li {
+    display: grid;
+    align-items: center;
+    text-align: center;
+}
+
+.user-rooms-wrap>ul>li:nth-child(2){
+    cursor: pointer;
+}
+
+.user-rooms-wrap>ul:not(:last-child) {
+    border-bottom: 1px solid;
+}
+
+.user-rooms-wrap>ul>li:not(:last-child) {
+    border-right: 1px solid;
+}
+
+
+
+
+
+
+/* 토론방 검색, 만들기 */
+.discussion-rooms-article>div:last-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.room-search {
+    width: 70%;
+    height: 40px;
+    display: grid;
+    grid-template-columns: 1.5fr 6.5fr 2fr;
+    margin: 30px 0;
+}
+
+.room-search>p {
+    font-size: 1rem;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: #F6E3CE;
+}
+
+.room-search>input {
+    font-size: 1rem;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 0 5px;
+    margin: 0 5px;
+}
+
+.discussion-rooms-article>div:last-child button {
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: #F6E3CE;
+    font-size: 1rem;
+}
+
+.discussion-rooms-article>div:last-child button:hover {
+    background-color: #dacbbc;
+}
+
+.add-room-btn {
+    width: 25%;
+    height: 44px;
+}
