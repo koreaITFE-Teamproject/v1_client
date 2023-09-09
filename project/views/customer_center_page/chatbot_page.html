@@ -9,56 +9,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <!-- 탬플릿을 어떻게 연결할껀지 봐야 이 페이지는 마무리 될듯. -->
     <script src="/project/js/common/common.js"></script>
-    <style>
-        .top_div{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 40px;
-        }
-        .chat_q_list{
-            display: flex;
-            flex-direction: column; 
-            border: 3px solid black;
-            margin: 10px;
-        }
-        .main_div {
-            display: flex;
-            flex-direction: row;
-            border: 3px solid black;
-            margin: 10px 10px;
-        }
-        .chat_q{
-            border: 3px solid black;
-            margin: 10px 10px;
-            padding: 10px;
-            border-radius: 10px;
-        }
-        .chat_talk{
-            border: 3px solid black;
-            width: 90%;
-        }
-        .top_div{
-            display: flex;
-        }
-    </style>
-    <script>
-        $(document).ready(function(){
-            // 마우스 모양 변경
-            $('.x_icon').mouseover(function(){
-                $(this).css('cursor', 'pointer');  
-            })
-            $('.chat_q').mouseover(function(){
-                $(this).css('cursor', 'pointer');  
-            })
-            
-            // 1:1 고객상담페이지 클릭시 작동되는 코드
-            $('#one_by_one').on('click', function(){
-                alert('고객상담센터')
-                // 고객 상담페이지로 연결되게 수정해야함.
-            })
-        })
-    </script>
+    <link rel="stylesheet" href="/project/css/customer_center_page/chatbot_page.css">
+    <script src="/project/js/customer_center_page/chatbot_page.js"></script>
 </head>
 <body>
     <header id="header"></header>
@@ -80,6 +32,5 @@
             
         </div>
     </div>
-    <footer id="footer"></footer>
 </body>
 </html>
