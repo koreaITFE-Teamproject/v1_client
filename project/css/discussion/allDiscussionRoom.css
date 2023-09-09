@@ -18,9 +18,15 @@ li {
 }
 
 
+.discussion-rooms-article {
+    width: 70%;
+    max-width: 1020px;
+    min-width: 700px;
+    margin: 0 auto;
+}
+
 /* 토론방 선택 */
 .select-discussion-rooms {
-    width: 100%;
     padding: 20px 0;
     border: 1px solid;
     display: flex;
@@ -64,7 +70,7 @@ li {
 
 /* 토론방 목록 */
 .discussion-rooms-list {
-    max-height: 300px;
+    max-height: 50vh;
     overflow-y: auto;
     border: 1px solid;
 }
@@ -140,21 +146,26 @@ li {
     display: grid;
     grid-template-columns: 1.5fr 6.5fr 2fr;
     margin: 30px 0;
+    
+    text-align: center;
 }
 
 .room-search>p {
-    font-size: 1rem;
-    text-align: center;
+    width: 100%;
+    font-size: .8rem;
     border: 1px solid;
     border-radius: 5px;
     background-color: #F6E3CE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .room-search>input {
     font-size: 1rem;
     border: 1px solid;
     border-radius: 5px;
-    padding: 0 5px;
+    padding: 0 10px;
     margin: 0 5px;
 }
 
