@@ -1,0 +1,38 @@
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* 화면 높이의 100%를 채우도록 설정 */
+    padding: 20px;
+}
+
+.input_div {
+    display: flex;
+    border: 1px solid black;
+    height: 200px;
+    /* 채팅 창 높이  합칠때 보고 수정*/
+}
+
+#chat_input {
+    width: 100%;
+    border: 1px solid black;
+}
+
+.enter_btn {
+    width: 100px;
+    border: 1px solid black;
+    background-color: #F6E3CE;
+    /* 입력 글자 중앙 위치 */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat_screen {
+    flex-grow: 1;
+    /* 남은 공간을 채우도록 설정 */
+    overflow-y: auto;
+    /* 내용이 넘칠 경우 스크롤 표시 */
+    border: 1px solid black;
+}

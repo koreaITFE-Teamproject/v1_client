@@ -8,15 +8,26 @@ input {
     padding: 10px;
     display: inline-block;
 }
+/* 제일 문서 내용 */
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 화면 높이의 100%를 채우도록 설정 */
+    margin: 0; /* body의 기본 마진 제거 */ 
 
+}
 
-/* 컨텐츠 제일 바깥 div */
+/* contents들 모아놓은 div */
 .main_div {
-    /* 위치 구분하려고 한 border */
-    /* border: 3px solid black;  */
-    padding: 50px 100px;
     background-color: white;
-
+    display: flex;
+    flex-direction: column; /* 컨텐츠를 세로로 정렬하기 위해 flex-direction을 column으로 설정 */
+    align-items: center; /* 가로 정렬을 중앙으로 조정 */
+    padding: 50px 100px;
+    border: 3px solid black;
+    border-radius: 10px;
+    width: 600px;
 }
 
 /* main_div 안의 내용들 div */

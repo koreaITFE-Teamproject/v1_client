@@ -7,72 +7,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.3/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        main{
-            background-color: blanchedalmond;
-            display: flex;
-            flex-direction: row;
-        }
-        div{
-            border: 3px solid black;
-            display: inline-block;
-        }
-        .menu_bar{
-            display: flex;
-            flex-direction: column;
-            width: 20vh;
-        }
-        .chat{
-          /* width 크기 물어보고 수정해야함. */
-          width: 100vh; 
-          height: 80vh;
-        }
-        #input_chat{
-          padding: 30px;
-          width: 500px;
-        }
-    </style>
-    <script>
-
-    </script>
+    <link rel="stylesheet" href="/project/css/admin/admin_chat.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <!-- daisyUi 링크 -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.3/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="/project/js/admin/admin_chat.js"></script>
 </head>
 <body>
     <main>
-        <div class="menu_bar">
-            <div class="menu_div">회원 조회</div>
-            <div class="menu_div">운영자간 운영 공유방</div>
-            <div class="menu_div">마케팅 데이터 화면</div>
-            <div class="menu_div">고객상담</div>
-        </div>
-        <div class="chat_bar">
-            <div class="chat_div">
-                <div class="chat chat-start">
-                    <!-- DasiyUI 채팅 예시코드 -->
-                    <!-- <div class="chat-header">
-                      Obi-Wan Kenobi
-                      <time class="text-xs opacity-50">2 hours ago</time>
-                    </div>
-                    <div class="chat-bubble">You were the Chosen One!</div>
-                    <div class="chat-footer opacity-50">
-                      Seen
-                    </div>
-                  </div>
-                  <div class="chat chat-start">
-                    <div class="chat-header">
-                      Obi-Wan Kenobi
-                      <time class="text-xs opacity-50">2 hour ago</time>
-                    </div>
-                    <div class="chat-bubble">I loved you.</div>
-                    <div class="chat-footer opacity-50">
-                      Delivered
-                    </div> -->
-                    <!-- DasiyUI 채팅 예시코드 -->
-                </div>
-              <div>
-                <input type="text" class="input_chat">
-                <div id="put_btn">입력</div>
-              </div>
-            
-    </main>
+      <div class="chat_screen">
+      </div>
+      <div class="input_div">
+        <input type="text" id="chat_input">
+        <div class="enter_btn">입력</div>
+      </div>
+    </main>  
 </body>
 </html>

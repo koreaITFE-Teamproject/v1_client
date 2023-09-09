@@ -1,9 +1,4 @@
 footer {
-  position: absolute;
-  /* 소민 코멘트 */
-  /* position absolute를 주석하면 main오케 다른 페이지에서 footer가 위로 감*/
-  /* position absolute를 주석 안하면 main 에서 난리남. */
-  /* 해결해야함. */
   bottom: 0;
   left: 0;
   right: 0;
