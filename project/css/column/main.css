@@ -68,3 +68,28 @@ th:nth-child(3),
 th:nth-child(4) {
   width: 20%;
 }
+
+/* 페이지네이션 스타일 */
+/* 나중에 게시글 테이블 완성되면 하단고정으로 만들어야함. */
+/* 하....... 버튼 배치를 못하면 어쩌자는거야... */
+/* 일단 요소 위치 설정은 나중에 다시 하고 페이지네이션 옆에 버튼 붙히는걸로 */
+.pagination-container {
+  display: flex;
+  justify-content: center; 
+}
+
+.pagination{
+  
+}
+
+.page-link {
+  color: black;
+}
+
+.write {
+  background-color: #F6E3CE;
+  height: 40px;
+  width: 80px;
+  border-radius: 4px;
+ 
+}
