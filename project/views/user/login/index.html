@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -30,7 +31,7 @@
         }
 
         .find_login_box_inner {
-            margin-top: 10%;
+            margin-top: 5%;
             height: 50%;
             display: flex;
             flex-direction: column;
@@ -38,35 +39,45 @@
             align-items: flex-start;
         }
 
-        .low>div {
+        .row {
+            margin-left: 18%;
+
+
+        }
+
+        .row>button {
             width: 100px;
             height: 50px;
             background-color: burlywood;
             border-radius: 10px;
-            font-size: 120%;
-            border: 1px solid black;
-            text-align: center;         
+            font-size: 120%
         }
 
-        .low>input {
+
+        .row>input {
             width: 630px;
             height: 46px;
             margin-bottom: 10px;
             border-radius: 10px;
-            font-size: 120%;
+            font-size: 120%
         }
 
-        .row {
-            margin-left: 10%;
+        .row>.pw_bar {
+            width: 630px;
         }
 
-        .row>button {
-            width: 880px;
-            height: 70px;
-            background-color: burlywood;
-            border-radius: 10px;
-            font-size: 120%;
+        .center {
+            width: 100%;
             text-align: center;
+        }
+
+        .check {
+            margin-right: 25%;
+        }
+
+        .row>.login {
+            width: 740px;
+            cursor: pointer;
         }
 
         h1 {
@@ -75,6 +86,68 @@
             margin-top: 80px;
         }
     </style>
+
+    <script>
+        $(document).ready(function () {
+            $(".login").click(function () {
+                var nameInput = $(".id_Bar");
+                var nameValue = nameInput.val();
+
+
+                if (nameValue.includes(" ")) {
+                    alert('이름에 공백이 포함될 수 없습니다.');
+                    return false;
+                }
+
+                if (nameValue.length < 7) {
+                    alert('7자리 이상 입력해주세요.');
+                }
+
+
+              
+            });
+
+            $(".login").click(function () {
+                var nameInput = $(".pw_bar");
+                var nameValue = nameInput.val();
+
+                if (nameValue.includes(" ")) {
+                    alert('비밀번호에 공백이 포함될 수 없습니다.');
+                    return false;
+                }
+
+                if (nameValue.length < 10) {
+                    alert('10자리 이상 입력해주세요.');
+                }
+            });
+
+
+
+
+
+
+
+            $(".id_Bar").keyup(function () {
+                var nameInput = $(".id_Bar");
+                var nameValue = nameInput.val();
+                if (nameValue.length > 20) {
+                    nameInput.val(nameValue.slice(0, 20));
+                    alert('이름은 20자리 이하로 입력해주세요.');
+                }
+            });
+
+            $(".pw_bar").keyup(function () {
+                var nameInput = $(".pw_bar");
+                var nameValue = nameInput.val();
+                if (nameValue.length > 30) {
+                    nameInput.val(nameValue.slice(0, 30));
+                    alert('이름은 30자리 이하로 입력해주세요.');
+                }
+            });
+
+        });
+
+    </script>
 </head>
 
 <body>
@@ -82,14 +155,15 @@
         <div class="find_login_box">
             <h1>관리자 로그인</h1>
             <div class="find_login_box_inner">
-                <div class="low">
-                    <div>아이디</div><input type="text" class="id_bar">
-                </div>
-                <div class="low">
-                    <div>비밀번호</div><input type="password" class="pw_bar">
+                <div class="row">
+                    <button class="id">아이디</button> <input type="text" class="id_Bar" placeholder="아이디">
                 </div>
                 <div class="row">
-                    <button>로그인</button>
+                    <button class="pw">비밀번호</button>
+                    <input type="password" class="pw_bar" placeholder="비밀번호">
+                </div>
+                <div class="row">
+                    <button class="login">로그인</button>
                 </div>
             </div>
         </div>

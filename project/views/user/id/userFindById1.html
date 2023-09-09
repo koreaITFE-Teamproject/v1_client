@@ -31,7 +31,7 @@
         }
 
         .find_login_box_inner {
-            margin-top: 20%;
+            margin-top: 10%;
             height: 50%;
             display: flex;
             flex-direction: column;
@@ -39,135 +39,131 @@
             align-items: flex-start;
         }
 
-        .row{
+        .row {
             margin-left: 10%;
         }
 
-        .row > button{
+        .row>button {
             width: 100px;
             height: 50px;
             background-color: burlywood;
             border-radius: 10px;
-            font-size: 120%
+            font-size: 120%;
+            border: 2px solid black;
         }
 
-        .row > input{
+        .row>.receive {
+            font-size: 83%;
+            height: 54px;
+        }
+
+        .row>.number_receive {
+            font-size: 83%;
+            height: 54px;
+        }
+
+        .row>input {
             width: 630px;
             height: 46px;
             margin-bottom: 10px;
             border-radius: 10px;
-            font-size: 120%
+            font-size: 120%;
+            border: 2px solid black;
         }
 
-        .row > .email_bar{
+        .row>select {
+            width: 300px;
+            height: 55px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            font-size: 120%;
+            border: 2px solid black;
+            text-align: center;
+        }
+
+        .row>.email_bar {
             width: 300px;
         }
 
-        .row > .number_receive{
-            width: 132px;
+        .row>.number {
+            width: 97px;
         }
 
-        .center{
+
+
+        .center {
             width: 100%;
-            text-align: center;         
+            text-align: center;
         }
 
         .check {
             margin-right: 25%;
+            cursor: pointer;
         }
 
-        /* 
-        .name {
-            width: 80px;
-            height: 50px;
-            background-color: burlywood;
-            border-radius: 10px;
-            position: relative;
-            left: -12%;
-            top: 50%;
-            font-size: 120%
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
         }
 
-        .nameBar {
-            width: 630px;
-            height: 46px;
-            margin-top: 150px;
-            margin-bottom: 10px;
-            border-radius: 10px;
-            position: relative;
-            left: -9.6%;
-            top: 50%;
-            font-size: 120%
-        }
-
-        .email {
-            width: 80px;
-            height: 50px;
-            background-color: burlywood;
-            border-radius: 10px;
-            position: relative;
-            left: -8%;
-            top: 50%;
-            font-size: 120%
-        }
-
-        .emailBar {
-            width: 300px;
-            height: 46px;
-            border-radius: 10px;
-            position: relative;
-            left: -5.8%;
-            top: 50%;
-            font-size: 120%;
-        }
-
-        .NumberReceive {
-            width: 80px;
-            height: 50px;
-            background-color: burlywood;
-            border-radius: 10px;
-            position: relative;
-            left: -5.7%;
-            top: -90%;
-            font-size: 100%;
-        }
-
-        .NumberReceiveBar {
-            width: 630px;
-            height: 46px;
-            border-radius: 10px;
-            position: relative;
-            left: -6%;
-            top: 50%;
-            font-size: 120%
-        }
-
-        .check {
-            width: 180px;
-            height: 50px;
-            background-color: burlywood;
-            border-radius: 10px;
-            font-size: 120%;
+        h1 {
             text-align: center;
-            margin: 350px;
-        } */
+            font-size: 50px;
+            margin-top: 100px;
+        }
     </style>
+    <script>
+        $(document).ready(function () {
+            $(".check").click(function () {
+                var nameInput = $(".nameBar");
+                var nameValue = nameInput.val();
+
+                if (nameValue.includes(" ")) {
+                    alert('이름에 공백이 포함될 수 없습니다.');
+                    return false;
+                }
+
+                if (nameValue.length < 2) {
+                    alert('2자리 이상 입력해주세요.');
+                }
+            });
+
+            $(".nameBar").keyup(function () {
+                var nameInput = $(".nameBar");
+                var nameValue = nameInput.val();
+                if (nameValue.length > 10) {
+                    nameInput.val(nameValue.slice(0, 10));
+                    alert('이름은 10자리 이하로 입력해주세요.');
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
     <div class="container">
         <div class="find_login_box">
+            <h1>아이디 찾기</h1>
             <div class="find_login_box_inner">
                 <div class="row">
-                    <button class="name">이름</button> <input type="text" class="nameBar">
+                    <button class="name">이름</button> <input type="text" rows="10" class="nameBar">
                 </div>
                 <div class="row">
                     <button class="email">이메일</button>
-                    <input type="text" class="email_bar" placeholder="이메일"> @ <input type="text" class="email_bar"placeholder="이메일">               
+                    <input type="text" class="email_bar" placeholder="이메일"> @ <select name="" id="select-email-option">
+                        <option value="none">=====선택=====</option>
+                        <option value="userInput">직접입력</option>
+                        <option value="google.com">google.com</option>
+                        <option value="naver.com">naver.com</option>
+                        <option value="naver.com">daum.com</option>
+                    </select>
+                    <button class="receive">인증번호 받기</button>
                 </div>
                 <div class="row">
-                    <button class="name">인증번호</button> 
+                    <button class="number">인증번호</button>
                     <input type="number" class="number_receive_bar" placeholder="인증번호 6자리 숫자 입력">
+                    <button class="number_receive">인증번호 확인</button>
                 </div>
                 <div class="row center">
                     <button class="check">확인</button>
