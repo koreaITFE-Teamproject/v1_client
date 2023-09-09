@@ -67,7 +67,13 @@ $(function () {
     // 이메일 옵션 바꿀 시
     var userEmail = "";      // 이메일
     $(".user-email-input").change(function () {
-        userEmail = `${$(".user-email-input").val()}@${$("#select-email-option").val()}`;
+        // 직접입력 일때
+        if ($("#select-email-option").val() === "userInput") {
+            userEmail = `${$(".user-email-input").val()}@${$(".custom-input").val()}`;
+        } else {
+            userEmail = `${$(".user-email-input").val()}@${$("#select-email-option").val()}`;
+        }
+        console.log(userEmail);
         isValid(inputs[5], $(this).val(), $(this).parent().next(), 5);
     });
 
@@ -113,7 +119,7 @@ $(function () {
     });
 
 
-    // 중복 확인 버튼 클릭 시 
+    // 중복 확인 버튼 클릭 시
     var checkDuplicate = [false, false];
     $("#login-id-duplicate-check-btn").click(function () {
         if (isValid($(this).prev(), $(this).prev().val(), $(this).parent().next(), 4)) { return; }
@@ -145,6 +151,12 @@ $(function () {
             idx++;
         }
         if (isTrue) { return alert("작성한 정보를 다시 확인해주세요."); }
+
+        // 전화번호 확인
+        console.log(phoneNumber);
+        if (isValid(inputs[6], phoneNumber, $(".user-phone-number>.validation-message"), 6)) {
+            return alert("전화번호를 확인해주세요.");
+        }
 
         // 중복 확인 눌렀는지
         for (var val of checkDuplicate) {
@@ -182,22 +194,22 @@ $(function () {
 
 
         /* 정규식 검사 */
-        if (idx < 5 && idx != 2) {                              // 길이가 정해져 있는 input의 정규표현식
+        if (idx < 5 && idx != 2) {                               // 길이가 정해져 있는 input의 정규표현식
             if (checkMsgPattern($this, val, msg)) { return true; }
         } else if (idx === 5) {                                  // 이메일 정규표현식
-            if (!emailRegex.test(userEmail)) {                  // 실패 시
-                msg.text("*이메일 형식을 확인해주세요. ex) test@test.com")
+            if (!emailRegex.test(userEmail)) {                   // 실패 시
+                msg.text("*이메일 형식을 확인해주세요. ex) test@test.com");
                 failCss($this, msg);
                 return true;
             }
-            successCss($this, msg);                             // 성공 시
-        } else if (idx === 6) {                                 // 전화번호 정규표현식
-            if (!pnRegex.test(phoneNumber)) {                   // 실패 시
-                msg.text("*전화번호 형식을 확인해주세요. ex) OOO-OOOO-OOOO")
+            successCss($this, msg);                                             // 성공 시
+        } else if (idx === 6) {                                                 // 전화번호 정규표현식
+            if (!pnRegex.test(phoneNumber) || (phoneNumber.length > 2 && phoneNumber.length < 13)) {        // 실패 시
+                msg.text("*전화번호 형식을 확인해주세요. ex) OOO-OOOO-OOOO");
                 failCss($this, msg);
                 return true;
             }
-            successCss($this, msg);                             // 성공 시
+            successCss($this, msg);                                             // 성공 시
         }
 
         return false;
