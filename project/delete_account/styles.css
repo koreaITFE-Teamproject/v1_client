@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 100px;
+    background-color: #F6E3CE;
+}
+
+.delete_account {
+    width: 300px;
+    border-radius: 5px; /* 중복 속성 제거 */
+    background-color: white;
+    padding: 20px;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+.custom-box {
+    border: 2px solid #333;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* 체크박스 스타일링 */
+.custom-checkbox {
+    margin-right: 5px;
+}
+
+/* 텍스트 스타일링 */
+p {
+    font-size: 16px;
+    color: #333;
+}
+
+label {
+    font-size: 14px;
+    color: #333;
+}

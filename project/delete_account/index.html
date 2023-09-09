@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탈퇴 페이지</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="/project/user_login/styles.css">
+</head>
+<body>
+    <div class="delete_account-form">
+        <p>정말 탈퇴하시겠습니까? <br>
+            탈퇴하려는 이유를 체크해 주세요</p>
+        <div class="custom-box">
+            <label>
+                <input type="checkbox" class="custom-checkbox"> 다른 사이트가 좋아서<br>
+                <input type="checkbox" class="custom-checkbox"> 사용빈도가 낮아서<br>
+                <input type="checkbox" class="custom-checkbox"> 콘텐츠 불만<br>
+                <input type="checkbox" class="custom-checkbox"> 기타
+                <input type="text" name="기타" class="text-field" placeholder="이유를 적어주세요">
+            </label>
+        </div>
+        <p>현재 사용중인 비밀번호</p>
+        <input type="password" id="passwordInput" placeholder="비밀번호를 입력하세요">
+        <p>비밀번호를 잊으셨나요?</p>  <div class="links">
+            <a href="#">비밀번호 재설정</a>
+        </div>
+        <button id="withdrawButton">탈퇴하기</button>
+    </div>
+
+    <script>
+        document.getElementById('withdrawButton').addEventListener('click', function () {
+            // 체크박스 상태 확인
+            var checkbox = document.getElementById('reasonCheckbox');
+            if (!checkbox.checked) {
+                // 체크되지 않았을 때 경고 메시지 표시
+                alert('체크박스를 선택하세요.');
+                return; 
+            }
+
+            // 비밀번호 입력 확인
+            var passwordInput = document.getElementById('passwordInput').value;
+            if (passwordInput.trim() === '') {
+                // 비밀번호가 비어있을 때 경고 메시지 표시
+                alert('비밀번호를 작성해 주세요.');
+                return;
+            }
+
+            alert('탈퇴되었습니다.');
+        });
+    </script>
+</body>
+</html>
