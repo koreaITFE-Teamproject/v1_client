@@ -1,7 +1,8 @@
 $(function () {
+    /* 회원가입 시 전화번호 입력 값이 올바르지 않을 떄 회원가입 불가능 하도록 수정예정 */
 
     // 테스트용 생성자 --------
-    // 사용자 객체 생엉을 위한 생성자 함수 정의
+    // 사용자 객체 생성을 위한 생성자 함수 정의
     function User(id, loginId, loginPw, name, nickname, email, phoneNumber, address) {
         this.id = id;
         this.loginId = loginId;
@@ -14,7 +15,7 @@ $(function () {
     }
 
     // 사용자 객체 생성
-    var id = 0;
+    var id = 1;
     var user1 = new User(id++, "testId01", "testPw01", "testName01", "testNickname01", "test01@test.com", "010 1234 5671", "대전");
     var user2 = new User(id++, "testId02", "testPw02", "testName02", "testNickname02", "test02@test.com", "010 1234 5672", "서울");
 
@@ -34,7 +35,7 @@ $(function () {
 
     var $joinBtn = $("#user-join-btn");         // 회원가입 버튼
 
-    // 정규식 패턴
+    // 정규표현식
     const spacePattern = /\s/;                            // 공백 체크
     const idRegex = /^[A-Za-z0-9]{7,15}$/;                // id, [A~Z, a~z, 0~9] {글자수 7~20 사이}
     const pwRegex = /^[A-Za-z0-9.,\/?!@#$%^&*]{10,30}$/;  // pw, [A~Z, a~z, 0~9, 특수문자(.,/?!@#$%^&*)] {글자수 10~30 사이}
@@ -158,7 +159,6 @@ $(function () {
         var newUser = new User(id++, inputs[0].val(), inputs[1].val(), inputs[3].val(), inputs[4].val(), userEmail, phoneNumber, inputs[7].val());
         users.push(newUser);
         console.log(users);
-
         alert("가입이 완료되었습니다.");
     });
 
@@ -182,16 +182,16 @@ $(function () {
 
 
         /* 정규식 검사 */
-        if (idx < 5 && idx != 2) {                              // 길이가 정해져 있는 input의 정규식 패턴 검사
+        if (idx < 5 && idx != 2) {                              // 길이가 정해져 있는 input의 정규표현식
             if (checkMsgPattern($this, val, msg)) { return true; }
-        } else if (idx === 5) {                                  // 이메일 정규식 패턴 검사
+        } else if (idx === 5) {                                  // 이메일 정규표현식
             if (!emailRegex.test(userEmail)) {                  // 실패 시
                 msg.text("*이메일 형식을 확인해주세요. ex) test@test.com")
                 failCss($this, msg);
                 return true;
             }
             successCss($this, msg);                             // 성공 시
-        } else if (idx === 6) {                                 // 전화번호 정규식 패턴 검사
+        } else if (idx === 6) {                                 // 전화번호 정규표현식
             if (!pnRegex.test(phoneNumber)) {                   // 실패 시
                 msg.text("*전화번호 형식을 확인해주세요. ex) OOO-OOOO-OOOO")
                 failCss($this, msg);
@@ -225,7 +225,7 @@ $(function () {
         return true;
     }
 
-    // 길이가 정해져 있는 input의 정규식 패턴 검사
+    // 길이가 정해져 있는 input의 정규표현식
     function checkMsgPattern($this, val, msg) {
 
         var userInfo = $this.parent().prev().text();    // 해당 인풋 부모의 이전 형제 (id, pw, name, nickname 같은 유저 정보 입력란 이름)
@@ -250,10 +250,10 @@ $(function () {
             msgLength.max = 14;
         }
 
-        // 정규식 검사
+        // 정규표현식
         if ($this.is(inputs[0]) && idRegex.test(val)) {                 // 아이디: 07 ~ 20, 한글x, 대소영o, 숫자o
             successCss($this, msg);
-        } else if ($this.is(inputs[1]) && pwRegex.test(val)) {          // 비  번: 10 ~ 30, 한글x, 대소영o, 숫자o, 특수문자(.,/?!@#$%^&*)o, 
+        } else if ($this.is(inputs[1]) && pwRegex.test(val)) {          // 비  번: 10 ~ 30, 한글x, 대소영o, 숫자o, 특수문자(.,/?!@#$%^&*)허용, 
             successCss($this, msg)
         } else if ($this.is(inputs[3]) && nameRegex.test(val)) {        // 이  름: 02 ~ 10, 한글o, 대소영o, 숫자x
             successCss($this, msg)
@@ -307,13 +307,13 @@ $(function () {
 
 
     /* ===== css style 변경 ===== */
-    var wrongStyle = { "border": "2px solid red" };     // input 스타일
-    var rightStyle = { "border": "1px solid black" };   // input 스타일
-    var wrongMsgStyle = {                               // validation-message 스타일
+    var wrongStyle = { "border": "2px solid red" };     // input 실패 시 스타일
+    var rightStyle = { "border": "1px solid black" };   // input 성공 시 스타일
+    var wrongMsgStyle = {                               // validation-message 실패 시 스타일
         "display": "grid",
         "color": "red",
     };
-    var rightMsgStyle = {                               // validation-message 스타일
+    var rightMsgStyle = {                               // validation-message 성공 시 스타일
         "display": "none",
         "color": "green",
     };

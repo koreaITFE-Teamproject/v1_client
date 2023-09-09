@@ -6,8 +6,17 @@
 
 main {
     width: 100%;
+    height: 100%;
     background-color: #F6E3CE;
     padding: 20px 0;
+}
+
+footer {
+    bottom: 0;
+}
+
+span {
+    font-size: 1.4rem;
 }
 
 input,
@@ -108,7 +117,8 @@ button {
 }
 
 /* 아이디 */
-.user-login-id-input{
+.user-login-id-input {
+    background-color: white;
     color: black;
 }
 
@@ -119,6 +129,7 @@ button {
 
 .custom-input {
     display: none;
+    margin: 0 20px 0 0;
 }
 
 /* 전화번호 */
@@ -148,12 +159,15 @@ button {
 
 /* 알림 토글 스위치 */
 .user-id-check>div:last-child {
+    /* 토글 스위치 위치 */
     padding: 0 20px;
     justify-self: left;
 }
 
-#notification-toggle-switch {
-    width: 80px;                        /* switch의 길이 */
+/* 토글 스위치 체크 전 */
+.toggle-swt {
+    /* 스위치의 길이 */
+    width: 80px;
     height: 40px;
     display: block;
     position: relative;
@@ -164,8 +178,10 @@ button {
     transition: all .3s;
 }
 
+/* 토글 버튼 체크 전 */
 .toggle-btn {
-    width: 30px;                        /* 버튼의 길이 */
+    /* 버튼의 길이 */
+    width: 30px;
     height: 30px;
     position: absolute;
     top: 50%;
@@ -174,6 +190,17 @@ button {
     border-radius: 50%;
     background: #F6E3CE;
     transition: all .3s;
+}
+
+/* 토글 스위치 체크 후 */
+.toggle-swt-checked {
+    background-color: #F6E3CE;
+}
+
+/* 토글 버튼 체크 후 */
+.toggle-btn-checked {
+    left: calc(100% - 34px);
+    background-color: #fff;
 }
 
 

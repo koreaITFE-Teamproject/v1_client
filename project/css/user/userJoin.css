@@ -9,6 +9,11 @@ main {
     background-color: #F6E3CE
 }
 
+span{
+    font-size: 1.4rem;
+}
+
+
 input,
 select {
     width: 100%;
@@ -63,7 +68,7 @@ button {
 .user-join-wrap>div>div>div:first-child {
     min-width: 60px;
     height: 100%;
-    font-size: 0.75em;
+    font-size: .9rem;
     background-color: #F6E3CE;
     margin: 0 10px 0 40px;
     border: 1px solid;
