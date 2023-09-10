@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 회원 조회</title>
+    <link rel="stylesheet" href="/project/css/admin/admin_user_info_views.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="/project/js/common/common.js"></script>
+    <script src="/project/js/admin/admin_user_info_views.js"></script>
+</head>
+
+<body>
+    <header id="header"></header>
+
+    <!-- <aside> 통일함 </aside> -->
+
+    <main>
+        <h2>회원 조회</h2>
+        <article>
+            <div class="search-users">
+                <div>
+                    <p>가입일</p>
+                    <input type="date">
+                    <span>~</span>
+                    <input type="date">
+                </div>
+                <div>
+                    <p>아이디</p>
+                    <input type="text">
+                </div>
+                <div>
+                    <p>이름</p>
+                    <input type="text">
+                </div>
+                <div>
+                    <p>관리</p>
+                    <select name="" id="">
+                        <option value="none">==선택==</option>
+                        <option value="member">회원</option>
+                        <option value="dormancy">회원(휴면)</option>
+                        <option value="withdrawSelf">탈퇴(본인)</option>
+                        <option value="withdrawAdmin ">탈퇴(강제)</option>
+                    </select>
+                </div>
+                <div>
+                    <button>조회 버튼</button>
+                </div>
+            </div>
+
+            <table class="user-info-table" border="1px">
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>아이디</th>
+                        <th>이름</th>
+                        <th>접속수</th>
+                        <th>가입일</th>
+                        <th>상태</th>   <!-- db 추가 해야됨, 회원, 회원(휴먼), 탈퇴(본인), 탈퇴(강제) -->
+                        <th>관리</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </article>
+
+    </main>
+
+</body>
+
+</html>
