@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-.discussion-rooms-article {
-    margin: 20px;
-}
-
 a {
     color: black;
     text-decoration: none;
@@ -17,16 +13,16 @@ li {
     list-style: none;
 }
 
-
 .discussion-rooms-article {
     width: 70%;
+    height: 100%;
     max-width: 1020px;
-    min-width: 700px;
     margin: 0 auto;
 }
 
 /* 토론방 선택 */
 .select-discussion-rooms {
+    margin-top: 20px;
     padding: 20px 0;
     border: 1px solid;
     display: flex;
@@ -52,9 +48,9 @@ li {
     display: grid;
     grid-template-columns: 1fr 6fr 3fr;
     grid-auto-rows: minmax(40px, auto);
-    margin-top: 30px;
     border: 1px solid;
-    border-bottom: 0px;
+    margin: 30px 0 0 0;
+    padding: 0;
 }
 
 .room-title-wrap>ul>li {
@@ -69,41 +65,14 @@ li {
 }
 
 /* 토론방 목록 */
-.discussion-rooms-list {
-    max-height: 50vh;
-    overflow-y: auto;
-    border: 1px solid;
-}
-
-/* 스트롤바 없애기, 기능은 유지 */
-/* ::-webkit-scrollbar {
-    display: none !important;
-} */
-
-/* 스크롤바 width 설정 */
-::-webkit-scrollbar {
-    width: 5px;
-}
-
-/* 스크롤바 트랙 배경색 설정 */
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-/* 스크롤바 핸들 배경색 설정 */
-::-webkit-scrollbar-thumb {
-    background: #888;
-}
-
-/* 스크롤바 핸들 호버 배경색 설정 */
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-
 .user-rooms-wrap>ul {
     display: grid;
     grid-template-columns: 1fr 6fr 3fr;
     grid-auto-rows: minmax(40px, auto);
+    margin: 0;
+    padding: 0;
+    border: 1px solid;
+    border-top: 0;
 }
 
 .user-rooms-wrap>ul:hover {
@@ -116,12 +85,8 @@ li {
     text-align: center;
 }
 
-.user-rooms-wrap>ul>li:nth-child(2){
+.user-rooms-wrap>ul>li:nth-child(2) {
     cursor: pointer;
-}
-
-.user-rooms-wrap>ul:not(:last-child) {
-    border-bottom: 1px solid;
 }
 
 .user-rooms-wrap>ul>li:not(:last-child) {
@@ -132,55 +97,51 @@ li {
 
 
 
-
 /* 토론방 검색, 만들기 */
-.discussion-rooms-article>div:last-child {
+.room-search-wrap {
+    width: 70%;
+    max-width: 1020px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    margin: 20px auto;
 }
 
 .room-search {
-    width: 70%;
-    height: 40px;
-    display: grid;
-    grid-template-columns: 1.5fr 6.5fr 2fr;
-    margin: 30px 0;
-    
+    width: 75%;
     text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 2.5fr .5fr;
 }
 
-.room-search>p {
-    width: 100%;
-    font-size: .8rem;
+.room-search>div,
+.room-search>input,
+.room-search>button,
+.room-search-wrap>.add-room-btn {
     border: 1px solid;
     border-radius: 5px;
+    margin: 0 3px;
+    padding: 8px 5px;
+    font-size: .8rem;
     background-color: #F6E3CE;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .room-search>input {
-    font-size: 1rem;
-    border: 1px solid;
-    border-radius: 5px;
-    padding: 0 10px;
-    margin: 0 5px;
+    background-color: white;
+    padding: 0 6px;
 }
 
-.discussion-rooms-article>div:last-child button {
-    border: 1px solid;
-    border-radius: 5px;
-    background-color: #F6E3CE;
-    font-size: 1rem;
+
+
+
+/* 지호님 pagination 스타일 가져온 거 */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }
 
-.discussion-rooms-article>div:last-child button:hover {
-    background-color: #dacbbc;
-}
+.pagination {}
 
-.add-room-btn {
-    width: 25%;
-    height: 44px;
+.page-link {
+    color: black;
 }
