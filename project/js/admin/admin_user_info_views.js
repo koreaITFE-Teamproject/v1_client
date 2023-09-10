@@ -17,9 +17,11 @@ $(function () {
     // db연결시 db 유저정보 삭제 예정
     $(".user-del-btn").click(function () {
         var idx = $(this).parent().parent().index();
-        if(confirm("해당 유저를 강제 탈퇴 시키겠습니까?")){
+        var userName = $(this).parent().prev().prev().prev().prev().text();
+            
+        if(confirm(`${userName}님을 강제 탈퇴 시키겠습니까?`)){
             $(".user-info-table>tbody>tr").eq(idx).remove();
-            return alert("삭제 되었습니다.");
+            return alert("탈퇴 되었습니다.");
         }
         alert("취소합니다.");
     });
