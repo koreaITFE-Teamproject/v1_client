@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>칼럼 읽기</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <style>
@@ -36,7 +36,7 @@
             height: 50px;
             display: flex;
             justify-content: center;
-            
+
         }
 
         .icon i {
@@ -89,7 +89,7 @@
             width: 90%;
         }
 
-        #input_btn {
+        .input_btn {
             height: 30px;
             display: flex;
             align-items: center;
@@ -98,14 +98,45 @@
             background-color: #F6E3CE;
             font-weight: bold;
         }
-        #comment_div{
+
+        #comment_div {
             background-color: #F6E3CE;
         }
     </style>
     <script>
-        $(document).ready(function(){
-            
+        $(document).ready(function () {
+            $(".input_btn").on('click', function () {
+                var text = $("#comment1").val()
+                // class이름이 input_bar이고 내용이 text내용인 div element 생성
+                var newDiv = document.createElement('div'); //
+                newDiv.className='input_bar'
+                newDiv.textContent = text;
+                // cre_comment의 자식요소로 만들어놓은 newDiv 추가
+                $(".cre_comment").append(newDiv)
+
+                var newtextarea = document.createElement('textarea');
+                newDiv.append(newtextarea)
+                
+                var newrecomDiv = document.createElement('div')
+                newrecomDiv.className = 'recomment'
+                
+                var inputDiv = document.createElement('div')
+                inputDiv.className = 'input_btn'
+                
+                
+                
+                $(".input_bar").append(newtextarea)
+
+                $(".input_bar").append(newrecomDiv)
+
+                $(".input_btn").append(inputDiv)
+
+                // 입력창 초기화
+                $(".comment1").val("");
+            })
         })
+        //2. 댓글 쓰기를 누르면 그 댓글의 대댓글 쓰이는 창 펼쳐짐
+        //3. 대댓글 쓰이는 창에 글 적고 입력 누르면 그게 div로 남아야함. 대댓글창 위로
         // 댓글에 대댓글 떠야함 : 뉴스창처럼 디자인
     </script>
 </head>
@@ -128,10 +159,12 @@
             <div id="comment_div">댓글 : <span id="commen_num"></span></div>
             <!-- 댓글 입력 받는 부분 : 대댓글도 동일한 형태로 클릭하면 만들어지게 하면 됨. -->
             <div class="input_bar">
-                <input type="text" class="comment1" placeholder="댓글을 입력해주세요.">
+                <textarea id="comment1" cols="30" rows="10" placeholder="댓글을 입력해주세요."></textarea>
                 <div class="recomment">
-                    <span>댓글 쓰기</span>
-                    <div id="input_btn">입력</div>
+                    <div class="input_btn">입력</div>
+                </div>
+                <div class="cre_comment">
+
                 </div>
             </div>
 
