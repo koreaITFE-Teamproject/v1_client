@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>운영자 고객상담 리스트</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
+<style>
+    main {
+        border: 3px solid black;
+    }
+
+    /* 토론방 타이틀 모음 */
+    .room-title-wrap>ul {
+        display: grid;
+        grid-template-columns: 1fr 6fr 3fr;
+        grid-auto-rows: minmax(40px, auto);
+        border: 1px solid;
+        margin: 30px 0 0 0;
+        padding: 0;
+    }
+
+    .room-title-wrap>ul>li {
+        height: 100%;
+        display: grid;
+        align-items: center;
+        text-align: center;
+    }
+
+    .room-title-wrap>ul>li:not(:last-child) {
+        border-right: 1px solid;
+    }
+
+    /* 토론방 목록 */
+    .user-rooms-wrap>ul {
+        display: grid;
+        grid-template-columns: 1fr 6fr 3fr;
+        grid-auto-rows: minmax(40px, auto);
+        margin: 0;
+        padding: 0;
+        border: 1px solid;
+        border-top: 0;
+    }
+
+    .user-rooms-wrap>ul:hover {
+        background-color: #dddddd;
+    }
+
+    .user-rooms-wrap>ul>li {
+        display: grid;
+        align-items: center;
+        text-align: center;
+    }
+
+    .user-rooms-wrap>ul>li:nth-child(2) {
+        cursor: pointer;
+    }
+
+    .user-rooms-wrap>ul>li:not(:last-child) {
+        border-right: 1px solid;
+    }
+
+    /* 지호님 pagination 스타일 가져온 거 */
+    .pagination-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .pagination {}
+
+    .page-link {
+        color: black;
+    }
+</style>
+<script>
+
+</script>
+
+<body>
+    <main>
+        <h2>고객상담</h2>
+        <!-- 토론방 타이틀 모음 -->
+        <div class="room-title-wrap">
+            <ul>
+                <li class="room-number">No</li>
+                <li class="room-name">제목</li>
+                <li class="room-manager">아이디</li>
+                <li class="room-name">등록시간</li>
+                <li class="room-manager">답변상태</li>
+            </ul>
+        </div>
+
+
+        <!-- 토론방 목록 -->
+        <div class="discussion-rooms-list">
+            <div class="user-rooms-wrap">
+                <!-- 테스트용 -->
+            </div>
+        </div>
+        </article>
+
+        <!-- 지호님 pagenation -->
+        <nav aria-label="Page navigation example" class="pagination-container">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">이전</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">다음</a></li>
+            </ul>
+        </nav>
+    </main>
+</body>
+
+</html>

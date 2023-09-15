@@ -13,32 +13,34 @@
 </head>
 <body>
     <header id="header"></header>
-    <div id="x_div"><i class="bi bi-x" id="x_icon"></i></div>
-    <div class="outline">
-        <div class="search_div">
-            <select name="전체" id="srch_select">
-                <option value="all">전체</option>
-                <option value="title">제목</option>
-                <option value="writer">글쓴이</option>
-                <!-- <option value="tag">태그</option>  -->
-                <!-- 태그 기능이 완성 되면 주석 풀기 -->
-            </select>
-            <input type="text" id="search_input">
-            <i class="bi bi-search" id="search_icon"></i>
+    <main>
+        <div id="x_div"><i class="bi bi-x" id="x_icon"></i></div>
+        <div class="outline">
+            <div class="search_div">
+                <select name="전체" id="srch_select">
+                    <option value="all">전체</option>
+                    <option value="title">제목</option>
+                    <option value="writer">글쓴이</option>
+                    <!-- <option value="tag">태그</option>  -->
+                    <!-- 태그 기능이 완성 되면 주석 풀기 -->
+                </select>
+                <input type="text" id="search_input">
+                <i class="bi bi-search" id="search_icon"></i>
+            </div>
         </div>
-    </div>
-    <div class="search_results">
-        <table id="postTable">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>제목</th>
-                    <th>글쓴이</th>
-                </tr>
-            </thead>
-            <tbody id="postBody"></tbody>
-        </table>
-    </div>
+        <div class="search_results">
+            <table id="postTable">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>제목</th>
+                        <th>글쓴이</th>
+                    </tr>
+                </thead>
+                <tbody id="postBody"></tbody>
+            </table>
+        </div>
+    </main>
 </body>
 </html>
 <!-- script로 테스트 데이터 3개 만들고 input 값이 no이랑 같으면 나오게 함. -->

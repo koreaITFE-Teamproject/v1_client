@@ -105,34 +105,52 @@
     </style>
     <script>
         $(document).ready(function () {
+            //일단 보류. 주말에 강사님이랑 함 살펴보기. 왜 span을 눌러도 안되지?
             $(".input_btn").on('click', function () {
-                var text = $("#comment1").val()
-                // class이름이 input_bar이고 내용이 text내용인 div element 생성
+                var text = $("textarea").val()
+                // 1.댓글에 쓴 내용 입력 누르면 text로 보임 : 여기까지는 오케
                 var newDiv = document.createElement('div'); //
                 newDiv.className='input_bar'
                 newDiv.textContent = text;
-                // cre_comment의 자식요소로 만들어놓은 newDiv 추가
-                $(".cre_comment").append(newDiv)
+                $(".input_bar").append(newDiv)
+                //2. text에 div 댓글쓰기가 생겨야함.
+                var writetext = document.createElement('span');
+                writetext.className='writetxt'
+                writetext.textContent ='댓글 쓰기'
+                newDiv.append(writetext)
+                
+                //댓글 쓰기를 누르면 댓글 쓰는 창이 생김
+                $('span').on('click', function(){
+                    var newTextarea =document.createElement('textarea')
+                    newTextarea.className='textarea'
+                })
 
-                var newtextarea = document.createElement('textarea');
-                newDiv.append(newtextarea)
                 
-                var newrecomDiv = document.createElement('div')
-                newrecomDiv.className = 'recomment'
-                
-                var inputDiv = document.createElement('div')
-                inputDiv.className = 'input_btn'
-                
-                
-                
-                $(".input_bar").append(newtextarea)
 
-                $(".input_bar").append(newrecomDiv)
 
-                $(".input_btn").append(inputDiv)
+                // //새 inputbar 만듬. append는 안 함.
+                // var newInputbar = document.createElement('div');
+                // newInputbar.className = 'input_bar';
+                // $(".input_bar").append(newInputbar)
 
-                // 입력창 초기화
-                $(".comment1").val("");
+                // // class : recomment인 div 생성. append함
+                // var newRecomment = document.createElement('div');
+                // newRecomment.className = 'recomment';
+                // newInputbar.append(newRecomment); 
+
+                // // class : input_btn text 입력
+                // var newInputBtn = document.createElement('div');
+                // newInputBtn.className = 'input_btn';
+                // newInputBtn.textContent = '입력'
+                // newRecomment.append(newInputBtn);
+
+                // // 새 textarea 만들고 inputbar 밑에 append
+                // var newTextarea = document.createElement('textarea');
+                // newInputbar.append(newTextarea);
+
+                // // // 입력창 초기화
+
+
             })
         })
         //2. 댓글 쓰기를 누르면 그 댓글의 대댓글 쓰이는 창 펼쳐짐
@@ -142,35 +160,37 @@
 </head>
 
 <body>
-    <div class="title_bar">
-        <!-- 제목  input 길이 50자로 지정 : 이건 공지 때려야함. -->
-        <!-- 여기는 DB에서 보내는 글제목이 들어와야함. DB 연결하면 수정-->
-        <div class="title">글 제목</div>
-        <div class="icon">
-            <i class="bi bi-heart"></i>
-            <i class="bi bi-bell"></i>
-        </div>
-    </div>
-    <div class="contents_bar">
-        <div class="column_contents">
-            칼럼 내용 들어올 자리 : DB가 할꺼
-        </div>
-        <div class="comment_bar">
-            <div id="comment_div">댓글 : <span id="commen_num"></span></div>
-            <!-- 댓글 입력 받는 부분 : 대댓글도 동일한 형태로 클릭하면 만들어지게 하면 됨. -->
-            <div class="input_bar">
-                <textarea id="comment1" cols="30" rows="10" placeholder="댓글을 입력해주세요."></textarea>
-                <div class="recomment">
-                    <div class="input_btn">입력</div>
-                </div>
-                <div class="cre_comment">
-
-                </div>
+    <main>
+        <div class="title_bar">
+            <!-- 제목  input 길이 50자로 지정 : 이건 공지 때려야함. -->
+            <!-- 여기는 DB에서 보내는 글제목이 들어와야함. DB 연결하면 수정-->
+            <div class="title">글 제목</div>
+            <div class="icon">
+                <i class="bi bi-heart"></i>
+                <i class="bi bi-bell"></i>
             </div>
-
-
         </div>
-    </div>
+        <div class="contents_bar">
+            <div class="column_contents">
+                칼럼 내용 들어올 자리 : DB가 할꺼
+            </div>
+            <div class="comment_bar">
+                <div id="comment_div">댓글 : <span id="commen_num"></span></div>
+                <!-- 댓글 입력 받는 부분 : 대댓글도 동일한 형태로 클릭하면 만들어지게 하면 됨. -->
+                <div class="input_bar">
+                    <textarea class="textarea" cols="30" rows="10" placeholder="댓글을 입력해주세요."></textarea>
+                    <div class="recomment">
+                        <div class="input_btn">입력</div>
+                    </div>
+                    <!-- <div class="cre_comment">
+    
+                    </div> -->
+                </div>
+    
+    
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
