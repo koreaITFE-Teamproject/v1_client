@@ -9,7 +9,7 @@ main {
     background-color: #F6E3CE;
 }
 
-span{
+span {
     font-size: 1.4rem;
 }
 
@@ -35,6 +35,10 @@ button {
     margin: 0 5px;
     background-color: #F6E3CE;
     cursor: pointer;
+}
+
+button:hover {
+    background-color: #e4d2bc;
 }
 
 .user-join-wrap {

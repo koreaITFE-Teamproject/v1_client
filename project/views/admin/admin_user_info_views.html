@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 회원 조회</title>
+    <!-- 페이지네이션 구현 부트스트랩 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/project/css/admin/admin_user_info_views.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="/project/js/common/common.js"></script>
@@ -13,13 +19,12 @@
 </head>
 
 <body>
-    <header id="header"></header>
 
-    <!-- <aside> 통일함 </aside> -->
+    <!-- <header id="header"></header> -->
 
     <main>
-        <h2>회원 조회</h2>
-        <article>
+        <h2 class="title-name">회원 조회</h2>
+        <article class="users-info-wrap">
             <div class="search-users">
                 <div>
                     <p>가입일</p>
@@ -29,15 +34,15 @@
                 </div>
                 <div>
                     <p>아이디</p>
-                    <input type="text">
+                    <input type="text" maxlength="20">
                 </div>
                 <div>
                     <p>이름</p>
-                    <input type="text">
+                    <input type="text" maxlength="10">
                 </div>
                 <div>
                     <p>관리</p>
-                    <select name="" id="">
+                    <select name="" id="user-status">
                         <option value="none" selected>==선택==</option>
                         <option value="member">회원</option>
                         <option value="dormancy">회원(휴면)</option>
@@ -46,11 +51,11 @@
                     </select>
                 </div>
                 <div>
-                    <button>조회 버튼</button>
+                    <button class="search-btn">조회 버튼</button>
                 </div>
             </div>
 
-            <table class="user-info-table" border="1px">
+            <table class="user-info-table">
                 <thead>
                     <tr>
                         <th>번호</th>
@@ -58,7 +63,7 @@
                         <th>이름</th>
                         <th>접속수</th>
                         <th>가입일</th>
-                        <th>상태</th>   <!-- db 추가 해야됨, 회원, 회원(휴면), 탈퇴(본인), 탈퇴(강제) -->
+                        <th>상태</th> <!-- db 추가 해야됨, 회원, 회원(휴면), 탈퇴(본인), 탈퇴(강제) -->
                         <th>관리</th>
                     </tr>
                 </thead>
@@ -66,6 +71,16 @@
             </table>
         </article>
 
+        <!-- 지호님 pagenation -->
+        <nav aria-label="Page navigation example" class="pagination-container">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">이전</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">다음</a></li>
+            </ul>
+        </nav>
     </main>
 
 </body>

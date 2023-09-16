@@ -38,7 +38,7 @@ li {
 }
 
 .select-discussion-rooms>button:hover {
-    background-color: #dacbbc;
+    background-color: #e4d2bc;
 }
 
 
@@ -48,9 +48,10 @@ li {
     display: grid;
     grid-template-columns: 1fr 6fr 3fr;
     grid-auto-rows: minmax(40px, auto);
-    border: 1px solid;
+    border: 1px solid #ddd;
     margin: 30px 0 0 0;
     padding: 0;
+    background-color: #f2f2f2;
 }
 
 .room-title-wrap>ul>li {
@@ -61,7 +62,7 @@ li {
 }
 
 .room-title-wrap>ul>li:not(:last-child) {
-    border-right: 1px solid;
+    border-right: 1px solid #ddd;
 }
 
 /* 토론방 목록 */
@@ -71,12 +72,12 @@ li {
     grid-auto-rows: minmax(40px, auto);
     margin: 0;
     padding: 0;
-    border: 1px solid;
+    border: 1px solid #ddd;
     border-top: 0;
 }
 
 .user-rooms-wrap>ul:hover {
-    background-color: #dddddd;
+    background-color: #e6e6e6;
 }
 
 .user-rooms-wrap>ul>li {
@@ -90,7 +91,7 @@ li {
 }
 
 .user-rooms-wrap>ul>li:not(:last-child) {
-    border-right: 1px solid;
+    border-right: 1px solid #ddd;
 }
 
 
