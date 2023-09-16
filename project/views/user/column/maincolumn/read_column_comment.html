@@ -8,156 +8,11 @@
     <title>칼럼 읽기</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <style>
-        div {
-            border: 1px solid black;
-            display: inline-block;
-        }
-
-        .title_bar {
-            display: block;
-            background-color: #F9ECDB;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-        }
-
-        .title {
-            width: 80%;
-            height: 80px;
-            text-align: center;
-            margin-left: auto;
-            font-size: 50px;
-        }
-
-        .icon {
-            width: 10%;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-
-        }
-
-        .icon i {
-            font-size: 30px;
-        }
-
-        .contents_bar {
-            width: 80%;
-            height: calc(100vh - 187px);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0 auto;
-
-        }
-
-        .column_contents {
-            width: 100%;
-            min-height: 100%;
-        }
-
-        .comment_bar {
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-        }
-
-        .input_bar {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .comment1 {
-            height: 100px;
-        }
-
-        .input_bar div {
-            cursor: pointer;
-        }
-
-        .recomment {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .recomment span {
-            width: 90%;
-        }
-
-        .input_btn {
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            background-color: #F6E3CE;
-            font-weight: bold;
-        }
-
-        #comment_div {
-            background-color: #F6E3CE;
-        }
-    </style>
-    <script>
-        $(document).ready(function () {
-            //일단 보류. 주말에 강사님이랑 함 살펴보기. 왜 span을 눌러도 안되지?
-            $(".input_btn").on('click', function () {
-                var text = $("textarea").val()
-                // 1.댓글에 쓴 내용 입력 누르면 text로 보임 : 여기까지는 오케
-                var newDiv = document.createElement('div'); //
-                newDiv.className='input_bar'
-                newDiv.textContent = text;
-                $(".input_bar").append(newDiv)
-                //2. text에 div 댓글쓰기가 생겨야함.
-                var writetext = document.createElement('span');
-                writetext.className='writetxt'
-                writetext.textContent ='댓글 쓰기'
-                newDiv.append(writetext)
-                
-                //댓글 쓰기를 누르면 댓글 쓰는 창이 생김
-                $('span').on('click', function(){
-                    var newTextarea =document.createElement('textarea')
-                    newTextarea.className='textarea'
-                })
-
-                
-
-
-                // //새 inputbar 만듬. append는 안 함.
-                // var newInputbar = document.createElement('div');
-                // newInputbar.className = 'input_bar';
-                // $(".input_bar").append(newInputbar)
-
-                // // class : recomment인 div 생성. append함
-                // var newRecomment = document.createElement('div');
-                // newRecomment.className = 'recomment';
-                // newInputbar.append(newRecomment); 
-
-                // // class : input_btn text 입력
-                // var newInputBtn = document.createElement('div');
-                // newInputBtn.className = 'input_btn';
-                // newInputBtn.textContent = '입력'
-                // newRecomment.append(newInputBtn);
-
-                // // 새 textarea 만들고 inputbar 밑에 append
-                // var newTextarea = document.createElement('textarea');
-                // newInputbar.append(newTextarea);
-
-                // // // 입력창 초기화
-
-
-            })
-        })
-        //2. 댓글 쓰기를 누르면 그 댓글의 대댓글 쓰이는 창 펼쳐짐
-        //3. 대댓글 쓰이는 창에 글 적고 입력 누르면 그게 div로 남아야함. 대댓글창 위로
-        // 댓글에 대댓글 떠야함 : 뉴스창처럼 디자인
-    </script>
+    <link rel="stylesheet" href="/project/css/column/read_column_comment.css">
+    <script src="/project/js/column/read_column_comment.js"></script>
+    
 </head>
+<!-- 이 페이지는 서버랑 연동하고 백이랑 프론트 같이 들어가야해서 퍼블리싱 까지만 했습니다! -->
 
 <body>
     <main>
@@ -174,20 +29,45 @@
             <div class="column_contents">
                 칼럼 내용 들어올 자리 : DB가 할꺼
             </div>
+            <!-- 댓글 부분, 위치 색깔 하늘색-->
             <div class="comment_bar">
-                <div id="comment_div">댓글 : <span id="commen_num"></span></div>
-                <!-- 댓글 입력 받는 부분 : 대댓글도 동일한 형태로 클릭하면 만들어지게 하면 됨. -->
-                <div class="input_bar">
-                    <textarea class="textarea" cols="30" rows="10" placeholder="댓글을 입력해주세요."></textarea>
-                    <div class="recomment">
-                        <div class="input_btn">입력</div>
+                <!-- server_num은 서버에서 데이터가 오면 받을 숫자 자리입니다. 지금은 하드코딩으롤 박은 거에요. -->
+                <div class="comment_num">댓글 수 : <span class="server_num">0</span></div>
+                <!-- 부모 댓글 textarea, 위치 색깔 파란색-->
+                <div class="comment_input">
+                    <textarea class="textarea" cols="30" rows="10"></textarea>
+                    <div class="input_div">
+                        <div class="limit_text"><span class="server_num">0</span>/300</div>
+                        <div class="input_btn">등록</div>
                     </div>
-                    <!-- <div class="cre_comment">
-    
-                    </div> -->
                 </div>
-    
-    
+                <!-- 부모 textarea로 받은 내용이 들어올 위치-->
+                <div class="input_text_bar">
+                    <div class="user_time"><span>유저정보</span><span>입력한 시간</span></div>
+                    <div class="recommnet_bar">
+                        <!-- 위치 색깔 분홍색 -->
+                        <div class="input_text">
+                            위의 댓글에서 입력한거 받는 부분
+                        </div>
+                        <span class="recomment_write">답글 쓰기</span>
+                    </div>
+                    <!-- 답글 쓰기를 누르면 나오는 자식 댓글 -->
+                    <!-- 자식 textarea로 받은 내용이 들어올 위치 -->
+                    <div class="user_time"><span>유저정보</span><span>입력한 시간</span></div>
+                    <div class="recommnet_bar">
+                        <div class="input_text">
+                            아래의 대댓글쓰기에서 입력한거 받는 부분
+                        </div>
+                        <!-- 자식 댓글 Textarea부분, 위치 색깔 파란색 -->
+                        <div class="comment_input">
+                            <textarea class="textarea" cols="30" rows="10"></textarea>
+                            <div class="input_div">
+                                <div class="limit_text"><span class="server_num">0</span>/300</div>
+                                <div class="input_btn">등록</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
