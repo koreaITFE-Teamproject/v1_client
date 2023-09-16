@@ -54,6 +54,7 @@ div {
     display: flex;
     flex-direction: column;
     border: 3px solid skyblue;
+    /* 구분 색 */
 }
 
 .comment_bar>div {
@@ -68,6 +69,7 @@ div {
     display: flex;
     flex-direction: column;
     border: 3px solid blue;
+    /* 구분 색 */
 }
 
 .user_time {
@@ -78,7 +80,8 @@ div {
 .recommnet_bar {
     display: flex;
     flex-direction: column;
-    border: 3px solid pink;
+    border: 3px solid pink; 
+    /* 구분 색 */
 }
 
 .input_text {
