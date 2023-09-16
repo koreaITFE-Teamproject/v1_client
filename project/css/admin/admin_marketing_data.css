@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.button-wrap {
+    width: 70%;
+    margin: 10px auto;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid;
+}
+
+.button-wrap>button {
+    width: 22%;
+    padding: 20px 0;
+    border: 1.5px solid;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background-color: #F6E3CE;
+    cursor: pointer;
+}
+
+.button-wrap>button:hover {
+    background-color: #e4d2bc;
+}
+
+.marketing-chart {
+    width: 70%;
+    height: 740px;
+    border: 2px solid;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
