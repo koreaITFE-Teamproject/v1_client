@@ -7,6 +7,7 @@
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <link rel="stylesheet" href="/project/css/admin/admin_menu.css">
+
 </head>
 
 <body>
@@ -16,9 +17,17 @@
         <div id="shared_room">운영자간 운영 공유방</div>
         <div id="marketing_data">마케팅 데이터 화면</div>
         <div id="Customer_consultation">고객상담</div>
+        <script>
+            var emptyDiv = document.createElement("div");
+            emptyDiv.id = "empty";
+
+            var adminMenu = document.querySelector(".admin_menu");
+            adminMenu.appendChild(emptyDiv);
+        </script>
     </div>
     <div id="empty"></div>
    </header> 
+
 </body>
 
 </html>
