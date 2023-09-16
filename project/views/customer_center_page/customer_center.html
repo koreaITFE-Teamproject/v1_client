@@ -13,52 +13,93 @@
         }
 
         .container {
-            text-align: center;
             height: 100vh;
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
             align-items: center;
-            flex-wrap: wrap
+            flex-wrap: wrap;
         }
 
-        .customer_box {
-            margin-top: 145px;
-            width: 1800px;
-            height: 720px;
-            border: 1px solid black;
-        }
 
         .customer_box_inner {
-            margin-top: 10%;
-            height: 50%;
+            height: 80%;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
             align-items: flex-start;
+            border: 1px solid black;
+            width: 90%;
+            margin-top: 4%;
         }
 
         .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 2%;
+            margin-top: -5%;
+            text-align: center;
+        }
+
+
+        .row>input {
+            border: 1px solid black;
+            width: 1880px;
+            height: 80px;
+            display: flex;
+            flex-direction: row;
+            margin-left: 2%;
+            margin-top: 3%;
+            text-align: center;
+        }
+
+        .row>div {
             border: 1px solid black;
             width: 150px;
             height: 80px;
+            display: flex;
+            flex-direction: row;
+            margin-left: 2%;
+            margin-top: 3%;
+            background-color: #F6E3CE;
+            text-align: center;
+        }
+
+        .row>#body {
+            height: 280px;
+        }
+
+        .row>#body_bar {
+            height: 280px;
+        }
+
+        button {
+            width: 200px;
+            height: 67px;
+            margin: 5%;
+            text-align: center;
+            margin-left: 10%;
+            background-color: #F6E3CE;
         }
     </style>
+
 </head>
 
 <body>
     <div class="container">
-        <div class="customer_box">
-            <div class="customer_box_inner">
-                <div class="row">
-                    <div id="title"></div> <input id="title_bar"></input>
-                </div>
-                <div class="row">
-                    <div id="body"></div> <input id="body_bar"></input>
-                </div>
-                <div class="row">
-                    <div id="picture"></div> <input id="picture_bar"></input>
-                </div>
+        <div class="customer_box_inner">
+            <div class="row">
+                <div id="title">제목</div> <input id="title_bar"></input>
+            </div>
+            <div class="row">
+                <div id="body">내용</div> <input id="body_bar"></input>
+            </div>
+            <div class="row">
+                <div id="picture">첨부사진</div> <input id="picture_bar"></input>
+            </div>
+            <div class="row">
+                <button>취소</button> <button>확인</button>
             </div>
         </div>
     </div>
