@@ -7,9 +7,11 @@
 
 .header {
     background-color: #F9ECDB;
-    height: 20%;
+    height: 100px;
     position: relative;
     z-index: 3;
+    display: flex;
+    align-items: center;
 }
 
 /* z-index 속성을 이용해서 겹침 문제를 해결할 수 있습니다! 우선은 footer도 하려고 하는데 css 문제 때문에 header에만 적용해둘게요!*/
@@ -21,16 +23,22 @@
     font-family: 'GmarketSansMedium';
 }
 
+#search {
+    padding: 10px;
+    position: absolute;
+    right: 0;
+}
+
 #search_id {
     font-size: 30px;
-    position: absolute;
+    /* position: absolute; */
     top: 10px;
     right: 10px;
     /* border: 3px solid black; */
     padding: 10px;
 }
 
-.bi{
+.bi {
     font-size: 30px;
 }
 
@@ -51,19 +59,18 @@
     display: inline-block;
     position: relative;
     text-align: center;
+    cursor: pointer;
 }
 
 /* 드롭다운 메뉴의 스타일 */
 .dropdown-content {
     display: none;
-    /* position: absolute; */
-    top: 100%;
+    position: absolute;
     left: 0;
     background-color: #F6E3CE;
     border: 1px solid #F6E3CE;
     width: 200px;
     margin-top: 10px
-
 }
 
 .menu_bar_item:hover .dropdown-content {
@@ -79,4 +86,23 @@
 
 .dropdown-content a:hover {
     background-color: #fff;
+}
+
+#topStartBrunchButton {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: inherit;
+    float: right;
+    background-color: #fff;
+    opacity: .9;
+    border: 1px solid #959595;
+    border-radius: 16px;
+    color: #333;
+    font-family: "Noto Sans Light", sans-serif;
+    font-size: 12px;
+    height: 28px;
+    line-height: 28px;
+    /* margin-top: 65px; */
+    text-align: center;
+    text-decoration: none;
+    width: 64px;
 }
