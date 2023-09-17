@@ -1,48 +1,51 @@
-* {
-  margin: 0;
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
-.admin_menu {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
 
-.admin_menu>div{
-  width: 300px;
-  height: 180px;
+
+.admin_header {
   background-color: #F6E3CE;
-  border: 1px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 40px;
-  overflow: visible;
-  text-align: center;
-  transition: background-color 0.3s;
+  height: 120px;
+  position: relative;
+  z-index: 3;
 }
 
-.admin_menu > div:hover {
-  background-color: #D3B396;
-  cursor: pointer;
+.site_name {
+  display: inline-block;
+  /* border: 3px solid black; */
+  padding: 15px;
+  font-family: 'GmarketSansMedium';
 }
 
-#empty {
-  width: 300px;
-  height: 105px;
-  background-color: #F6E3CE;
-  border: 1px solid black;
+/* 로고 */
+.bi{
+  font-size: 30px;
+  margin-left: 2px;
+}
+
+.menu_bar {
+  /* border: 3px solid black; */
+  padding: 10px;
+  position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 40px;
-  overflow: visible;
-  text-align: center;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+}
+
+.menu_bar_item {
+  font-size: 20px;
+  width: 200px;
+  /* border: 3px solid black; */
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}
+
+
+a {
+  text-decoration: none;
+  color: black;
 }
