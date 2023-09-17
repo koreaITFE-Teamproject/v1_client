@@ -17,7 +17,7 @@
 .site_name {
     display: inline-block;
     /* border: 3px solid black; */
-    padding: 30px;
+    padding: 10px;
     font-family: 'GmarketSansMedium';
 }
 
@@ -44,7 +44,7 @@
 }
 
 .menu_bar_item {
-    font-size: 25px;
+    font-size: 20px;
     width: 200px;
     padding: 10px;
     /* border: 3px solid black; */

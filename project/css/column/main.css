@@ -1,8 +1,9 @@
+
 .option_bar {
     width: 70%;
     margin: 0 auto;
     padding: 20px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     display: flex;
     justify-content: space-between;
     align-items: center;
