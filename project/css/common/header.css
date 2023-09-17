@@ -7,7 +7,7 @@
 
 .header {
     background-color: #F6E3CE;
-    height: 200px;
+    height: 20%;
     position: relative;
     z-index: 3;
 }
@@ -16,33 +16,38 @@
 
 .site_name {
     display: inline-block;
-    border: 3px solid black;
+    /* border: 3px solid black; */
     padding: 30px;
     font-family: 'GmarketSansMedium';
 }
 
-.bi {
+#search_id {
     font-size: 30px;
     position: absolute;
     top: 10px;
     right: 10px;
-    border: 3px solid black;
+    /* border: 3px solid black; */
     padding: 10px;
 }
 
+.bi{
+    font-size: 30px;
+}
+
 .menu_bar {
-    border: 3px solid black;
+    /* border: 3px solid black; */
     padding: 10px;
     position: relative;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
 
 }
 
 .menu_bar_item {
+    font-size: 25px;
     width: 200px;
     padding: 10px;
-    border: 3px solid black;
+    /* border: 3px solid black; */
     display: inline-block;
     position: relative;
     text-align: center;
@@ -51,11 +56,11 @@
 /* 드롭다운 메뉴의 스타일 */
 .dropdown-content {
     display: none;
-    position: absolute;
+    /* position: absolute; */
     top: 100%;
     left: 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: #F6E3CE;
+    border: 1px solid #F6E3CE;
     width: 200px;
 
 }
@@ -72,5 +77,5 @@
 }
 
 .dropdown-content a:hover {
-    background-color: #F6E3CE;
+    background-color: #fff;
 }
