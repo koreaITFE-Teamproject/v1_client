@@ -1,12 +1,26 @@
+@font-face {
+    font-family: 'HakgyoansimWoojuR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    font-family: 'HakgyoansimWoojuR';
+}
+
 .recomm {
     height: 50px;
-    width: 300px;
-    border: 3px solid black;
+    width: 250px;
+    /* background-color: #F6E3CE; */
+    color: #764127;
     text-align: center;
     margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 24px;
 }
 
 /* 분야별 칼럼 분류제외한 itemMenu_bar */
@@ -21,7 +35,7 @@
 .recomm_bar {
     display: flex;
     align-items: center;
-    height: 100px;
+    height: 150px;
     margin-bottom: 10pox;
     justify-content: center;
 
@@ -29,23 +43,31 @@
 
 /* 분야별 칼럼 분류를 제외한 3가지 item div */
 .bar_item {
-    border: 3px solid black;
-    width: 200px;
-    height: 100px;
+    border: 0.5px solid #F2F2F2;
+    width: 50%;
+    /* height: 400px; */
     text-align: center;
     vertical-align: middle;
     line-height: 100px;
-
 }
+
+.bar_item:hover{
+    border: 0.5px solid #F6E3CE;
+}
+
 
 /* 분야별 칼럼 분류 item div */
 .class_item {
-    border: 3px solid black;
-    width: 200px;
-    height: 100px;
+    border: 0.5px solid #F2F2F2;
+    width: 150px;
+    height: 150px;
     text-align: center;
     vertical-align: middle;
-    line-height: 100px;
+    line-height: 150px;
+}
+
+.class_item:hover{
+    border: 0.5px solid #F6E3CE;
 }
 
 .class_frame {

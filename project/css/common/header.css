@@ -6,7 +6,7 @@
 }
 
 .header {
-    background-color: #F6E3CE;
+    background-color: #F9ECDB;
     height: 20%;
     position: relative;
     z-index: 3;
@@ -44,7 +44,7 @@
 }
 
 .menu_bar_item {
-    font-size: 20px;
+    font-size: 17px;
     width: 200px;
     padding: 10px;
     /* border: 3px solid black; */
@@ -62,6 +62,7 @@
     background-color: #F6E3CE;
     border: 1px solid #F6E3CE;
     width: 200px;
+    margin-top: 10px
 
 }
 
