@@ -5,6 +5,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'HakgyoansimWoojuR';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 .admin_header {
   background-color: #F9ECDB;
@@ -45,6 +52,10 @@
   text-align: center;
 }
 
+.menu_bar_item a {
+  font-family: 'HakgyoansimWoojuR';
+}
+
 .menu_bar_item:hover {
   background-color: #F6E3CE;
 }
@@ -53,5 +64,4 @@
 a {
   text-decoration: none;
   color: black;
-  font-family: 'GmarketSansMedium';
 }
