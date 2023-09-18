@@ -27,6 +27,15 @@
   font-family: 'GmarketSansMedium';
 }
 
+.site_name a {
+  color: black; /* 링크의 색상을 검정으로 설정 */
+  text-decoration: none; /* 밑줄 제거 */
+}
+
+.site_name a:hover {
+  color: black; /* 호버 시에도 색상을 검정으로 유지 */
+}
+
 /* 로고 */
 .bi{
   font-size: 30px;
@@ -52,16 +61,15 @@
   text-align: center;
 }
 
-.menu_bar_item a {
-  font-family: 'HakgyoansimWoojuR';
-}
-
 .menu_bar_item:hover {
   background-color: #F6E3CE;
 }
 
-
-a {
-  text-decoration: none;
-  color: black;
+.menu_bar_item a {
+  font-family: 'HakgyoansimWoojuR';
+  color: black; /* 링크의 색상을 검정으로 설정 */
+  text-decoration: none; /* 밑줄 제거 */
+}
+.menu_bar_item a:hover {
+  background-color: transparent; /* 호버 시 배경색 투명으로 설정 */
 }
