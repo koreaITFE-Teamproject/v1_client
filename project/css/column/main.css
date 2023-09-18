@@ -1,20 +1,31 @@
+.column-list-article {
+  width: 70%;
+  height: 100%;
+  max-width: 1020px;
+  margin: 0 auto;
+}
 
 .option_bar {
-    width: 70%;
-    margin: 0 auto;
-    padding: 20px;
-    /* border: 2px solid black; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  margin-top: 20px;
+  padding: 20px 0;
+  border: 1.4px solid #764127;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.option_bar button {
-  padding: 10px 20px; 
-  background-color: antiquewhite;
-  cursor : pointer;
+.option_bar>button {
+  border: 1px solid;
+    border-radius: 5px;
+    background-color: #F9ECDB;
+    width: 30%;
+    height: 50px;
 }
 
+
+.option_bar>button:hover {
+  background-color: #e4d2bc;
+}
 
 .all {
   width: 200px; 
@@ -36,7 +47,7 @@
 .button_area {
   justify-content: center;
   text-align: end;
-  width: 70%;
+  
   margin: 0 auto;
   margin-top: 1%;
 }
@@ -56,7 +67,7 @@
 
 /* postTable(게시글 목록 요소 스타일) */
 table {
-  width: 70%;
+  width: 100%;
   margin: 20px auto;
   border-collapse: collapse;
 }
