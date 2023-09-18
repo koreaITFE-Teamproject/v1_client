@@ -37,11 +37,8 @@
 
 .marketing-chart {
     width: 70%;
-    height: 740px;
-    border: 2px solid;
     margin: 30px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #F9ECDB;
+    padding: 10px;
+    border: 2px solid;
 }
+  
