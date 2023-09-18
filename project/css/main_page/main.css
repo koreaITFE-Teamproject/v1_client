@@ -9,11 +9,14 @@
     margin: 0;
     font-family: 'HakgyoansimWoojuR';
 }
-
+.recomm_outline{
+    border: 3px solid black;
+    height: 60%;
+    
+}
 .recomm {
     height: 50px;
     width: 250px;
-    /* background-color: #F6E3CE; */
     color: #764127;
     text-align: center;
     margin-top: 20px;
@@ -38,14 +41,16 @@
     height: 150px;
     margin-bottom: 10pox;
     justify-content: center;
-
+    border: 3px solid black;
+    
 }
 
 /* 분야별 칼럼 분류를 제외한 3가지 item div */
 .bar_item {
-    border: 0.5px solid #F2F2F2;
+    height: 100%;
+    border: 3px solid black;
+    /* border: 0.5px solid #F2F2F2; */
     width: 50%;
-    /* height: 400px; */
     text-align: center;
     vertical-align: middle;
     line-height: 100px;

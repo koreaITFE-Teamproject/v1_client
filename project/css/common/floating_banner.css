@@ -1,5 +1,9 @@
+*{
+  margin: 0;  
+  color: #764127;
+}
 .banner_div {
-    border: 3px solid black;
+    border: 3px solid #764127;
     border-radius: 10px;
     display: flex;
     flex-direction: column;

@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'HakgyoansimWoojuR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    margin: 0;
+    font-family: 'HakgyoansimWoojuR';
+}
+.page_title{
+    color: #764127;
+}
 .top_div {
     display: flex;
     justify-content: space-between;
@@ -20,10 +33,11 @@
 }
 
 .chat_q {
-    border: 3px solid black;
+    border: 1px solid #764127;
     margin: 10px 10px;
     padding: 10px;
     border-radius: 10px;
+
 }
 
 .chat_talk {
