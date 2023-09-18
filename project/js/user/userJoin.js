@@ -320,7 +320,7 @@ $(function () {
 
     /* ===== css style 변경 ===== */
     var wrongStyle = { "border": "2px solid red" };     // input 실패 시 스타일
-    var rightStyle = { "border": "1px solid black" };   // input 성공 시 스타일
+    var rightStyle = { "border": "1.4px solid black" };   // input 성공 시 스타일
     var wrongMsgStyle = {                               // validation-message 실패 시 스타일
         "display": "grid",
         "color": "red",

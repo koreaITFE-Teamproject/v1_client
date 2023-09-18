@@ -1,18 +1,25 @@
+@font-face {
+    font-family: 'HakgyoansimWoojuR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-main {
-    margin: 10px 0;
+    font-family: 'HakgyoansimWoojuR';
 }
 
 .title-name {
     width: 80%;
     margin: 0 auto;
+    margin-top: 10px;
     padding: 10px 15px;
-    border: 1px solid;
+    border: 1.5px solid #764127;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     border-bottom: 0;
     font-size: 1.8rem;
     font-weight: bold;
@@ -25,7 +32,9 @@ main {
 
 /* 유저 검색 */
 .search-users {
-    border: 1px solid;
+    border: 1.5px solid #764127;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .search-users>div {
@@ -34,20 +43,24 @@ main {
 }
 
 .search-users>div>p {
-    width: 13%;
+    width: 10%;
     text-align: center;
-    border: 1px solid;
-    margin: 0 8px;
+    border: 1.5px solid #764127;
+    border-radius: 5px;
+    margin: 0 12px 0 8px;
+    padding: 5px 0;
 }
 
 .search-users>div>span {
-    margin: 0 5px;
+    padding: 5px 10px;
 }
 
 .search-users>div>input,
 .search-users>div>select {
-    width: 20%;
-    padding: 0 5px;
+    width: 15%;
+    padding: 0 10px;
+    border: 1.5px solid;
+    border-radius: 5px;
 }
 
 .search-users>div:last-child {
@@ -58,19 +71,20 @@ main {
 .search-btn {
     margin: 0;
     padding: 0;
-    border: 1px solid;
+    border: 1.5px solid #764127;
+    border-radius: 5px;
     font-size: 1.2rem;
     width: 20%;
     height: 35px;
-    background-color: #f6e3ce;
-}
-
-.search-btn:hover{
-    background-color: #e4d2bc;
 }
 
 /* 유저 정보 테이블 */
-tbody, td, tfoot, th, thead, tr {
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
     border-color: inherit;
     border: 1px solid #ddd;
 }
@@ -97,11 +111,11 @@ tbody, td, tfoot, th, thead, tr {
     height: 40px;
 }
 
-.user-info-table tbody>tr:hover{
-    background-color: #e6e6e6;
+.user-info-table tbody>tr:hover {
+    background-color: #F9ECDB;
 
-    .user-del-btn{
-        background-color: #e6e6e6;
+    .user-del-btn {
+        background-color: #F9ECDB;
     }
 }
 
