@@ -9,7 +9,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'HakgyoansimWoojuR';
+    
 }
 
 
@@ -29,6 +29,7 @@
     font-size: 1.2rem;
     background-color: #F6E3CE;
     cursor: pointer;
+    font-family: 'HakgyoansimWoojuR';
 }
 
 .button-wrap>button:hover {

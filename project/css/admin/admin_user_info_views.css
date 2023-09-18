@@ -9,8 +9,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'HakgyoansimWoojuR';
 }
+
 
 .title-name {
     width: 80%;
@@ -23,11 +23,13 @@
     border-bottom: 0;
     font-size: 1.8rem;
     font-weight: bold;
+    font-family: 'HakgyoansimWoojuR';
 }
 
 .users-info-wrap {
     width: 80%;
     margin: 0 auto;
+    font-family: 'HakgyoansimWoojuR';
 }
 
 /* 유저 검색 */
@@ -134,6 +136,7 @@ tr {
     display: flex;
     justify-content: center;
     margin-top: 30px;
+    font-family: 'HakgyoansimWoojuR';
 }
 
 .pagination {}
