@@ -6,9 +6,8 @@
 }
 
 
-
 .admin_header {
-  background-color: #F6E3CE;
+  background-color: #F9ECDB;
   height: 120px;
   position: relative;
   z-index: 3;
@@ -17,7 +16,7 @@
 .site_name {
   display: inline-block;
   /* border: 3px solid black; */
-  padding: 15px;
+  padding: 10px;
   font-family: 'GmarketSansMedium';
 }
 
@@ -36,16 +35,23 @@
 }
 
 .menu_bar_item {
+  padding: auto;
   font-size: 20px;
   width: 200px;
+  height: 25px;
   /* border: 3px solid black; */
   display: inline-block;
   position: relative;
   text-align: center;
 }
 
+.menu_bar_item:hover {
+  background-color: #F6E3CE;
+}
+
 
 a {
   text-decoration: none;
   color: black;
+  font-family: 'GmarketSansMedium';
 }
