@@ -33,6 +33,19 @@
     font-family: 'GmarketSansMedium';
 }
 
+.site_name a {
+    color: black; /* 링크의 색상을 검정으로 설정 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+  
+.site_name a:hover {
+color: black; /* 호버 시에도 색상을 검정으로 유지 */
+}
+
+.bi {
+    font-size: 30px;
+}
+
 #search {
     padding: 10px;
     position: absolute;
@@ -48,9 +61,6 @@
     padding: 10px;
 }
 
-.bi {
-    font-size: 30px;
-}
 
 .menu_bar {
     /* border: 3px solid black; */

@@ -7,8 +7,11 @@
 
 *{
     margin: 0;
+}
+.main_div {
     font-family: 'HakgyoansimWoojuR';
 }
+
 .recomm_outline{
     border: 3px solid black;
     height: 60%;
