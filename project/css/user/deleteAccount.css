@@ -35,3 +35,18 @@ label {
     font-size: 14px;
     color: #333;
 }
+
+.links {
+    font-size: 12px;
+    color: black;
+    margin-bottom: 10%;
+}
+
+.links a {
+    font-size: 12px;
+    color: black;
+}
+
+.out {
+    margin-left: 35%;
+}
