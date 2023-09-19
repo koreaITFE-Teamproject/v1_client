@@ -21,9 +21,11 @@
 
 .admin_header {
   background-color: #F9ECDB;
-  height: 120px;
+  height: 100px;
   position: relative;
   z-index: 3;
+  display: flex;
+  align-items: center;
 }
 
 .site_name {
@@ -45,7 +47,6 @@
 /* 로고 */
 .bi{
   font-size: 30px;
-  margin-left: 2px;
 }
 
 .menu_bar {
@@ -57,10 +58,9 @@
 }
 
 .menu_bar_item {
-  padding: auto;
+  padding: 10px;
   font-size: 20px;
   width: 200px;
-  height: 25px;
   /* border: 3px solid black; */
   display: inline-block;
   position: relative;
