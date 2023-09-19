@@ -1,52 +1,95 @@
-* {
-    box-sizing: border-box;
+@font-face {
+    font-family: 'HakgyoansimWoojuR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
 
-body {
-    margin: 100px;
-    background-color: #F6E3CE;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'HakgyoansimWoojuR';
 }
 
 .delete_account-form {
-    width: 300px;
+    width: 600px;
+    border: 1.5px solid #764127;
     border-radius: 5px; /* 중복 속성 제거 */
-    background-color: white;
     padding: 20px;
-    margin: 0 auto;
-    border: 1px solid black;
+    margin: 30px auto;
 }
 
 .checkbox-part {
-    border: 2px solid #333;
+    width: 100%;
+    border: 1.5px solid;
     padding: 10px;
     margin: 10px 0;
-}
-
-.custom-checkbox {
-    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 p {
-    font-size: 16px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding: 5px 0;
+    letter-spacing: 2.5px;
     color: #333;
 }
 
 label {
-    font-size: 14px;
+    font-size: 1.4rem;
     color: #333;
+    padding: 7px 15px;
 }
 
-.links {
-    font-size: 12px;
-    color: black;
-    margin-bottom: 10%;
+.all{
+    transform: scale(1.7);
+}
+
+span {
+    padding: 0 12px;
+}
+
+.text-field,
+#passwordInput {
+    margin: 10px;
+    padding: 7px 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+}
+
+.text-field {
+    height: 150px;
+    resize: none;
+}
+
+#passwordInput{
+    width: 40%;
+    margin: 10px 0;
+}
+
+.password-part {
+    margin: 30px 0;
+    padding: 0 10px;
+}
+
+.links{
+    margin: 10px 0 10% 0;
 }
 
 .links a {
-    font-size: 12px;
+    font-size: 1.2rem;
     color: black;
 }
 
+.delete-btn-part{
+    text-align: center;
+}
+
 .out {
-    margin-left: 35%;
+    font-size: 1rem;
+    width: 25%;
+    height: 30px;
 }

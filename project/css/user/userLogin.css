@@ -1,82 +1,78 @@
-*{
-    box-sizing: border-box;
+@font-face {
+    font-family: 'HakgyoansimWoojuR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
 
-body { 
-    margin: 100px;
-    background-color: #F6E3CE;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'HakgyoansimWoojuR';
+}
+
+h1 {
+    margin: 10px 0 20px 0;
 }
 
 .login-form {
-    width: 300px;
-    border: 0;
+    width: 600px;
+    border: 1.5px solid #764127;
     border-radius: 5px;
-    background-color: white;
     padding: 20px;
-    margin: 0 auto;
+    margin: 30px auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-field,
+.submit-btn {
+    font-size: 1.4rem;
     border: 1px solid black;
-    border-radius: 50px;
-    
+    border-radius: 5px;
+    margin: 7px 0;
+    padding: 20px 12px;
 }
 
 .text-field {
-    font-size: 14px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    width: 100%;
-    border: 1px solid black;
+    letter-spacing: 1.5px;
+    font-weight: bold;
 }
 
 .submit-btn {
-    color: black;
-    font-size: 14px;
+    padding: 12px 0;
     background-color: #F6E3CE;
-    margin-bottom: 30px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    width: 100%;
-    border: 1px solid black;
+    cursor: pointer;
 }
 
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
 
 .links a {
-    font-size: 12px;
+    font-size: 1.2rem;
     color: black;
-}
-
-.right { 
-    text-align: right;
-    margin-bottom: 10px;
-}
-
-.left {
-    text-align: left;
-    margin-bottom: 10px;
-}
-
-
-.submit-btn {
-    color: black;
-    font-size: 14px;
-    background-color: #F6E3CE;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    width: 100%;
-    border: 1px solid black;
 }
 
 .qr-btn {
-    color: black;
-    font-size: 14px;
+    font-size: 1.2rem;
     background-color: #F6E3CE;
     border-radius: 5px;
-    width: 80px;
-    height: 80px; 
+    width: 120px;
+    height: 110px;
     border: 1px solid black;
-    margin-left: 35%;
+    margin: 0 auto;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.submit-btn:hover,
+.qr-btn:hover {
+    background-color: #e4d2bc;
 }
