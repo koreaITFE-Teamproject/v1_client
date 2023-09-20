@@ -22,7 +22,7 @@
 
 .checkbox-part {
     width: 100%;
-    border: 1.5px solid;
+    border: 1.5px solid #764127;
     padding: 10px;
     margin: 10px 0;
     display: flex;
@@ -87,6 +87,18 @@ span {
 .delete-btn-part{
     text-align: center;
 }
+
+#withdrawButton{
+    border: 1px solid;
+    border-radius: 2px;
+    background-color: #F9ECDB;
+}
+
+#withdrawButton:hover{
+    background-color: #e4d2bc;
+}
+
+
 
 .out {
     font-size: 1rem;

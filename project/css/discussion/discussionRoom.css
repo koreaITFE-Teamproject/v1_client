@@ -30,7 +30,7 @@ li {
 
 /* 토론방 선택 */
 .select-discussion-rooms {
-    margin-top: 20px;
+    margin-top: 30px;
     padding: 20px 0;
     border: 1.4px solid #764127;
     border-radius: 5px;
@@ -111,35 +111,30 @@ li {
 .room-search-wrap {
     width: 70%;
     max-width: 1020px;
-    display: flex;
-    justify-content: space-between;
-    margin: 20px auto;
-}
-
-.room-search {
-    width: 75%;
-    text-align: center;
     display: grid;
-    grid-template-columns: 1fr 2.5fr .5fr;
+    grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+    justify-content: space-between;
+    text-align: center;
+    margin: 20px auto;
+    font-size: 20px;
 }
 
-.room-search>div,
-.room-search>input,
-.room-search>button,
-.room-search-wrap>.add-room-btn {
+.room-search-wrap>p,
+.search-input,
+.room-search-wrap>button {
     border: 1px solid;
     border-radius: 5px;
     margin: 0 3px;
     padding: 8px 5px;
-    font-size: .8rem;
-    background-color: #F9ECDB;
+    font-size: 1.1rem;
+    background-color: #F9ECDB;   
 }
 
-.room-search>input {
+.search-input {
+    /* width: 500px; */
     background-color: white;
-    padding: 0 6px;
+    padding: 0 8px;
 }
-
 
 
 

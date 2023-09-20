@@ -45,7 +45,7 @@ form {
 
 .submit-btn {
     padding: 12px 0;
-    background-color: #F6E3CE;
+    background-color: #F9ECDB;
     cursor: pointer;
 }
 
@@ -62,7 +62,7 @@ form {
 
 .qr-btn {
     font-size: 1.2rem;
-    background-color: #F6E3CE;
+    background-color: #F9ECDB;
     border-radius: 5px;
     width: 120px;
     height: 110px;
