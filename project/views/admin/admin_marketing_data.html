@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자 마케팅 데이터</title>
-    <link rel="stylesheet" href="/project/css/admin/admin_marketing_data.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="/project/js/admin/adminModule.js"></script>
-    <script src="/project/js/admin/admin_marketing_data.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>관리자 마케팅 데이터</title>
+  <link rel="stylesheet" href="/project/css/admin/admin_marketing_data.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="/project/js/admin/adminModule.js"></script>
+  <script src="/project/js/admin/admin_marketing_data.js"></script>
 </head>
+
 <body>
   <header id="header"></header>
 
-    <main>
-      <div class="button-wrap">
-        <button>hot book</button>
-        <button>hot topic</button>
-        <button>신규회원추이</button>
-        <button>상담분야분석</button>
-      </div>
+  <main>
+    <div class="button-wrap">
+      <button>hot book</button>
+      <button>hot topic</button>
+      <button>신규회원추이</button>
+      <button>상담분야분석</button>
+    </div>
 
-      <div class="marketing-chart">
-        <!-- <p>차트 들어갈 자리</p> -->
-        <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
-      </div>
-      
-    </main>
+    <div class="marketing-chart">
+      <!-- <p>차트 들어갈 자리</p> -->
+      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+    </div>
 
-    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js" integrity="sha384-gdQErvCNWvHQZj6XZM0dNsAoY4v+j5P1XDpNkcM3HJG1Yx04ecqIHk7+4VBOCHOG" crossorigin="anonymous"></script>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"
+    integrity="sha384-gdQErvCNWvHQZj6XZM0dNsAoY4v+j5P1XDpNkcM3HJG1Yx04ecqIHk7+4VBOCHOG"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -9,13 +9,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
-
 
 .button-wrap {
     width: 70%;
-    margin: 10px auto;
+    margin: 30px auto;
     padding: 10px 15px;
     display: flex;
     justify-content: space-between;

@@ -9,13 +9,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+main {
     font-family: 'HakgyoansimWoojuR';
 }
 
 .delete_account-form {
     width: 600px;
     border: 1.5px solid #764127;
-    border-radius: 5px; /* 중복 속성 제거 */
+    border-radius: 5px;
+    /* 중복 속성 제거 */
     padding: 20px;
     margin: 30px auto;
 }
@@ -43,7 +47,7 @@ label {
     padding: 7px 15px;
 }
 
-.all{
+.all {
     transform: scale(1.7);
 }
 
@@ -65,7 +69,7 @@ span {
     resize: none;
 }
 
-#passwordInput{
+#passwordInput {
     width: 40%;
     margin: 10px 0;
 }
@@ -75,7 +79,7 @@ span {
     padding: 0 10px;
 }
 
-.links{
+.links {
     margin: 10px 0 10% 0;
 }
 
@@ -84,17 +88,17 @@ span {
     color: black;
 }
 
-.delete-btn-part{
+.delete-btn-part {
     text-align: center;
 }
 
-#withdrawButton{
+#withdrawButton {
     border: 1px solid;
     border-radius: 2px;
     background-color: #F9ECDB;
 }
 
-#withdrawButton:hover{
+#withdrawButton:hover {
     background-color: #e4d2bc;
 }
 

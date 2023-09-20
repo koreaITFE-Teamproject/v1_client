@@ -9,6 +9,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+main {
     font-family: 'HakgyoansimWoojuR';
 }
 
@@ -127,7 +130,7 @@ li {
     margin: 0 3px;
     padding: 8px 5px;
     font-size: 1.1rem;
-    background-color: #F9ECDB;   
+    background-color: #F9ECDB;
 }
 
 .search-input {
