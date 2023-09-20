@@ -1,10 +1,25 @@
+@font-face {
+    font-family: 'HakgyoansimWoojuR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+.search_div .search_results{
+    font-family: 'HakgyoansimWoojuR';
+}
+#srch_select{
+    border: 1.5px solid #764127;
+}
 .search_div {
-    border: 3px solid black;
+    background-color: #F9ECDB;
+    border: 1.5px solid #764127;
     padding: 10px;
     margin: 0 auto;
+    border-radius: 5px;
 }
 
 input {
+    border: 1.5px solid #764127;
     width: 500px;
     padding: 10px;
 }
@@ -51,7 +66,7 @@ table {
 
 th,
 td {
-    border: 1px solid #ddd;
+    border: 1.5px solid #764127;
     padding: 8px;
     text-align: center;
 }

@@ -24,9 +24,6 @@ input {
 main{
     display: flex;
     justify-content: center;
-    /* align-items: center; */
-    height: 100vh; /* 화면 높이의 100%를 채우도록 설정 */
-    
 }
 
 /* contents들 모아놓은 div */
@@ -36,12 +33,12 @@ main{
     display: flex;
     flex-direction: column; /* 컨텐츠를 세로로 정렬하기 위해 flex-direction을 column으로 설정 */
     align-items: center; /* 가로 정렬을 중앙으로 조정 */
-    padding: 50px 100px;
+    padding: 20px;
     border: 1.5px solid #764127;
     width: 600px;
 }
 
-/* main_div 안의 내용들 div */
+/* main_div 안의 내용들 위치 크기 맞춤 */
 .contents {
     padding: 5px;
     width: 600px;
@@ -67,7 +64,7 @@ h1 {
     text-align: center;
 }
 
-/* 인증번호 div */
+/* 인증번호 확인 div */
 #ck_num {
     display: flex;
     justify-content: flex-end;

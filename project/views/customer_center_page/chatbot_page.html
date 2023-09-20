@@ -9,29 +9,62 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <!-- 탬플릿을 어떻게 연결할껀지 봐야 이 페이지는 마무리 될듯. -->
     <script src="/project/js/common/common.js"></script>
-    <link rel="stylesheet" href="/project/css/customer_center_page/chatbot_page.css">
+    <!-- <link rel="stylesheet" href="/project/css/customer_center_page/chatbot_page.css"> -->
     <script src="/project/js/customer_center_page/chatbot_page.js"></script>
 </head>
-<body>
-    <header id="header"></header>
-    <main>
-        <div class="top_div">
-            <div class="page_title">CHAT BOT 상담</div>
-            <!-- 이거 안보임 위치 수정 -->
-            <div class="x_icon"><i class="bi bi-x"></i></div>
-        </div>
-        <div class="main_div">
-            <div class="chat_q_list">
-                <div class="chat_q">챗봇 질문 1</div>
-                <div class="chat_q">챗봇 질문 2</div>
-                <div class="chat_q">챗봇 질문 3</div>
-                <div class="chat_q">챗봇 질문 4</div>
-                <div class="chat_q">챗봇 질문 5</div>
-                <div class="chat_q" id="one_by_one">1:1 고객상담</div>
-            </div>
-            <div class="chat_talk">
+<style>
 
-                
+.outline{
+    border: 1px solid blue;
+    flex-direction: row; /* 수평으로 정렬 */
+    justify-content: space-between; /* 요소 사이에 공간을 최대한 배분 */
+    align-items: center; /* 수직 가운데 정렬 */
+    border: 1px solid blue;
+    height: 100vh; /* 높이를 화면 높이에 맞게 조절 */
+    
+}
+
+ .main_div{
+    height: 80vh;
+ }
+ .chat_q_list{
+    height: 100%;
+    display: inline-block;
+    display: flex;
+    flex-direction: column; 
+    border: 1px solid pink; 
+     
+    }
+.chat_q{
+    width: 200px;
+    display: inline-block;
+    height: 100%;
+    border: 1px solid red; 
+ }
+</style>
+<body>
+    <!-- <header id="header"></header> -->
+    <main>
+        <div class="outline">
+            <div class="top_div">
+                <h2 class="page_title">CHAT BOT 상담</h2>
+                <!-- <div class="page_title">CHAT BOT 상담</div> -->
+                <!-- 이거 안보임 위치 수정 -->
+                <div class="x_icon"><i class="bi bi-x"></i></div>
+            </div>
+            <div class="main_div">
+                <div class="chat_q_list">
+                    <div class="chat_q">챗봇 질문 1</div>
+                    <div class="chat_q">챗봇 질문 2</div>
+                    <div class="chat_q">챗봇 질문 3</div>
+                    <div class="chat_q">챗봇 질문 4</div>
+                    <div class="chat_q">챗봇 질문 5</div>
+                    <div class="chat_q" id="one_by_one">1:1 고객상담</div>
+                </div>
+                <div class="chat_talk">
+    
+                    
+                </div>
             </div>
         </div>
     </main>
