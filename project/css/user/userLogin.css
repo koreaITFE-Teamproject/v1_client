@@ -27,18 +27,43 @@ h1 {
     margin: 30px auto;
 }
 
+.login-form>h1{
+    text-align: center;
+}
+
 form {
     display: flex;
     flex-direction: column;
 }
 
+/* 수정 요청한 부분 추가 */
+.login-wrap{
+    display: grid;
+    grid-template-columns: 1.5fr 8.5fr;
+    grid-gap: 15px;
+}
+
+/* 수정 요청한 부분 추가 */
+.login-id,
+.login-pw{
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: #F9ECDB;
+    margin: 7px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
 .text-field,
 .submit-btn {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     border: 1px solid black;
     border-radius: 5px;
     margin: 7px 0;
-    padding: 20px 12px;
+    padding: 18px 12px;
 }
 
 .text-field {
