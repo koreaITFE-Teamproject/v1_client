@@ -1,5 +1,4 @@
 div {
-    border: 3px solid #F6E3CE;
     display: inline-block;
 }
 
@@ -41,20 +40,22 @@ div {
     margin: 0 auto;
 
 }
-
+/* 칼럼 들어올 자리 */
 .column_contents {
+    margin-top: 30px;
     width: 100%;
     min-height: 100%;
+    border: 1.5px solid #764127;
 }
 
 /* 댓글 창 부분 */
 /* 큰 틀 */
 .comment_bar {
+    margin-top: 5px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    border: 3px solid skyblue;
-    /* 구분 색 */
+    border: 1.5px solid #764127;
 }
 
 .comment_bar>div {
@@ -63,13 +64,14 @@ div {
 
 .comment_num {
     width: 20%;
+    background-color: #F9ECDB;
+    color: #764127;
 }
 
 .comment_input {
     display: flex;
     flex-direction: column;
-    border: 3px solid blue;
-    /* 구분 색 */
+    border: 1.5px solid #764127;
 }
 
 .user_time {
@@ -80,8 +82,8 @@ div {
 .recommnet_bar {
     display: flex;
     flex-direction: column;
-    border: 3px solid pink; 
     /* 구분 색 */
+    border: 3px solid pink; 
 }
 
 .input_text {
@@ -104,8 +106,19 @@ span {
 
 .limit_text {
     order: 1;
+    padding: 5px 10px;
+    border: 1.5px solid #764127;
 }
 
 .input_btn {
+    padding: 5px 20px;
     order: 2;
+    background-color: #F9ECDB;
+    color: #764127;
+    border: 1.5px solid #764127;
+    border-radius: 5px;
+}
+
+textarea{
+    border: none;
 }

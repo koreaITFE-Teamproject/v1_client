@@ -13,7 +13,6 @@
 }
 
 .recomm_outline{
-    border: 3px solid black;
     height: 60%;
     
 }
@@ -31,7 +30,7 @@
 
 /* 분야별 칼럼 분류제외한 itemMenu_bar */
 .coumn_bar {
-    height: 200px;
+    height: 300px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -44,15 +43,13 @@
     height: 150px;
     margin-bottom: 10pox;
     justify-content: center;
-    border: 3px solid black;
     
 }
 
 /* 분야별 칼럼 분류를 제외한 3가지 item div */
 .bar_item {
     height: 100%;
-    border: 3px solid black;
-    /* border: 0.5px solid #F2F2F2; */
+    border: 0.5px solid #F2F2F2;
     width: 50%;
     text-align: center;
     vertical-align: middle;
@@ -85,4 +82,20 @@
 /* 마우스 호버 시 포인터 모양으로 변경 */
 .bar_item:hover, .class_item:hover {
     cursor: pointer; 
+}
+
+/* 칼럼 디자인 웹 퍼블리싱 */
+
+.column_title{
+    font-size: 30px;
+
+}
+
+img{
+    height: 100%;
+    border: 0.5px solid #F2F2F2;
+    width: 50%;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px;
 }

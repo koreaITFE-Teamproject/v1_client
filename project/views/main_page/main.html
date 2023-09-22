@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
     <script src="/project/js/main_page/main.js"></script>
     <script src="/project/js/common/common.js"></script>
 </head>
+
 <body>
     <header id="header"></header>
     <main>
@@ -17,32 +19,37 @@
             <div class="recomm_outline">
                 <div class="recomm" id="recomm_coumn">추천 칼럼</div>
                 <div class="coumn_bar">
-                    <div class="bar_item">칼럼 제목</div>
+                    <div class="bar_item">
+                        <!-- 칼럼 제목이 들어갈 디자인 예시 -->
+                        <div class="column_title">경차가 뭐 어때서</div>
+                        <div class="column_writer">책마음</div>
+                    </div>
                     <div class="bar_item">칼럼 제목</div>
                     <div class="bar_item">칼럼 제목</div>
                     <div class="bar_item">칼럼 제목1</div>
                     <div class="bar_item">칼럼 제목2</div>
                 </div>
             </div>
-            <hr>    
+            <hr>
             <div class="recomm_outline">
                 <div class="recomm" id="recomm_book">추천 책</div>
                 <div class="coumn_bar">
-                    <div class="bar_item">추천 책 이미지</div>
+                    <!-- <div class="bar_item">추천 책 이미지</div> -->
+                    <img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791130646091.jpg" alt="">
                     <div class="bar_item">추천 책 이미지</div>
                     <div class="bar_item">추천 책 이미지</div>
                     <div class="bar_item">추천 책 이미지</div>
                     <div class="bar_item">추천 책 이미지</div>
                 </div>
             </div>
-            <hr>    
+            <hr>
             <div class="recomm" id="recomm_class">분야별 컬럼 분류</div>
-                <div class="class_frame">
-                    <div class="recomm_bar">
-                        <div class="class_item">국내 소설</div>
-                        <div class="class_item">해외 소설</div>
-                        <div class="class_item">시/에세이</div>
-                        <div class="class_item">인문</div>
+            <div class="class_frame">
+                <div class="recomm_bar">
+                    <div class="class_item">국내 소설</div>
+                    <div class="class_item">해외 소설</div>
+                    <div class="class_item">시/에세이</div>
+                    <div class="class_item">인문</div>
                     <div class="class_item">가정/육아</div>
                 </div>
                 <div class="recomm_bar">
@@ -67,21 +74,53 @@
                     <div class="class_item">만화</div>
                 </div>
             </div>
-            <hr>    
+            <hr>
             <div class="recomm_outline">
                 <div class="recomm" id="recomm_discussRoom">추천 토론방</div>
                 <div class="coumn_bar">
+                    <div class="bar_item">월요 경제 토론방</div>
                     <div class="bar_item">토론방 이름</div>
-                        <div class="bar_item">토론방 이름</div>
-                        <div class="bar_item">토론방 이름</div>
-                        <div class="bar_item">토론방 이름</div>
-                        <div class="bar_item">토론방 이름</div>
+                    <div class="bar_item">토론방 이름</div>
+                    <div class="bar_item">토론방 이름</div>
+                    <div class="bar_item">토론방 이름</div>
                 </div>
+            </div>
+            <hr>
+            <!-- 캐러셀 연구 필요함. -->
+            <!-- 밖에서 캐러셀 예제 가져온거 : 얘는 왜/어떻게  되는가? -->
+            <!-- 부트스트랩 cdn 링크 -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+                integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+                crossorigin="anonymous">
+                <!-- 아래도 있어야 버튼이 움직임. -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                crossorigin="anonymous"></script>
+            <!-- 캐러셀 부분 -->
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="bar_item">토론방 이름</div> 
+                        <!-- 여기를 div를 박으면 시간지나면 넘어갈뿐. 버튼이 없어진다.. -->
+                    </div>
+                    <div class="carousel-item"><img class="d-block w-100"
+                            src="https://source.unsplash.com/collection/190727/1600x900" alt="..." /></div>
+                    <div class="carousel-item"><img class="d-block w-100"
+                            src="https://source.unsplash.com/WLUHO9A_xik/1600x900" alt="..." /></div>
+                </div>
+                <!-- 버튼 -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+                        class="visually-hidden">Previous</span> </button> <button class="carousel-control-next"
+                    type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next"> <span
+                        class="carousel-control-next-icon" aria-hidden="true"></span> <span
+                        class="visually-hidden">Next</span> </button>
             </div>
         </div>
     </main>
 </body>
 <footer id="footer"></footer>
+
 </html>
 <!-- 1차 완성 상세 위치 조정 및 컬러 등은 모든 페이지 기본틀 되고나면 수정 -->
 <!-- 안의 컨텐츠(컬럼 분류를 제외한)는 백으로 되야함 -->
