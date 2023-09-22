@@ -5,52 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>챗봇</title>
     <!-- 부트스트랩 아이콘 링크 연결 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <!-- daisyUi 링크 -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.3/dist/full.css" rel="stylesheet" type="text/css" />
     <!-- 탬플릿을 어떻게 연결할껀지 봐야 이 페이지는 마무리 될듯. -->
     <script src="/project/js/common/common.js"></script>
-    <!-- <link rel="stylesheet" href="/project/css/customer_center_page/chatbot_page.css"> -->
+    <link rel="stylesheet" href="/project/css/customer_center_page/chatbot_page.css">
     <script src="/project/js/customer_center_page/chatbot_page.js"></script>
 </head>
-<style>
-
-.outline{
-    border: 1px solid blue;
-    flex-direction: row; /* 수평으로 정렬 */
-    justify-content: space-between; /* 요소 사이에 공간을 최대한 배분 */
-    align-items: center; /* 수직 가운데 정렬 */
-    border: 1px solid blue;
-    height: 100vh; /* 높이를 화면 높이에 맞게 조절 */
-    
-}
-
- .main_div{
-    height: 80vh;
- }
- .chat_q_list{
-    height: 100%;
-    display: inline-block;
-    display: flex;
-    flex-direction: column; 
-    border: 1px solid pink; 
-     
-    }
-.chat_q{
-    width: 200px;
-    display: inline-block;
-    height: 100%;
-    border: 1px solid red; 
- }
-</style>
 <body>
     <!-- <header id="header"></header> -->
     <main>
         <div class="outline">
             <div class="top_div">
-                <h2 class="page_title">CHAT BOT 상담</h2>
+                <h2 class="page_title">CHAT BOT</h2>
                 <!-- <div class="page_title">CHAT BOT 상담</div> -->
                 <!-- 이거 안보임 위치 수정 -->
-                <div class="x_icon"><i class="bi bi-x"></i></div>
+                <!-- <div class="x_icon"><i class="bi bi-x"></i></div> -->
             </div>
             <div class="main_div">
                 <div class="chat_q_list">
@@ -62,7 +34,14 @@
                     <div class="chat_q" id="one_by_one">1:1 고객상담</div>
                 </div>
                 <div class="chat_talk">
-    
+                    <!-- 하드로 임의로 박습니다. 퍼블리싱 일뿐 이건 서버로 구현해야해요. -->
+                    <div class="chat chat-start">
+                        <div class="chat-bubble">안녕하세요? 무엇을 도와드릴까요? <br/>아래에서 선택해 주세요</div>
+                        <div class="chat-bubble">안녕하세요? 무엇을 도와드릴까요? <br/>아래에서 선택해 주세요</div>
+                      </div>
+                      <div class="chat chat-end">
+                        <div class="chat-bubble">You underestimate my power!</div>
+                      </div>
                     
                 </div>
             </div>

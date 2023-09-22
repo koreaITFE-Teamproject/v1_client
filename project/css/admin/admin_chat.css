@@ -1,38 +1,55 @@
+@font-face {
+    font-family: 'HakgyoansimWoojuR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    margin: 0;
+}
+
 main {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    /* 화면 높이의 100%를 채우도록 설정 */
     padding: 20px;
+    align-items: center;
 }
 
 .input_div {
+    width: 80%;
     display: flex;
-    border: 1px solid black;
+    border: 1.5px solid #764127;
     height: 200px;
-    /* 채팅 창 높이  합칠때 보고 수정*/
+    border-radius: 0 0 10px 10px;
 }
 
 #chat_input {
     width: 100%;
-    border: 1px solid black;
+    border: 1.5px solid #764127;
+    border-radius: 0 0 0 10px;
 }
 
 .enter_btn {
+    font-family: 'HakgyoansimWoojuR';
     width: 100px;
-    border: 1px solid black;
+    border: 1.5px/ solid #764127;
     background-color: #F6E3CE;
     /* 입력 글자 중앙 위치 */
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 0 0 10px 0;
 }
 
 .chat_screen {
+    width: 80%;
+    font-family: 'HakgyoansimWoojuR';
     flex-grow: 1;
     /* 남은 공간을 채우도록 설정 */
     overflow-y: auto;
     /* 내용이 넘칠 경우 스크롤 표시 */
-    border: 1px solid black;
+    border: 1.5px solid #764127;
+    border-radius: 10px 10px 0 0;
 }

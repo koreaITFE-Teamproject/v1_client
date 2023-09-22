@@ -7,6 +7,7 @@ $(document).ready(function () {
     // 채팅 메시지 추가 함수
     function addChatMessage(message) {
         // 메시지를 chat_screen에 추가
+        // 이 메세지 색상이 우리껄로 바뀐 상태로 서버에서 보내면 들어와야함. 해결방법?
         const chatMessage = `
             <div class="chat chat-start">
               <div class="chat-header">User<time class="text-xs opacity-50">Just now</time></div>
@@ -14,6 +15,7 @@ $(document).ready(function () {
             </div>
           `;
         $('.chat_screen').append(chatMessage);
+        $(".chat-bubble").css({"backgroundColor": "#F9ECDB", "color": "black"});
     }
 
     // 입력 처리 함수
