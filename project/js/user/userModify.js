@@ -35,6 +35,7 @@ $(function () {
 
 
     var isNotificationOn = false;
+    var userEmail;           // 유저 이메일
 
     // 클릭한 유저의 아이디로 정보 가져오기
     for (var user of users) {
@@ -44,11 +45,12 @@ $(function () {
             $(".user-login-pw-input").add(".user-login-pw-ck-input").val(user.loginPw);   //pw
 
             // 이메일
-            var isTrue = false;                                     // 이메일 뒷부분이 select option에 있는지 확인하기 위한 bool타입 변수, 변수명 수정 예정
-            var userEmail = user.email.split("@");                  // @ 자르기
-            $(".user-email-input").val(userEmail[0]);               // 이메일 앞부분
+            userEmail = user.email;
+            var isTrue = false;                                     // 이메일 뒷부분이 select option에 있는지 확인하기 위한 bool타입 변수
+            var tempUserEmail = user.email.split("@");                  // @ 자르기
+            $(".user-email-input").val(tempUserEmail[0]);               // 이메일 앞부분
             $("#select-email-option>option").each(function () {     // 반복, 이메일 뒷 부분
-                if ($(this).val() === userEmail[1]) {               // 현재 select option과 저장되어있는 유저의 email 뒷 부분 일치 시 
+                if ($(this).val() === tempUserEmail[1]) {               // 현재 select option과 저장되어있는 유저의 email 뒷 부분 일치 시 
                     $(this).prop("selected", true);
                     isTrue = true;
                 }
@@ -57,7 +59,7 @@ $(function () {
             if (!isTrue) {
                 $("#select-email-option").val("userInput");
                 $(".custom-input").show();
-                $(".custom-input").val(userEmail[1]);
+                $(".custom-input").val(tempUserEmail[1]);
             }
 
 
@@ -79,6 +81,22 @@ $(function () {
             }
         }
     }
+
+    // 저장 버튼 클릭 시
+    $("#update-btn").click(function(){
+        var userInfo = [];
+        $(".editable-info input").each(function(){+
+            userInfo.push($(this).val());
+        });
+        userInfo.pop();
+        userInfo.pop();
+        userInfo.push(userEmail);
+        console.log(userInfo)
+        // 현재 사용중인 ""와 같습니다.
+        // 사용할 수 없는 "" 입니다.
+        // 이미 사용중인 "" 입니다.
+    });
+
 
     // 이메일 select value 변할 시
     $("#select-email-option").change(function () {

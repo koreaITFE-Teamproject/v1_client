@@ -24,7 +24,7 @@
                 <p class="brief"><span class="required">*</span>표시는 필수 기입항목입니다.</p>
                 <div>
                     <!-- 이름 -->
-                    <div class="user-name">
+                    <div id="user-name" class="editable-info">
                         <div><span class="required">*</span>이름</div>
                         <div>
                             <input type="text" class="user-name-input" maxlength="10">
@@ -33,7 +33,7 @@
                     </div>
 
                     <!-- 아이디 -->
-                    <div class="user-login-id">
+                    <div id="user-login-id">
                         <div>아이디</div>
                         <div>
                             <!-- 보기 전용 readonly -->
@@ -42,7 +42,7 @@
                     </div>
 
                     <!-- 비밀번호 -->
-                    <div class="user-login-pw">
+                    <div id="user-login-pw" class="editable-info">
                         <div><span class="required">*</span>비밀번호</div>
                         <div>
                             <input type="password" class="user-login-pw-input" maxlength="30">
@@ -53,7 +53,7 @@
                     </div>
 
                     <!-- 비밀번호 확인 -->
-                    <div class="user-login-pw-ck">
+                    <div id="user-login-pw-ck" class="editable-info">
                         <div><span class="required">*</span>비밀번호 확인</div>
                         <div>
                             <input type="password" class="user-login-pw-ck-input">
@@ -62,7 +62,7 @@
                     </div>
 
                     <!-- 이메일 -->
-                    <div class="user-email">
+                    <div id="user-email" class="editable-info">
                         <div><span class="required">*</span>이메일</div>
                         <div>
                             <input type="text" class="user-email-input">
@@ -82,7 +82,7 @@
                     </div>
 
                     <!-- 전화번호 -->
-                    <div class="user-phone-number">
+                    <div id="user-phone-number">
                         <div>전화번호</div>
                         <div class="input-numbers">
                             <!-- 각 input 패턴 적용 -->
@@ -96,7 +96,7 @@
                     </div>
 
                     <!-- 주소 -->
-                    <div class="user-address">
+                    <div id="user-address">
                         <div>주소</div>
                         <div>
                             <input type="text" class="user-address-input">
@@ -106,7 +106,7 @@
                     </div>
 
                     <!-- 알림설정 -->
-                    <div class="user-id-check">
+                    <div id="user-id-check">
                         <div>알림설정</div>
                         <div>
                             <input type="checkbox" id="toggle" hidden>

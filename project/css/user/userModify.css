@@ -146,7 +146,7 @@ button:hover{
 }
 
 /* 이메일 */
-.user-email>div:nth-child(2)>span {
+#user-email>div:nth-child(2)>span {
     padding: 0 10px;
 }
 
@@ -156,7 +156,7 @@ button:hover{
 }
 
 /* 전화번호 */
-.user-phone-number span {
+#user-phone-number span {
     padding: 0 10px;
 }
 
@@ -181,7 +181,7 @@ button:hover{
 
 
 /* 알림 토글 스위치 */
-.user-id-check>div:last-child {
+#user-id-check>div:last-child {
     /* 토글 스위치 위치 */
     padding: 0 20px;
     justify-self: left;
