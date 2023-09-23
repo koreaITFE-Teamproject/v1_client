@@ -88,20 +88,6 @@ i {
     margin: 10px;
 }
 
-/* 반응형 캠사이즈 조절 */
-@media screen and (max-width: 1260px) {
-    .user-video-screen {
-        width: calc(100% / 2.2);
-    }
-}
-
-@media screen and (max-width: 1000px) {
-    .user-video-screen {
-        width: 93%;
-        height: 300px;
-    }
-}
-
 /* 본인화면 색 다름 */
 .user-video-screen:first-child>.screen {
     border: 2px solid;
@@ -149,4 +135,27 @@ i {
     width: 100%;
     margin: 0;
     padding: 0 0 0 5px;
+}
+
+
+/* 반응형 캠사이즈 조절 */
+@media screen and (max-width: 1260px) {
+    .user-video-screen {
+        width: calc(100% / 2.2);
+    }
+
+    .options{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .user-video-screen {
+        width: 93%;
+        height: 300px;
+    }
+
+    .options{
+        width: 90%;
+    }
 }
