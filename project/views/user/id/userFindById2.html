@@ -8,8 +8,16 @@
     <title>Document</title>
 
     <style>
+        @font-face {
+            font-family: 'HakgyoansimWoojuR';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         * {
             margin: 0;
+            font-family: 'HakgyoansimWoojuR';
         }
 
         .container {
@@ -42,20 +50,13 @@
             margin-top: 160px;
         }
 
-        .idBar {
-            margin-right: 290px;
-        }
-
         .box {
             border: 1px solid black;
             margin: 10px;
             height: 70px;
             width: 60%;
-            margin-left: 7%;
-            margin-top: 5%;
-            margin-bottom: 5%;
-        }
 
+        }
 
 
         button {
@@ -68,15 +69,33 @@
             margin-top: 150px;
             cursor: pointer;
         }
+
+        .row {
+            position: relative;
+            top: 19px;
+            margin-top: 8%
+        }
+
+        .row > .box{
+            position: relative;
+            left: 55px;
+
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="find_login_box">
-            <p class="id">아이디는</p>
-            <div class="box"></div>
-            <p class="text">입니다.</p>
+            <div class="row">
+                <p class="id">아이디는</p>
+            </div>
+            <div class="row">
+                <div class="box"></div>
+            </div>
+            <div class="row">
+                <p class="text">입니다.</p>
+            </div>
             <button class="password">비밀번호 찾기</button>
             <button class="check">확인</button>
         </div>

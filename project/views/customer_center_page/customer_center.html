@@ -8,8 +8,16 @@
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <style>
+        @font-face {
+            font-family: 'HakgyoansimWoojuR';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         * {
             margin: 0;
+            font-family: 'HakgyoansimWoojuR';
         }
 
         .container {
@@ -19,17 +27,18 @@
             justify-content: space-evenly;
             align-items: center;
             flex-wrap: wrap;
+
         }
 
 
         .customer_box_inner {
             height: 80%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: flex-start;
+            /* display: flex;
+            flex-direction: row; */
+            /* justify-content: space-around;
+            align-items: flex-start; */
             border: 1px solid black;
-            width: 90%;
+            width: 110%;
             margin-top: 4%;
         }
 
@@ -37,21 +46,25 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-left: 2%;
-            margin-top: -5%;
+            /* margin-left: 2%;
+            margin-top: -3%; */
             text-align: center;
+            /* margin-bottom: 2%; */
+            color: #764127;
         }
 
 
         .row>input {
             border: 1px solid black;
-            width: 1880px;
+            width: 1450px;
             height: 80px;
             display: flex;
             flex-direction: row;
-            margin-left: 2%;
-            margin-top: 3%;
             text-align: center;
+            font-size: 35px;
+            margin-left: 1%;
+            margin-top: 3%;
+
         }
 
         .row>div {
@@ -59,47 +72,144 @@
             width: 150px;
             height: 80px;
             display: flex;
+            justify-content: center;
+            align-items: center;
             flex-direction: row;
-            margin-left: 2%;
+            margin-left: 1%;
             margin-top: 3%;
             background-color: #F6E3CE;
             text-align: center;
+            font-size: 26px;
+            color: #764127;
         }
 
         .row>#body {
             height: 280px;
+            color: #764127;
         }
 
         .row>#body_bar {
             height: 280px;
+            border: 1px solid black;
+            width: 1450px;
+            display: flex;
+            flex-direction: row;
+            margin-left: 1%;
+            margin-top: 3%;
+            text-align: center;
+            font-size: 35px;
+            text-align: left;
         }
+
+        .Btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #764127;
+
+        }
+
+
 
         button {
-            width: 200px;
-            height: 67px;
-            margin: 5%;
-            text-align: center;
-            margin-left: 10%;
+            border: 1px solid black;
+            width: 150px;
+            height: 80px;
+            display: flex;
+            margin-left: 2%;
+            margin-top: 5%;
             background-color: #F6E3CE;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            font-size: 26px;
+            color: #764127;
+            margin-bottom: 2%;
+        }
+
+        .row>#file {
+            border: 1px solid black;
+            width: 120px;
+            height: 80px;
+            display: flex;
+            margin-left: 2%;
+            background-color: #F6E3CE;
+            text-align: center;
+            justify-content: center;
+
+        }
+
+        .row>#del {
+            border: 1px solid black;
+            width: 120px;
+            height: 80px;
+            display: flex;
+            margin-left: 2%;
+            background-color: #F6E3CE;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .row>#picture_bar {
+            width: 1150px;
+            background-color: white;
+        }
+
+        .textCount,
+        .textTotal {
+            display: inline-block;
+            margin-left: 10px;
+            text-align: right;
+            font-size: 24px;
+        }
+
+        .textCount {
+            margin-left: 90%;
         }
     </style>
+    <script>
+        $(document).ready(function () {
+            var bodyTextarea = $('#body_bar');
+            var characterCountDisplay = $('.textCount');
+            var maxCharacterCount = 1000;
 
+            bodyTextarea.on('input', function () {
+                var text = bodyTextarea.val();
+                var currentCharacterCount = text.length;
+
+                if (currentCharacterCount > maxCharacterCount) {
+                    bodyTextarea.val(text.slice(0, maxCharacterCount));
+                    currentCharacterCount = maxCharacterCount;
+                }
+                characterCountDisplay.text(currentCharacterCount + '자');
+            });
+        });
+    </script>
 </head>
 
 <body>
     <div class="container">
-        <div class="customer_box_inner">
-            <div class="row">
-                <div id="title">제목</div> <input id="title_bar"></input>
-            </div>
-            <div class="row">
-                <div id="body">내용</div> <input id="body_bar"></input>
-            </div>
-            <div class="row">
-                <div id="picture">첨부사진</div> <input id="picture_bar"></input>
-            </div>
-            <div class="row">
-                <button>취소</button> <button>확인</button>
+        <div class="border">
+            <h1>1:1고객센터</h1>
+            <div class="customer_box_inner">
+                <div class="row">
+                    <div id="title">제목</div> <input id="title_bar"></input>
+                </div>
+                <div class="row">
+                    <div id="body">내용</div>
+                    <textarea id="body_bar"></textarea>
+                </div>
+                <div class="textCount">0자</div>
+                <div class="textTotal">/1000자</div>
+                <div class="row">
+                    <div id="picture">첨부사진</div>
+                    <div id="picture_bar"></div><button id="file">파일선택</button><button id="del">삭제</button>
+                </div>
+                <div class="Btn">
+
+
+                    <button>취소</button> <button>확인</button>
+                </div>
             </div>
         </div>
     </div>
