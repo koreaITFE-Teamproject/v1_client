@@ -62,6 +62,14 @@ button:hover {
     padding: 15px 50px;
 }
 
+#user-join-title{
+    width: 20%;
+    border: 2px solid #764127;
+    border-radius: 5px;
+    padding: 8px 0;
+    margin: 30px 0 20px 40px;
+}
+
 .user-join-wrap>div>div {
     display: grid;
     grid-template-columns: 2fr 8fr;

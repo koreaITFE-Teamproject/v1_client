@@ -20,7 +20,7 @@ h1 {
 }
 
 .login-form {
-    width: 600px;
+    width: 500px;
     border: 1.5px solid #764127;
     border-radius: 5px;
     padding: 20px;
@@ -87,6 +87,17 @@ form {
     font-size: 1.2rem;
     color: black;
 }
+
+.login-btn-container{
+    text-align: center;
+}
+
+.login-btn-container img{
+    width: 100%;
+    height: 65px;
+    margin: 5px auto;
+}
+/* 439 70 */
 
 .qr-btn {
     font-size: 1.2rem;

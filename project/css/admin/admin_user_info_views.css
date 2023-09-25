@@ -20,13 +20,12 @@ main {
     width: 80%;
     margin: 0 auto;
     margin-top: 30px;
+    margin-bottom: 20px;
     padding: 10px 15px;
-    border: 1.5px solid #764127;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
     border-bottom: 0;
     font-size: 1.8rem;
     font-weight: bold;
+    background-color: #F9ECDB;
 }
 
 .users-info-wrap {
@@ -37,8 +36,7 @@ main {
 /* 유저 검색 */
 .search-users {
     border: 1.5px solid #764127;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-radius: 5px;
 }
 
 .search-users>div {
@@ -63,7 +61,7 @@ main {
 .search-users>div>select {
     width: 15%;
     padding: 0 10px;
-    border: 1.5px solid;
+    border: 1.5px solid #764127;
     border-radius: 5px;
 }
 

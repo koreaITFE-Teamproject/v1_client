@@ -116,12 +116,11 @@ i {
 }
 
 .options>div {
-    width: 40%;
-    margin: 0 auto;
     padding: 15px 20px;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
+    margin: 10px;
+    display: flex;
     align-items: center;
+    justify-content: space-evenly;
     border: 1.5px solid;
     border-radius: 3px;
     cursor: pointer;
@@ -132,19 +131,17 @@ i {
 }
 
 .options>div>p {
-    width: 100%;
-    margin: 0;
-    padding: 0 0 0 5px;
+    margin: 0 10px;
 }
 
 
-/* 반응형 캠사이즈 조절 */
+/* 반응형 캠사이즈 조절
 @media screen and (max-width: 1260px) {
     .user-video-screen {
         width: calc(100% / 2.2);
     }
 
-    .options{
+    .options {
         width: 70%;
     }
 }
@@ -155,7 +152,47 @@ i {
         height: 300px;
     }
 
-    .options{
+    .options {
         width: 90%;
     }
+} */
+
+
+/* 토글 스위치 */
+.toggle-swt {
+    /* 스위치의 길이 */
+    width: 80px;
+    height: 40px;
+    display: block;
+    position: relative;
+    border: 1.4px solid #919191;
+    border-radius: 30px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+/* 토글 버튼 체크 전 */
+.toggle-btn {
+    /* 버튼의 길이 */
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: #F9ECDB;
+    transition: all .3s;
+}
+
+/* 토글 스위치 체크 후 */
+.toggle-swt-checked {
+    background-color: #F9ECDB;
+}
+
+/* 토글 버튼 체크 후 */
+.toggle-btn-checked {
+    left: calc(100% - 34px);
+    background-color: #fff;
 }

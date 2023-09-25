@@ -26,7 +26,7 @@ select {
     font-size: 1.1rem;
     font-weight: bold;
     letter-spacing: 1.5px;
-    border: 1.4px solid;
+    border: 1.4px solid #764127;
     border-radius: 5px;
     padding: 0 15px;
 }
@@ -36,11 +36,12 @@ button {
     width: 100%;
     height: 100%;
     font-size: 1.1rem;
-    border: 1.4px solid;
+    border: 1.4px solid #764127;
     border-radius: 5px;
     background-color: #F9ECDB;
     margin-left: 10px;
     cursor: pointer;
+    font-family: 'HakgyoansimWoojuR';
 }
 
 button:hover{
@@ -66,7 +67,7 @@ button:hover{
 
 #user-modify-title {
     width: 20%;
-    border: 2px solid;
+    border: 2px solid #764127;
     border-radius: 5px;
     padding: 8px 0;
     text-align: center;
@@ -113,7 +114,7 @@ button:hover{
     height: 100%;
     font-size: 1.1rem;
     background-color: #F9ECDB;
-    border: 1.4px solid;
+    border: 1.4px solid #764127;
     border-radius: 5px;
     margin-right: 10px;
 }
