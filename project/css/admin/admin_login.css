@@ -1,0 +1,94 @@
+@font-face {
+    font-family: 'HakgyoansimWoojuR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+}
+
+
+div {
+    border-radius: 10px;
+    font-family: 'HakgyoansimWoojuR';
+}
+
+
+input {
+    padding: 10px;
+    display: inline-block;
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+
+.main_div {
+    padding: 20px;
+    margin-top: 30px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1.5px solid #764127;
+    width: 600px;
+}
+
+
+.contents {
+    padding: 5px;
+    width: 600px;
+}
+
+
+.division_name {
+    display: inline-block;
+    border: 1.5px solid #764127;
+    padding: 10px;
+    background-color: #F9ECDB;
+    text-align: center;
+    width: 100px;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+#ck_num {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+#ck_num_input {
+    width: 300px;
+    margin-right: 10px;
+}
+
+
+#login_Btn {
+    width: 400px;
+    padding: 15px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 11px;
+}
+
+
+#ck_button_outdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.input_bar {
+    width: 70%;
+}

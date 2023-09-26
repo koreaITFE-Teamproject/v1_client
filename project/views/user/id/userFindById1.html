@@ -3,229 +3,54 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>아이디 찾기</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <style>
-         @font-face {
-            font-family: 'HakgyoansimWoojuR';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        * {
-            margin: 0;
-            font-family: 'HakgyoansimWoojuR';
-        }
-
-        .container {
-            background-color: #F6E3CE;
-            text-align: center;
-            height: 100vh;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .find_login_box {
-            width: 1100px;
-            height: 850px;
-            background-color: white;
-            border-radius: 80px;
-        }
-
-        .find_login_box_inner {
-            margin-top: 10%;
-            height: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: flex-start;
-        }
-
-        .row {
-            margin-left: 10%;
-        }
-
-        .row>button {
-            width: 100px;
-            height: 50px;
-            background-color: #F6E3CE;
-            border-radius: 10px;
-            font-size: 120%;
-            border: 2px solid black;
-        }
-
-        .row>.receive {
-            font-size: 83%;
-            height: 54px;
-        }
-
-        .row>.number_receive {
-            font-size: 83%;
-            height: 54px;
-        }
-
-        .row>input {
-            width: 638px;
-            height: 46px;
-            margin-bottom: 10px;
-            border-radius: 10px;
-            font-size: 120%;
-            border: 2px solid black;
-        }
-
-        .row>select {
-            width: 210px;
-            height: 55px;
-            margin-bottom: 10px;
-            border-radius: 10px;
-            font-size: 120%;
-            border: 2px solid black;
-            text-align: center;
-        }
-
-        .row>.email_bar {
-            width: 200px;
-        }
-
-        .row>.number {
-            width: 97px;
-        }
-
-        .center {
-            width: 100%;
-            text-align: center;
-        }
-
-        .check {
-            margin-right: 25%;
-            cursor: pointer;
-        }
-
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 50px;
-            margin-top: 100px;
-        }
-
-        #custom-input {
-            width: 200px;
-
-        }
-
-        .receive {
-            cursor: pointer;
-        }
-
-        .number_receive {
-            cursor: pointer;
-        }
-    </style>
-    <script>
-        $(document).ready(function () {
-
-            $('#select-email-option').change(function () {
-                if($('#select-email-option').val() == 'userInput'){
-                    $('#custom-input').show();
-                    $('#custom-input').attr('disabled', false);
-                }
-                else{
-                    $('#custom-input').hide();
-                }
-            });
-
-            $(".check").click(function () {
-                var nameInput = $(".nameBar");
-                var nameValue = nameInput.val();
-
-                if (nameValue.length < 2) {
-                    alert('2자리 이상 입력해주세요.');
-                }
-
-                var emailInput = $(".email_bar");
-                var emailValue = emailInput.val();
-
-                var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-
-                if (!emailRegex.test(emailValue)) {
-                    alert('올바른 이메일 형식이 아닙니다.');
-                    return;
-                }
-            });
-// 
-            $(".nameBar").keyup(function () {
-                var nameInput = $(".nameBar");
-                var nameValue = nameInput.val();
-
-                if (nameValue.length > 10) {
-                    nameInput.val(nameValue.slice(0, 10));
-                    alert('이름을 10자리 이하로 입력해주세요.');
-                }
-
-                if (nameValue.search(/\s/) != -1) {
-                    alert('공백이 포함될 수 없습니다.');
-                    return false;
-                }
-            });
-
-            $(".number_receive_bar").keyup(function () {
-                var receiveInput = $(".number_receive_bar");
-                var receiveValue = receiveInput.val();
-
-                if (receiveValue.length > 6) {
-                    receiveInput.val(receiveValue.slice(0, 6));
-                    alert('6자리 이하로 입력해주세요.');
-                }
-            });
-
-
-        });
-    </script>
+    <link rel="stylesheet" href="/project/css/user/userFindById1.css">
+    <script src="/project/js/passwd/passwd.js"></script>
+    <script src="/project/js/common/common.js"></script>
 </head>
-
 <body>
-    <div class="container">
-        <div class="find_login_box">
-            <h1>아이디 찾기</h1>
-            <div class="find_login_box_inner">
-                <div class="row">
-                    <button class="name">이름</button> <input type="text" rows="10" class="nameBar">
-                </div>
-                <div class="row">
-                    <button class="email">이메일</button>
-                    <input type="text" class="email_bar" placeholder="이메일"><span>@</span>
-                    <input type="text" id="custom-input">
-                    <select name=""id="select-email-option">
-                        <option value="none">====선택====</option>
-                        <option value="userInput">직접입력</option>
-                        <option value="google.com">google.com</option>
-                        <option value="naver.com">naver.com</option>
-                        <option value="naver.com">daum.com</option>
-                    </select>
-                    <button class="receive">인증번호 받기</button>
-                </div>
-                <div class="row">
-                    <button class="number">인증번호</button>
-                    <input type="number" class="number_receive_bar" placeholder="인증번호 6자리 숫자 입력">
-                    <button class="number_receive">인증번호 확인</button>
-                </div>
-                <div class="row center">
-                    <button class="check">확인</button>
-                </div>
+    <header id="header"></header>
+    <main>
+        <div class="main_div">
+            <div class="contents">
+                <h1>아이디 찾기</h1>
+            </div>
+            <div class="contents">
+                <div class="division_name" id="name_div">이름</div>
+                <input type="text" class="name_input" id="name_input">
+            </div>
+            <div class="contents">
+                <tr class="user-email">
+                    <td>
+                        <div class="division_name"><span class="required"></span>이메일</div>
+                    </td>
+                    <td>
+                        <input type="text" class="user-email-input">
+                        <span>@</span>
+                        <input type="text" class="custom-input">
+                        <select name="" id="select-email-option">
+                            <option value="none">===선택===</option>
+                            <option value="userInput">직접입력</option>
+                            <option value="google.com">google.com</option>
+                            <option value="naver.com">naver.com</option>
+                            <option value="naver.com">nate.com</option>
+                            <option value="">카카오</option>
+                        </select>
+                    </td>
+                    <td class="validation-message"></td>
+                </tr>
+            </div>
+            <div class="contents" id="ck_num">
+                <input type="text" id="ck_num_input" placeholder="인증번호 6자리 입력해 주세요">
+                <div class="division_name" id="ck_num_box">인증번호 확인</div>
+            </div>
+            <div class="contents" id="ck_button_outdiv">
+                <div class="division_name" id="ck_button">확인</div>
             </div>
         </div>
-    </div>
+    </main>
 </body>
 
 </html>
