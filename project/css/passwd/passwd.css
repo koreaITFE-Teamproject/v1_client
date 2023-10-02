@@ -83,7 +83,12 @@ h1 {
     padding: 15px;
     text-align: center;
     display: inline-block;
+    background-color: #F9ECDB;
+}
 
+/* 확인 버튼 div hover */
+#ck_button:hover {
+    background-color: #F6E3CE;
 }
 
 /* 확인 버튼 위치 가운데로 */
