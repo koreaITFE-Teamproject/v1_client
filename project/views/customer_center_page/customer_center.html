@@ -38,8 +38,10 @@
             /* justify-content: space-around;
             align-items: flex-start; */
             border: 1px solid black;
-            width: 110%;
+            width: 105%;
             margin-top: 4%;
+            position: relative;
+            left: -30px;
         }
 
         .row {
@@ -56,10 +58,8 @@
 
         .row>input {
             border: 1px solid black;
-            width: 1450px;
+            width: 1300px;
             height: 80px;
-            display: flex;
-            flex-direction: row;
             text-align: center;
             font-size: 35px;
             margin-left: 1%;
@@ -91,7 +91,7 @@
         .row>#body_bar {
             height: 280px;
             border: 1px solid black;
-            width: 1450px;
+            width: 1300px;
             display: flex;
             flex-direction: row;
             margin-left: 1%;
@@ -109,15 +109,13 @@
 
         }
 
-
-
         button {
             border: 1px solid black;
             width: 150px;
             height: 80px;
             display: flex;
             margin-left: 2%;
-            margin-top: 5%;
+            margin-top: 2%;
             background-color: #F6E3CE;
             text-align: center;
             justify-content: center;
@@ -131,28 +129,31 @@
             border: 1px solid black;
             width: 120px;
             height: 80px;
-            display: flex;
             margin-left: 2%;
             background-color: #F6E3CE;
             text-align: center;
             justify-content: center;
-
+            position: relative;
+            top: 23px px;
         }
 
         .row>#del {
             border: 1px solid black;
             width: 120px;
             height: 80px;
-            display: flex;
             margin-left: 2%;
             background-color: #F6E3CE;
             text-align: center;
             justify-content: center;
+            position: relative;
+            top: 23px px;
         }
 
         .row>#picture_bar {
-            width: 1150px;
+            width: 1000px;
             background-color: white;
+            position: relative;
+            top: -22px;
         }
 
         .textCount,
@@ -165,6 +166,16 @@
 
         .textCount {
             margin-left: 90%;
+        }
+
+        .row>#picture {
+            position: relative;
+            top: -22px;
+        }
+
+        #h1{
+            position: relative;
+            left: 1px;
         }
     </style>
     <script>
