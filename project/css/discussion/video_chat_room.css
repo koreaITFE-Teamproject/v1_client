@@ -40,7 +40,7 @@ i {
 }
 
 .room-head>h2 {
-    margin: 10px;
+    margin: 10px 2%;
 }
 
 /* 인원, 캠 스크린 부분 */
@@ -132,6 +132,7 @@ i {
 
 .options>div>p {
     margin: 0 10px;
+    background-color: #fff;
 }
 
 

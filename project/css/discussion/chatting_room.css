@@ -17,6 +17,7 @@ ul {
 
 main {
     font-family: 'HakgyoansimWoojuR';
+    height: calc(100vh - 160px);
 }
 
 i {
@@ -26,9 +27,12 @@ i {
 .chating-room-wrap {
     width: 70%;
     min-width: 600px;
+    height: 100%;
     margin: 30px auto;
     border: 1.5px solid #764127;
     border-radius: 5px;
+    display: grid;
+    grid-template-rows: 1fr 9fr;
 }
 
 /* 제목 부분 */
@@ -40,10 +44,11 @@ i {
 }
 
 .room-head>h2 {
-    margin: 10px;
+    margin: 10px 2%;
+    font-size: 2rem;
 }
 
-/* 인원, 캠 스크린 부분 */
+/* 인원 */
 .room-body {
     display: grid;
     grid-template-columns: 1.5fr 8.5fr;
@@ -74,32 +79,48 @@ i {
     word-wrap: break-word;
 }
 
-.user-chat {
-    margin-bottom: 10%;
+
+/* 수정 */
+.user-chat-container {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 7.5fr 2.5fr;
+}
+
+/* 소민님 어드민 채팅 디자인 참고 */
+.chat_screen {
+    font-family: 'HakgyoansimWoojuR';
+    overflow-y: auto;
     border-bottom: 1.5px solid #764127;
 }
 
-.enter-chat {
-    width: 50%;
-    display: flex;
+.chat-bubble {
+    background-color: #F9ECDB;
+    color: black;
+}
+
+.input_div {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 8.5fr 1.5fr;
+}
+
+#chat_input {
+    font-family: 'HakgyoansimWoojuR';
+    padding: 5px;
+    font-size: 1.2rem;
+    border: 0;
+    border-right: 1.5px solid #764127;
+    resize: none;
+}
+
+.enter_btn {
+    font-family: 'HakgyoansimWoojuR';
+    background-color: #F6E3CE;
+    text-align: center;
+    cursor: pointer;
+    display: grid;
     align-items: center;
-}
-
-.enter { 
-    flex-direction: row-reverse;
-}
-
-.nick-name {
-    width:10%;
-    height:10%;
-    border:1px solid #764127;
-    margin:5px 5px 5px 5px;
-    position: absolute;
-    left: 80%;
-    top: 80%;
-    display: flex-end;
-}
-
-.contain {
-    
+    font-size: 1.4rem;
+    border-bottom-right-radius: 5px;
 }

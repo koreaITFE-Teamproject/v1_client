@@ -1,62 +1,86 @@
-.new{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 200px;
-    width: 50vh;
-    padding: 10px;
-    /* border: 1px solid gray;
-    border-radius: 5px; */
+/* 화면 정의서대로 수정 */
+
+@font-face {
+    font-family: 'HakgyoansimWoojuR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.name {
-    border: 1px solid black;
-    float: left;
-    width:100px;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    background-color: #F6E3CE;
-    border-radius: 10%;
-    margin-right: 5px;
+}
+
+main {
+    font-family: 'HakgyoansimWoojuR';
+}
+
+.room-setting-container {
+    width: 50%;
+    margin: 30px auto;
+    padding: 40px 0;
+    border: 1.5px solid #764127;
+    border-radius: 5px;
+    display: grid;
+    grid-template-rows: 1fr 2fr 3fr;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
+.box-head {
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    width: 50vw;
+    text-align: center;
+}
+
+.room-name,
 .text-field {
-    border: 1px solid black;
-    float: left;
-    margin-left: 5%;
-    width:70%;
-    height:30px;
-    /* box-sizing: border-box; */
-    margin-right: 5px;
+    height: 8vh;
+    display: grid;
+    align-items: center;
+    border: 1.5px solid #764127;
+    border-radius: 5px;
+    font-size: 1.2rem;
 }
 
-.select {
-    margin-top: 2%;
-    width: 100%;
-    height: 100px;
-    /* position: absolute;
-    top: 110%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
+.room-name {
+    background-color: #F9ECDB;
+    margin: 0 20px;
+
 }
 
-.box {
-    background-color: #F6E3CE;
-    border-radius: 10%;
-    width: 100px;
-    height: 25px;
-    float: right;
-    border: 1px solid black;
-    margin-right: 1%;
+.text-field {
+    padding: 5px;
+    margin-right: 20px;
+}
+
+.box-body {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.select-box {
+    height: 8vh;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+button {
+    width: 30%;
+    height: 8vh;
     cursor: pointer;
-}
-
-.make {
-    display: flex;
-    justify-content: center;
-}
-
-.box-head{
-    display: flex;
+    margin: 0 10px;
+    background-color: #F9ECDB;
+    border: 1.5px solid #764127;
+    border-radius: 5px;
 }

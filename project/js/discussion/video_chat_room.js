@@ -12,9 +12,18 @@ $(function () {
         toggleSWT($(this));
     });
 
+    $(".room-video").click(function(){
+        toggleSWT($(this).children($("notification-toggle-switch-1")));
+    });
+
     $("#notification-toggle-switch-2").click(function () {
         toggleSWT($(this));
     });
+
+    $(".room-microphone").click(function(){
+        toggleSWT($(this).children($("notification-toggle-switch-2")));
+    });
+    
 
     function toggleSWT($this) {
         $this.toggleClass("toggle-swt-checked");
