@@ -33,9 +33,6 @@ i {
 
 /* 제목 부분 */
 .room-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     border-bottom: 1.5px solid #764127;
 }
 
