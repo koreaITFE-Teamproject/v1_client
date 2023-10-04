@@ -44,7 +44,7 @@ main {
     display: flex;
     align-items: center;
     height: 150px;
-    margin-bottom: 10pox;
+    margin-bottom: 10px;
     justify-content: center;
 
 }
@@ -52,7 +52,7 @@ main {
 /* 분야별 칼럼 분류를 제외한 3가지 item div */
 .bar_item {
     height: 100%;
-    border: 0.5px solid #F2F2F2;
+    border: 0.5px solid #F9ECDB;
     width: 50%;
     text-align: center;
     vertical-align: middle;
@@ -60,7 +60,7 @@ main {
 }
 
 .bar_item:hover {
-    border: 0.5px solid #F6E3CE;
+    border: 0.5px solid #F9ECDB;
 }
 
 
@@ -111,20 +111,6 @@ img {
 
 
 /* 캐러셀 테스트 */
-/* 부트스트랩 캐러셀 */
-.carousel-item {
-    /* background-color: black; */
-    height: 300px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-}
-
-.carousel-control-prev-icon .carousel-control-next-icon {
-    background-color: black;
-}
-
 /* 스스롤 만들었다는 캐러셀 테스트*/
 .self_carousel {
     box-sizing: border-box;
@@ -144,11 +130,20 @@ img {
     width: 100%;
 }
 
-.carousel-wrapper>.carousel>img {
-    width: 500px;
-    height: 300px;
-}
 
 .carousel-wrapper>.carousel>.coumn_bar {
     width: 100%;
+}
+
+.carousel> .coumn_bar>.bar_item{
+    border: 2px solid black;
+    width: 100%;
+}
+
+.self_carousel{
+    width: 100%;
+}
+
+hr{
+    margin: 5px;
 }
