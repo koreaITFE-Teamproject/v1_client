@@ -1,14 +1,33 @@
+@font-face {
+  font-family: 'HakgyoansimWoojuR';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+}
+
+main {
+  margin-top: 30px;
+}
+
 .layouts{
   display: inline-flex;
   margin: 5px;
+  font-family: 'HakgyoansimWoojuR';
 }
 
+
+
 button {
-  background-color: #F6E3CE;
+  background-color: #F9ECDB;
   height: 40px;
   width: 80px;
-  border-radius: 2px;
+  border-radius: 1.5px;
   margin-left: 5px;
+  color: #764127;
 }
 .name {
   height: 40px;

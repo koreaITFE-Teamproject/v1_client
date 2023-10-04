@@ -11,44 +11,43 @@
 
 
 <body>
-  <header>
-    <div id="header"></div>
-  </header>
+  <header id="header"></header>
+
   <main>
     <div class="container">
       <h2>1:1 고객상담 응답</h2>
-
-      <!-- 회원 이메일 섹션 -->
-      <div class="section">
+      <div class="section_container">
+        <!-- 회원 이메일 섹션 -->
+        <div class="section">
           <label for="email">회원 이메일:</label>
           <input type="email" id="email" name="email" required>
-      </div>
+        </div>
 
-      <!-- 고객의 문의내용 섹션 -->
-      <div class="section">
+        <!-- 고객의 문의내용 섹션 -->
+        <div class="section">
           <label for="inquiry">고객의 문의내용:</label>
           <textarea id="inquiry" name="inquiry" rows=5 required></textarea>
-      </div>
+        </div>
 
-      <!-- 답변섹션 -->
-      <div class="section">
-        <label for="inquiry">답변:</label>
-        <input type="text" class="respond">
-      </div>
+        <!-- 답변섹션 -->
+        <div class="section">
+          <label for="inquiry">답변:</label>
+          <input type="text" class="respond">
+        </div>
 
-      <!-- 첨부파일 섹션 -->
-      <div class= "section">
+        <!-- 첨부파일 섹션 -->
+        <div class= "section">
           <label for= "attachment">첨부파일:</label> 
           <input type= "file" id= "attachment" name= "attachment"> 
-     </div>
-
-     <!-- 전송하기, 취소 버튼 -->
-     <div class= "buttons">
-         <button type= "submit">전송하기</button> 
-         <button type = "reset">취소</button> 
-     </div> 
-
- </div>
+        </div>
+      </div>
+       <!-- 전송하기, 취소 버튼 -->
+      <div class= "buttons">
+        <button type= "submit">전송하기</button> 
+        <button type = "reset">취소</button> 
+      </div> 
+      
+    </div>
   </main>
 </body>
 </html>

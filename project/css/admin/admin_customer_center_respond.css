@@ -1,11 +1,39 @@
+@font-face {
+  font-family: 'HakgyoansimWoojuR';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* * {
+  margin: 0;
+}
+
+main {
+  margin-top: 30px;
+} */
+
+/* 왜 헤더가 난리인걸까....? */
+
+
+
 .container {
-  max-width: 500px;
+  width: 70%;
   margin: 0 auto;
   padding: 20px;
+  font-family: 'HakgyoansimWoojuR';
 }
 
 h2 {
+  background-color: #F9ECDB;
   text-align: center;
+  padding: 10px;
+  /* margin: 10px auto; */
+  margin-bottom: 20px;
+}
+
+.section_container {
+  border: 1px solid black;
 }
 
 .section {
@@ -14,7 +42,8 @@ h2 {
 
 label {
   display: block;
-}
+}d
+
 .respond,
 input[type='email'],
 textarea {
