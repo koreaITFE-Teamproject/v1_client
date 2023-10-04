@@ -120,6 +120,11 @@ span {
     border-radius: 5px;
 }
 
+.input_btn:hover{
+    background-color: #F6E3CE;
+    cursor: pointer;
+}
+
 textarea{
     border: none;
 }

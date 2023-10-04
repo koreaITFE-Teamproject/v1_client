@@ -86,8 +86,7 @@ h1 {
     background-color: #F9ECDB;
 }
 
-/* 확인 버튼 div hover */
-#ck_button:hover {
+#ck_button:hover{
     background-color: #F6E3CE;
 }
 

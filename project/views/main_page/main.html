@@ -16,6 +16,17 @@
     <header id="header"></header>
     <main>
         <div class="recomm_outline">
+            <h3 class="tit_brunch">책에 대해 이야기하고 사람을 만나는 공간. Booker<span class="ico_brunch ico_logo"></span>
+            </h3>
+            <p class="desc_brunch">
+                <span class="part">Booker에서 책에 대한 서로의 생각을 공유해보세요.<br></span>
+                <span class="part">그리고 나의 생각도 이야기해보세요.<br></span>
+                <span class="part">
+                        <span class="txt_brunch">혼자만 간직하던 나만의 생각을.</span>
+                    </span>
+            </p>
+        </div>
+        <div class="recomm_outline">
             <div class="recomm" id="recomm_coumn">추천 칼럼</div>
             <div class="coumn_bar">
                 <div class="bar_item">
@@ -114,6 +125,7 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
                 <button class="prev" type="button">prev</button>
                 <button class="next" type="button">next</button>
@@ -121,23 +133,34 @@
             <script>
                 const prevButton = document.querySelector('.prev');
                 const nextButton = document.querySelector('.next');
-                const carousel = document.querySelector('.carousel');
-
-                let index = 0;
-
+                const columnBar = document.querySelector('.coumn_bar');
+            
+                let currentIndex = 0;
+                const maxIndex = columnBar.children.length - 1;
+            
                 prevButton.addEventListener('click', () => {
-                    if (index === 0) return;
-                    index -= 1;
-                    // prevButton
-                    carousel.style.transform = `translate3d(-${500 * index}px, 0, 0)`;
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                        updateColumnBar();
+                    }
                 });
-
+            
                 nextButton.addEventListener('click', () => {
-                    if (index === 2) return;
-                    index += 1;
-
-                    carousel.style.transform = `translate3d(-${500 * index}px, 0, 0)`;
+                    if (currentIndex < maxIndex) {
+                        currentIndex++;
+                        updateColumnBar();
+                    }
                 });
+            
+                function updateColumnBar() {
+                    // 모든 아이템 숨기기
+                    for (let i = 0; i < columnBar.children.length; i++) {
+                        columnBar.children[i].style.display = 'none';
+                    }
+            
+                    // 현재 인덱스의 아이템 보이기
+                    columnBar.children[currentIndex].style.display = 'block';
+                }
             </script>
             
         </div>

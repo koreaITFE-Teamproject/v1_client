@@ -16,6 +16,7 @@ main {
 .recomm_outline {
     width: 100%;
     height: 60%;
+    padding: 0 1%;
 
 }
 
@@ -51,6 +52,9 @@ main {
 
 /* 분야별 칼럼 분류를 제외한 3가지 item div */
 .bar_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 가운데 정렬 */
     height: 100%;
     border: 0.5px solid #F9ECDB;
     width: 50%;
@@ -60,13 +64,14 @@ main {
 }
 
 .bar_item:hover {
-    border: 0.5px solid #F9ECDB;
+    cursor: pointer;
+    border: 0.5px solid #D3B396;
 }
 
 
 /* 분야별 칼럼 분류 item div */
 .class_item {
-    border: 0.5px solid #F2F2F2;
+    border: 0.5px solid #F9ECDB;
     width: 150px;
     height: 150px;
     text-align: center;
@@ -75,7 +80,8 @@ main {
 }
 
 .class_item:hover {
-    border: 0.5px solid #F6E3CE;
+    cursor: pointer;
+    border: 0.5px solid #D3B396;
 }
 
 .class_frame {
@@ -83,14 +89,43 @@ main {
     width: 100%;
 }
 
-/* 마우스 호버 시 포인터 모양으로 변경 */
-.bar_item:hover,
+/* 마우스 호버 시 포인터 모양으로 변경 + border랑 글자 색 변환 */
 .class_item:hover {
+    border: 0.5px solid #D3B396;
+    color: #D3B396;
     cursor: pointer;
 }
 
+h3{
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    backface-visibility: hidden;
+    padding: 0;
+    text-rendering: inherit;
+    margin: 150px auto 0;
+    color: #764127;
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 0;
+    text-align: left;
+    font-family: 'HakgyoansimWoojuR';
+    letter-spacing: -.05em;
 
+}
+.desc_brunch{
+    -webkit-font-smoothing: antialiased;
+    backface-visibility: hidden;
+    padding: 0;
+    text-rendering: inherit;
+    width: 960px;
+    font-family: "Nanum Myeongjo",sans-serif;
+    color: #cacaca;
+    font-size: 32px;
+    line-height: 46px;
+    margin-top: -3px;
+    padding-bottom: 16px;
 
+}
 
 
 /* 칼럼 디자인 웹 퍼블리싱 */
@@ -102,7 +137,7 @@ main {
 
 img {
     height: 100%;
-    border: 0.5px solid #F2F2F2;
+    border: 0.5px solid #F9ECDB;
     width: 50%;
     text-align: center;
     vertical-align: middle;
@@ -131,14 +166,10 @@ img {
 }
 
 
-.carousel-wrapper>.carousel>.coumn_bar {
+.coumn_bar {
     width: 100%;
 }
 
-.carousel> .coumn_bar>.bar_item{
-    border: 2px solid black;
-    width: 100%;
-}
 
 .self_carousel{
     width: 100%;
@@ -146,4 +177,8 @@ img {
 
 hr{
     margin: 5px;
+}
+
+.cut_div{
+    display: flex;
 }

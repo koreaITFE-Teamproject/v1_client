@@ -5,12 +5,13 @@
     font-style: normal;
 }
 
-main>h2 {
+main>h1 {
     background-color: #F9ECDB;
     padding: 10px;
     margin: 20px auto;
     width: 70%;
     font-family: 'HakgyoansimWoojuR';
+    font-size: 2.5rem;
 }
 
 main>.out_line {
@@ -40,13 +41,17 @@ main>.out_line {
     font-family: 'HakgyoansimWoojuR';
     width: 100px;
     border: 1.5px/ solid #764127;
-    background-color: #F6E3CE;
+    background-color: #F9ECDB;
     /* 입력 글자 중앙 위치 */
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 0 0 10px 0;
+}
+
+.enter_btn:hover{
+    background-color: #F6E3CE;
 }
 
 .chat_screen {

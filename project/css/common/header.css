@@ -47,15 +47,10 @@ header {
 }
 
 .site_name a {
-    color: black;
+    color: #764127;
     /* 링크의 색상을 검정으로 설정 */
     text-decoration: none;
     /* 밑줄 제거 */
-}
-
-.site_name a:hover {
-    color: black;
-    /* 호버 시에도 색상을 검정으로 유지 */
 }
 
 .bi {
@@ -92,6 +87,7 @@ header {
     position: relative;
     text-align: center;
     cursor: pointer;
+    color: #764127;
 }
 
 /* 드롭다운 메뉴의 스타일 */
@@ -99,8 +95,8 @@ header {
     display: none;
     position: absolute;
     left: 0;
-    background-color: #F6E3CE;
-    border: 1px solid #F6E3CE;
+    background-color: #F9ECDB;
+    border: 1px solid #F9ECDB;
     width: 200px;
     margin-top: 10px
 }
@@ -113,11 +109,11 @@ header {
     display: block;
     padding: 10px;
     text-decoration: none;
-    color: #333;
+    color: #764127;
 }
 
 .dropdown-content a:hover {
-    background-color: #fff;
+    background-color: #F6E3CE;
 }
 
 #topStartBrunchButton {
