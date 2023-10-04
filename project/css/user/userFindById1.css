@@ -99,3 +99,11 @@ h1 {
     width: 82px;
     margin-right: 5%;
 }   
+
+#ck_num_box:hover{
+    background-color: #F6E3CE;
+}
+
+#ck_button:hover{
+    background-color: #F6E3CE;
+}

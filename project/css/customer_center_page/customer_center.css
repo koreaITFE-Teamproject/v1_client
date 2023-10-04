@@ -1,0 +1,203 @@
+@font-face {
+    font-family: 'HakgyoansimWoojuR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+   
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+
+.customer_box_inner {
+    height: 80%;
+    /* display: flex;
+    flex-direction: row; */
+    /* justify-content: space-around;
+    align-items: flex-start; */
+    border: 1px solid black;
+    width: 105%;
+    margin-top: 1%;
+    position: relative;
+    left: -30px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 2%;
+    margin-top: -3%; */
+    text-align: center;
+    /* margin-bottom: 2%; */
+    color: #764127;
+    font-family: 'HakgyoansimWoojuR';
+}
+
+
+.row>input {
+    border: 1px solid black;
+    width: 1300px;
+    height: 60px;
+    text-align: center;
+    font-size: 35px;
+    margin-left: 1%;
+    margin-top: 3%;
+
+}
+
+.row>div {
+    border: 1px solid black;
+    width: 150px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 1%;
+    margin-top: 3%;
+    background-color: #F9ECDB;
+    text-align: center;
+    font-size: 26px;
+    color: #764127;
+    border-radius: 10px;
+    border: 1.5px solid #764127;
+}
+
+.row>#body {
+    height: 250px;
+    color: #764127;
+}
+
+.row>#body_bar {
+    height: 250px;
+    border: 1px solid black;
+    width: 1300px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 1%;
+    margin-top: 3%;
+    text-align: center;
+    font-size: 35px;
+    text-align: left;
+}
+
+.Btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #764127;
+
+}
+
+button {
+    border: 1px solid black;
+    width: 150px;
+    height: 60px;
+    display: flex;
+    margin-left: 2%;
+    margin-top: 2%;
+    background-color: #F9ECDB;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    color: #764127;
+    margin-bottom: 2%;
+    border-radius: 10px;
+    font-family: 'HakgyoansimWoojuR';
+    border: 1.5px solid #764127;
+}
+
+button:hover{
+    background-color: #F6E3CE;
+}
+
+.row>#file {
+    border: 1px solid black;
+    width: 120px;
+    height: 60px;
+    margin-left: 2%;
+    background-color: #F9ECDB;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    top: 23px px;
+    border-radius: 10px;
+    font-family: 'HakgyoansimWoojuR';
+    border: 1.5px solid #764127;
+}
+
+.row>#file:hover{
+    background-color: #F6E3CE;
+}
+
+.row>#del {
+    border: 1px solid black;
+    width: 120px;
+    height: 60px;
+    margin-left: 2%;
+    background-color: #F9ECDB;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    top: 23px px;
+    border-radius: 10px;
+    font-family: 'HakgyoansimWoojuR';
+    border: 1.5px solid #764127;
+}
+
+.row>#del:hover{
+    background-color: #F6E3CE;
+}
+
+.row>#picture_bar {
+    width: 1000px;
+    background-color: white;
+    position: relative;
+    top: -22px;
+    border-radius: 0px;
+}
+
+.textCount,
+.textTotal {
+    /* display: inline-block; */
+    /* margin-left: 10px;
+    text-align: right; */
+    font-size: 24px;
+}
+
+.textCount {
+    margin-left: 90%;
+    position: relative;
+    left: -54px;
+}
+
+.row>#picture {
+    position: relative;
+    top: -22px;
+}
+
+#h1{
+    position: relative;
+    left: 9px;
+}
+
+.textTotal{
+    position: relative;
+    top: -33px;
+    left: 1391px;
+}
+
