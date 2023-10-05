@@ -38,11 +38,14 @@ i {
 /* 제목 부분 */
 .room-head {
     border-bottom: 1.5px solid #764127;
+    display: grid;
+    align-items: center;
 }
 
-.room-head>h2 {
+.room-head>h1 {
     margin: 10px 2%;
-    font-size: 2rem;
+    /* 폰트 h1 사이즈 40px */
+    font-size: 40px;
 }
 
 /* 인원 */
