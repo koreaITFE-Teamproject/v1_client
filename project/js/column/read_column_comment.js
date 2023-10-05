@@ -1,6 +1,17 @@
 $(document).ready(function () {
-    //1. 등록 버튼 클릭하면 마우스모양 변경
-    //2. 등록을 클릭하거나 엔터를 누르면 등록버튼 작동.
+    // 현재 구분 안되고 둘다 들어감. 백 들어오면 구분 되게 해야함.
+    var bodyTextarea= $('.textarea');
+    var characterCountDisplay = $('.js_num');
+    var maxCharacterCount = 300;
 
+    bodyTextarea.on('input', function () {
+        var text = bodyTextarea.val();
+        var currentCharacterCount = text.length;
 
+        if (currentCharacterCount > maxCharacterCount) {
+            bodyTextarea.val(text.slice(0, maxCharacterCount));
+            currentCharacterCount = maxCharacterCount;
+        }
+        characterCountDisplay.text(currentCharacterCount);
+    });
 })
