@@ -37,7 +37,8 @@ footer span {
 
 div{
   display: inline-block;
-  margin-right: 4%;
   font-family: 'GmarketSansMedium';
+  position: relative;
+  right: 60px;
 }
 
