@@ -12,11 +12,11 @@
   font-style: normal;
 }
 
-*{
+* {
   margin: 0;
 }
 
-span{
+span {
   font-family: 'HakgyoansimWoojuR';
 }
 
@@ -25,18 +25,17 @@ footer {
   left: 0;
   right: 0;
   text-align: center;
-  font-size: 20px; 
-  background-color: #F9ECDB; 
-  color:#764127;      
+  font-size: 20px;
+  background-color: #F9ECDB;
+  color: #764127;
 }
 
 footer span {
   margin: 0 70px;
-  line-height: 3.5; 
+  line-height: 3.5;
 }
 
-div{
+footer>div {
   display: inline-block;
   font-family: 'GmarketSansMedium';
 }
-
