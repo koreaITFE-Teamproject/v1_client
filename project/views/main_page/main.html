@@ -22,8 +22,8 @@
                 <span class="part">Booker에서 책에 대한 서로의 생각을 공유해보세요.<br></span>
                 <span class="part">그리고 나의 생각도 이야기해보세요.<br></span>
                 <span class="part">
-                        <span class="txt_brunch">혼자만 간직하던 나만의 생각을.</span>
-                    </span>
+                    <span class="txt_brunch">혼자만 간직하던 나만의 생각을.</span>
+                </span>
             </p>
         </div>
         <div class="recomm_outline">
@@ -100,71 +100,74 @@
         <hr>
 
         <!--  스스로 캐러셀 만든분 사이트 링크 : https://junjangsee.tistory.com/entry/%EC%99%84%EC%A0%84-%EC%B4%88-%EB%8B%A8%EC%88%9C%ED%95%98%EA%B2%8C-%EC%BA%90%EB%9F%AC%EC%85%80Carousel-%EA%B5%AC%ED%98%84%ED%95%B4%EB%B3%B4%EA%B8%B0 -->
-        <div class="self_carousel">
-                <div class="carousel-wrapper">
-                    <div class="carousel">
-                        <div class="coumn_bar">
-                            <div class="cut_div">
-                                <div class="bar_item">토론방 이름1</div>
-                                <div class="bar_item">토론방 이름2</div>
-                                <div class="bar_item">토론방 이름3</div>
-                                <div class="bar_item">토론방 이름4</div>
-                                <div class="bar_item">토론방 이름5</div>
-                            </div>
-                            <div class="cut_div">
-                                <div class="bar_item">토론방 이름6</div>
-                                <div class="bar_item">토론방 이름7</div>
-                                <div class="bar_item">토론방 이름8</div>
-                                <div class="bar_item">토론방 이름9</div>
-                                <div class="bar_item">토론방 이름10</div>
-                            </div>
-                            <div class="cut_div">
-                                <div class="bar_item">토론방 이름11</div>
-                                <div class="bar_item">토론방 이름12</div>
-                                <div class="bar_item">토론방 이름13</div>
-                                <div class="bar_item">토론방 이름14</div>
-                                <div class="bar_item">토론방 이름15</div>
-                            </div>
-                        </div>
-                    </div>
-                    
+        <div class="carousel-wrapper">
+            <div class="slide_bar">
+                <div class="cut_div">
+                    <div class="bar_item">토론방 이름1</div>
+                    <div class="bar_item">토론방 이름2</div>
+                    <div class="bar_item">토론방 이름3</div>
+                    <div class="bar_item">토론방 이름4</div>
+                    <div class="bar_item">토론방 이름5</div>
                 </div>
-                <button class="prev" type="button">prev</button>
-                <button class="next" type="button">next</button>
+                <div class="cut_div">
+                    <div class="bar_item">토론방 이름6</div>
+                    <div class="bar_item">토론방 이름7</div>
+                    <div class="bar_item">토론방 이름8</div>
+                    <div class="bar_item">토론방 이름9</div>
+                    <div class="bar_item">토론방 이름10</div>
+                </div>
+                <div class="cut_div">
+                    <div class="bar_item">토론방 이름11</div>
+                    <div class="bar_item">토론방 이름12</div>
+                    <div class="bar_item">토론방 이름13</div>
+                    <div class="bar_item">토론방 이름14</div>
+                    <div class="bar_item">토론방 이름15</div>
+                </div>
             </div>
-            <script>
-                const prevButton = document.querySelector('.prev');
-                const nextButton = document.querySelector('.next');
-                const columnBar = document.querySelector('.coumn_bar');
-            
-                let currentIndex = 0;
-                const maxIndex = columnBar.children.length - 1;
-            
-                prevButton.addEventListener('click', () => {
-                    if (currentIndex > 0) {
-                        currentIndex--;
-                        updateColumnBar();
-                    }
-                });
-            
-                nextButton.addEventListener('click', () => {
-                    if (currentIndex < maxIndex) {
-                        currentIndex++;
-                        updateColumnBar();
-                    }
-                });
-            
-                function updateColumnBar() {
-                    // 모든 아이템 숨기기
-                    for (let i = 0; i < columnBar.children.length; i++) {
-                        columnBar.children[i].style.display = 'none';
-                    }
-            
-                    // 현재 인덱스의 아이템 보이기
-                    columnBar.children[currentIndex].style.display = 'block';
+        </div>
+        <div class="btn-wrap">
+            <button class="prev" type="button">prev</button>
+            <button class="next" type="button">next</button>
+        </div>
+        <script>
+            const prevButton = $('.prev');
+            const nextButton = $('.next');
+            const slideBar = $('.slide_bar');
+
+            let currentIndex = 1;
+
+            bwWidth = window.innerWidth - 17;   // 브라우저 현재 길이
+            currentSlideWidth = 0;              // 움직인 슬라이드의 길이를 저장하기위한 변수 선언
+
+            $(window).on("resize", function () {                    // 브라우저의 크기가 변할때
+                bwWidth = window.innerWidth - 17;                   // 현재 브라우저의 길이값 다시 저장
+                currentSlideWidth = bwWidth * (currentIndex - 1);   // 현재의 인덱스에서 브라우저의 길이가 변할 때 길이가 깨지는거 방지용
+                slideBar.css("transform", `translate3d(-${currentSlideWidth}px, 0, 0)`);
+            });
+
+            // ===================== 이부분 콘솔창 보여주시면 감사하겠습니다!
+            console.log(bwWidth);
+            console.log(parseInt($(".carousel-wrapper").css("width")));
+
+            // 이전버튼 클릭 시
+            prevButton.click(function () {
+                if (currentIndex > 1) {
+                    currentSlideWidth = currentSlideWidth - bwWidth;
+                    slideBar.css("transform", `translate3d(-${currentSlideWidth}px, 0, 0)`);
+                    currentIndex--;
                 }
-            </script>
-            
+            });
+
+            // 다음버튼 클릭 시
+            nextButton.click(function () {
+                if (currentIndex < 3) {
+                    slideBar.css("transform", `translate3d(-${bwWidth * currentIndex}px, 0, 0)`);
+                    currentSlideWidth = bwWidth * currentIndex;
+                    currentIndex++;
+                }
+            });
+        </script>
+
         </div>
     </main>
 </body>
