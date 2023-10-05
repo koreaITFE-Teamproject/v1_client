@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메인</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="/project/css/main_page/main.css">
     <script src="/project/js/main_page/main.js"></script>
     <script src="/project/js/common/common.js"></script>
@@ -101,6 +103,8 @@
 
         <!--  스스로 캐러셀 만든분 사이트 링크 : https://junjangsee.tistory.com/entry/%EC%99%84%EC%A0%84-%EC%B4%88-%EB%8B%A8%EC%88%9C%ED%95%98%EA%B2%8C-%EC%BA%90%EB%9F%AC%EC%85%80Carousel-%EA%B5%AC%ED%98%84%ED%95%B4%EB%B3%B4%EA%B8%B0 -->
         <div class="carousel-wrapper">
+            <i class="bi bi-chevron-left"></i>
+            <i class="bi bi-chevron-right"></i>
             <div class="slide_bar">
                 <div class="cut_div">
                     <div class="bar_item">토론방 이름1</div>
@@ -124,14 +128,23 @@
                     <div class="bar_item">토론방 이름15</div>
                 </div>
             </div>
+
+            <div class="slide-indicators">
+                <label for="first_cut_div" class="indicators-label">
+                    <input type="radio" id="first_cut_div" class="indicators-radio" name="indicators" checked hidden>
+                </label>
+                <label for="second_cut_div" class="indicators-label">
+                    <input type="radio" id="second_cut_div" class="indicators-radio" name="indicators" hidden>
+                </label>
+                <label for="third_cut_div" class="indicators-label">
+                    <input type="radio" id="third_cut_div" class="indicators-radio" name="indicators" hidden>
+                </label>
+            </div>
         </div>
-        <div class="btn-wrap">
-            <button class="prev" type="button">prev</button>
-            <button class="next" type="button">next</button>
-        </div>
+
         <script>
-            const prevButton = $('.prev');
-            const nextButton = $('.next');
+            const prevButton = $('.bi-chevron-left');
+            const nextButton = $('.bi-chevron-right');
             const slideBar = $('.slide_bar');
 
             let currentIndex = 1;
@@ -139,10 +152,11 @@
             bwWidth = window.innerWidth - 17;   // 브라우저 현재 길이
             currentSlideWidth = 0;              // 움직인 슬라이드의 길이를 저장하기위한 변수 선언
 
-            $(window).on("resize", function () {                    // 브라우저의 크기가 변할때
-                bwWidth = window.innerWidth - 17;                   // 현재 브라우저의 길이값 다시 저장
-                currentSlideWidth = bwWidth * (currentIndex - 1);   // 현재의 인덱스에서 브라우저의 길이가 변할 때 길이가 깨지는거 방지용
-                slideBar.css("transform", `translate3d(-${currentSlideWidth}px, 0, 0)`);
+            showBtn();                          // 버튼 보이기, 숨기기
+
+            // 브라우저의 크기가 변할 시
+            $(window).on("resize", function () {
+                setSlideBarCss(currentIndex);
             });
 
             // 이전버튼 클릭 시
@@ -150,7 +164,9 @@
                 if (currentIndex > 1) {
                     currentSlideWidth = currentSlideWidth - bwWidth;
                     slideBar.css("transform", `translate3d(-${currentSlideWidth}px, 0, 0)`);
-                    currentIndex--;
+                    currentIndex--
+                    setIndicatorsLabelCss(currentIndex - 1);
+                    showBtn();
                 }
             });
 
@@ -159,9 +175,47 @@
                 if (currentIndex < 3) {
                     slideBar.css("transform", `translate3d(-${bwWidth * currentIndex}px, 0, 0)`);
                     currentSlideWidth = bwWidth * currentIndex;
-                    currentIndex++;
+                    setIndicatorsLabelCss(currentIndex++);
+                    showBtn();
                 }
             });
+
+            $(".indicators-label").first().css("backgroundColor", "black");     // 시작 시 첫번째 라벨 색 변경, 선택된거 표시
+            // 라디오 버튼 클릭 시
+            $(".indicators-radio").click(function () {
+                let indicatorsIdx = $(this).parent().index();                   // 현재 선택한 지표 인덱스
+                currentIndex = indicatorsIdx + 1;
+
+                setIndicatorsLabelCss(currentIndex - 1);                        // 라디오 색 변경
+                setSlideBarCss(currentIndex);                                   // 해당 인덱스로 슬라이드 움직임
+                showBtn();
+            });
+
+
+            // 슬라이드 길이 변경 함수
+            function setSlideBarCss(curIdx) {
+                bwWidth = window.innerWidth - 17;             // 현재 브라우저의 길이값 다시 저장
+                currentSlideWidth = bwWidth * (curIdx - 1);   // 현재의 인덱스에서 브라우저의 길이가 변할 때 길이가 깨지는거 방지용               
+                slideBar.css("transform", `translate3d(-${currentSlideWidth}px, 0, 0)`);
+            }
+
+            // 지표 색 변경 함수
+            function setIndicatorsLabelCss(curIdx) {
+                $(".indicators-label").css("backgroundColor", "#7e7e7e");
+                $(".indicators-label").eq(curIdx).css("backgroundColor", "black");
+            }
+
+            // 버튼 각 끝에 위치할떄 보이기, 숨기기
+            function showBtn() {
+                prevButton.show();
+                nextButton.show();
+                if (currentIndex === 1) {
+                    prevButton.hide();
+                } else if (currentIndex === 3) {
+                    nextButton.hide();
+                }
+            }
+
         </script>
 
         </div>
