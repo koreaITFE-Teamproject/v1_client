@@ -1,8 +1,17 @@
+@font-face {
+  font-family: 'HakgyoansimWoojuR';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .column-list-article {
   width: 70%;
   height: 100%;
   max-width: 1020px;
   margin: 0 auto;
+  font-family: 'HakgyoansimWoojuR';
+
 }
 
 .option_bar {
@@ -57,7 +66,7 @@
   height: 40px;
   width: 80px;
   border-radius: 4px;
-  
+  border: 1.4px solid #764127;
 }
 
 
@@ -110,6 +119,7 @@ th:nth-child(4) {
 .pagination-container {
   display: flex;
   justify-content: center; 
+  font-family: 'HakgyoansimWoojuR';
 }
 
 /* .pagination{
