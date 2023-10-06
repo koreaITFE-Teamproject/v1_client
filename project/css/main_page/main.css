@@ -216,9 +216,3 @@ hr {
     padding: 3px 22px;
     cursor: pointer;
 }
-
-.indicators-radio:checked {
-    .indicators-label {
-        background-color: black;
-    }
-}
