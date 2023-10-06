@@ -162,7 +162,7 @@ hr {
     cursor: pointer;
     z-index: 5;
     transition: color 0.3s;
-    color: #D3B396;
+    color: #F6E3CE;
 }
 
 .bi-chevron-left {
@@ -211,7 +211,6 @@ hr {
 }
 
 .indicators-label {
-    background-color: #D3B396;
     margin: 5px 7px;
     padding: 3px 22px;
     cursor: pointer;

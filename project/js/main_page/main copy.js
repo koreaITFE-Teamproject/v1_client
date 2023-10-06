@@ -4,19 +4,20 @@ $(document).ready(function () {
         alert("클릭되었습니다."); // 임의 값
     });
     
-    const columnprevButton = $('#column_left');
-    const columnnextButton = $('#column_right');
-    const columnslideBar = $('#column_slide_bar');
+    var columnprevButton = $('#column_left');
+    var columnnextButton = $('#column_right');
+    var columnslideBar = $('#column_slide_bar');
 
-    const bookprevButton = $('#book_left');
-    const booknextButton = $('#book_right');
-    const bookslideBar = $('#book_slide_bar');
+    var bookprevButton = $('#book_left');
+    var booknextButton = $('#book_right');
+    var bookslideBar = $('#book_slide_bar');
 
-    const discussRoomprevButton = $('#discussRoom_left');
-    const discussRoomnextButton = $('#discussRoom_right');
-    const discussRoomslideBar = $('#dcdiscussRoom_slide_bar');
+    var discussRoomprevButton = $('#discussRoom_left');
+    var discussRoomnextButton = $('#discussRoom_right');
+    var discussRoomslideBar = $('#dcdiscussRoom_slide_bar');
 
-    let currentIndex = 1;
+    // var currentIndex = 1;
+
     bwWidth = window.innerWidth - 17;   // 브라우저 현재 길이
     currentSlideWidth = 0;              // 움직인 슬라이드의 길이를 저장하기위한 변수 선언
 
@@ -37,7 +38,17 @@ $(document).ready(function () {
         $(".indicators-label").eq(curIdx).css("backgroundColor", "#764127");
     }
 
-    function showBtn(prevButton, nextButton, maxIndex) {
+    // 라디오 버튼 클릭 시
+    $(".indicators-radio").click(function () {
+        let indicatorsIdx = $(this).parent().index();                   // 현재 선택한 지표 인덱스
+        currentIndex = indicatorsIdx + 1;
+
+        setIndicatorsLabelCss(currentIndex - 1);                        // 라디오 색 변경
+        setSlideBarCss(currentIndex);                                   // 해당 인덱스로 슬라이드 움직임
+        showBtn();
+    });
+
+    function showBtn(prevButton, nextButton, maxIndex, currentIndex) {
         prevButton.show();
         nextButton.show();
         if (currentIndex === 1) {
@@ -48,14 +59,14 @@ $(document).ready(function () {
     }
 
     // 슬라이드 버튼 관련 이벤트 핸들러
-    function initializeSlideButtons(prevButton, nextButton, slideBar, maxIndex) {
+    function initializeSlideButtons(prevButton, nextButton, slideBar, maxIndex, currentIndex) {
         prevButton.click(function () {
             if (currentIndex > 1) {
                 currentSlideWidth -= bwWidth;
                 slideBar.css("transform", `translate3d(-${currentSlideWidth}px, 0, 0)`);
                 currentIndex--;
                 setIndicatorsLabelCss(currentIndex - 1);
-                showBtn(prevButton, nextButton, maxIndex);
+                showBtn(prevButton, nextButton, maxIndex, currentIndex);
             }
         });
 
@@ -64,13 +75,13 @@ $(document).ready(function () {
                 slideBar.css("transform", `translate3d(-${bwWidth * currentIndex}px, 0, 0)`);
                 currentSlideWidth = bwWidth * currentIndex;
                 setIndicatorsLabelCss(currentIndex++);
-                showBtn(prevButton, nextButton, maxIndex);
+                showBtn(prevButton, nextButton, maxIndex, currentIndex);
             }
         });
     }
 
     // 각 슬라이드 관련 초기화
-    initializeSlideButtons(columnprevButton, columnnextButton, columnslideBar, 3);
-    initializeSlideButtons(bookprevButton, booknextButton, bookslideBar, 3);
-    initializeSlideButtons(discussRoomprevButton, discussRoomnextButton, discussRoomslideBar, 3);
+    initializeSlideButtons(columnprevButton, columnnextButton, columnslideBar, 3, 1);
+    initializeSlideButtons(bookprevButton, booknextButton, bookslideBar, 3, 1);
+    initializeSlideButtons(discussRoomprevButton, discussRoomnextButton, discussRoomslideBar, 3, 1);
 });
