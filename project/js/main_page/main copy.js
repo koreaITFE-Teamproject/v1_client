@@ -3,7 +3,7 @@ $(document).ready(function () {
     $(".bar_item, .class_item").on("click", function () {
         alert("클릭되었습니다."); // 임의 값
     });
-    
+
     var columnprevButton = $('#column_left');
     var columnnextButton = $('#column_right');
     var columnslideBar = $('#column_slide_bar');
@@ -14,11 +14,11 @@ $(document).ready(function () {
 
     var discussRoomprevButton = $('#discussRoom_left');
     var discussRoomnextButton = $('#discussRoom_right');
-    var discussRoomslideBar = $('#discussRoom_slide_bar');
+    var discussRoomslideBar = $('#dcdiscussRoom_slide_bar');
 
     // var currentIndex = 1;
-
-    bwWidth = window.innerWidth - 17;   // 브라우저 현재 길이
+    // bwWidth = 창길이 - (창길이 - .recomm_outline의 길이)     // 현재 자기 브라우저의 길이
+    bwWidth = window.innerWidth - (window.innerWidth - parseFloat($(".recomm_outline").css("width")));   // 브라우저 현재 길이
     currentSlideWidth = 0;              // 움직인 슬라이드의 길이를 저장하기위한 변수 선언
 
     // 브라우저의 크기가 변할 시
@@ -28,7 +28,7 @@ $(document).ready(function () {
 
     // 슬라이드 관련 함수
     function setSlideBarCss(curIdx) {
-        bwWidth = window.innerWidth - 17;             // 현재 브라우저의 길이값 다시 저장
+        bwWidth = window.innerWidth - (window.innerWidth - parseFloat($(".recomm_outline").css("width")));  // 현재 브라우저의 길이값 다시 저장
         currentSlideWidth = bwWidth * (curIdx - 1);   // 현재의 인덱스에서 브라우저의 길이가 변할 때 길이가 깨지는거 방지용               
         slideBar.css("transform", `translate3d(-${currentSlideWidth}px, 0, 0)`);
     }
