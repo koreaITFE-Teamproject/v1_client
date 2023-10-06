@@ -14,7 +14,7 @@ $(document).ready(function () {
 
     var discussRoomprevButton = $('#discussRoom_left');
     var discussRoomnextButton = $('#discussRoom_right');
-    var discussRoomslideBar = $('#dcdiscussRoom_slide_bar');
+    var discussRoomslideBar = $('#discussRoom_slide_bar');
 
     // var currentIndex = 1;
 
