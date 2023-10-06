@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="/project/css/main_page/main.css">
-    <script src="/project/js/main_page/main.js"></script>
+    <script src="/project/js/main_page/main copy.js"></script>
     <script src="/project/js/common/common.js"></script>
 </head>
 
@@ -31,9 +31,9 @@
         <div class="recomm_outline">
             <div class="recomm" id="recomm_coumn">추천 칼럼</div>
             <div class="carousel-wrapper">
-                <i class="bi bi-chevron-left"></i>
-                <i class="bi bi-chevron-right"></i>
-                <div class="slide_bar">
+                <i class="bi bi-chevron-left" id="column_left"></i>
+                <i class="bi bi-chevron-right" id="column_right"></i>
+                <div class="slide_bar" id="column_slide_bar">
                     <div class="cut_div">
                         <div class="bar_item"><!-- 칼럼 제목이 들어갈 디자인 예시 -->
                             <div class="column_title">경차가 뭐 어때서</div>
@@ -61,25 +61,26 @@
                 </div>
     
                 <div class="slide-indicators">
-                    <label for="first_cut_div" class="indicators-label">
-                        <input type="radio" id="first_cut_div" class="indicators-radio" name="indicators" checked hidden>
+                    <label for="first_cut_div" class="column-indicators-label">
+                        <input type="radio" id="first_cut_div" class="column-indicators-radio" name="indicators" checked hidden>
                     </label>
                     <label for="second_cut_div" class="indicators-label">
-                        <input type="radio" id="second_cut_div" class="indicators-radio" name="indicators" hidden>
+                        <input type="radio" id="second_cut_div" class="column-indicators-radio" name="indicators" hidden>
                     </label>
                     <label for="third_cut_div" class="indicators-label">
-                        <input type="radio" id="third_cut_div" class="indicators-radio" name="indicators" hidden>
+                        <input type="radio" id="third_cut_div" class="column-indicators-radio" name="indicators" hidden>
                     </label>
                 </div>
+            </div>
             </div>
         </div>
         <hr>
         <div class="recomm_outline">
             <div class="recomm" id="recomm_book">추천 책</div>
             <div class="carousel-wrapper">
-                <i class="bi bi-chevron-left"></i>
-                <i class="bi bi-chevron-right"></i>
-                <div class="slide_bar">
+                <i class="bi bi-chevron-left" id="book_left"></i>
+                <i class="bi bi-chevron-right" id="book_right"></i>
+                <div class="slide_bar" id="book_slide_bar">
                     <div class="cut_div">
                         <div class="bar_item"><img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791130646091.jpg" alt=""></div>
                         <div class="bar_item">추천 책 이미지2</div>
@@ -104,14 +105,14 @@
                 </div>
     
                 <div class="slide-indicators">
-                    <label for="first_cut_div" class="indicators-label">
-                        <input type="radio" id="first_cut_div" class="indicators-radio" name="indicators" checked hidden>
+                    <label for="first_cut_div" class="book-indicators-label">
+                        <input type="radio" id="first_cut_div" class="book-indicators-radio" name="indicators" checked hidden>
                     </label>
                     <label for="second_cut_div" class="indicators-label">
-                        <input type="radio" id="second_cut_div" class="indicators-radio" name="indicators" hidden>
+                        <input type="radio" id="second_cut_div" class="book-indicators-radio" name="indicators" hidden>
                     </label>
                     <label for="third_cut_div" class="indicators-label">
-                        <input type="radio" id="third_cut_div" class="indicators-radio" name="indicators" hidden>
+                        <input type="radio" id="third_cut_div" class="book-indicators-radio" name="indicators" hidden>
                     </label>
                 </div>
             </div>
@@ -152,9 +153,9 @@
         <div class="recomm_outline">
             <div class="recomm" id="recomm_discussRoom">추천 토론방</div>
             <div class="carousel-wrapper">
-                <i class="bi bi-chevron-left"></i>
-                <i class="bi bi-chevron-right"></i>
-                <div class="slide_bar">
+                <i class="bi bi-chevron-left" id="discussRoom_left"></i>
+                <i class="bi bi-chevron-right" id="discussRoom_right"></i>
+                <div class="slide_bar" id="discussRoom_slide_bar">
                     <div class="cut_div">
                         <div class="bar_item">월요 경제 토론방</div>
                         <div class="bar_item">토론방 이름2</div>
@@ -179,58 +180,16 @@
                 </div>
     
                 <div class="slide-indicators">
-                    <label for="first_cut_div" class="indicators-label">
-                        <input type="radio" id="first_cut_div" class="indicators-radio" name="indicators" checked hidden>
+                    <label for="first_cut_div" class="book-indicators-label">
+                        <input type="radio" id="first_cut_div" class="discuss-indicators-radio" name="indicators" checked hidden>
                     </label>
                     <label for="second_cut_div" class="indicators-label">
-                        <input type="radio" id="second_cut_div" class="indicators-radio" name="indicators" hidden>
+                        <input type="radio" id="second_cut_div" class="discuss-indicators-radio" name="indicators" hidden>
                     </label>
                     <label for="third_cut_div" class="indicators-label">
-                        <input type="radio" id="third_cut_div" class="indicators-radio" name="indicators" hidden>
+                        <input type="radio" id="third_cut_div" class="discuss-indicators-radio" name="indicators" hidden>
                     </label>
                 </div>
-            </div>
-        </div>
-        <hr>
-
-        <!--  스스로 캐러셀 만든분 사이트 링크 : https://junjangsee.tistory.com/entry/%EC%99%84%EC%A0%84-%EC%B4%88-%EB%8B%A8%EC%88%9C%ED%95%98%EA%B2%8C-%EC%BA%90%EB%9F%AC%EC%85%80Carousel-%EA%B5%AC%ED%98%84%ED%95%B4%EB%B3%B4%EA%B8%B0 -->
-        <div class="carousel-wrapper">
-            <i class="bi bi-chevron-left"></i>
-            <i class="bi bi-chevron-right"></i>
-            <div class="slide_bar">
-                <div class="cut_div">
-                    <div class="bar_item">월요 경제 토론방</div>
-                    <div class="bar_item">토론방 이름2</div>
-                    <div class="bar_item">토론방 이름3</div>
-                    <div class="bar_item">토론방 이름4</div>
-                    <div class="bar_item">토론방 이름5</div>
-                </div>
-                <div class="cut_div">
-                    <div class="bar_item">토론방 이름6</div>
-                    <div class="bar_item">토론방 이름7</div>
-                    <div class="bar_item">토론방 이름8</div>
-                    <div class="bar_item">토론방 이름9</div>
-                    <div class="bar_item">토론방 이름10</div>
-                </div>
-                <div class="cut_div">
-                    <div class="bar_item">토론방 이름11</div>
-                    <div class="bar_item">토론방 이름12</div>
-                    <div class="bar_item">토론방 이름13</div>
-                    <div class="bar_item">토론방 이름14</div>
-                    <div class="bar_item">토론방 이름15</div>
-                </div>
-            </div>
-
-            <div class="slide-indicators">
-                <label for="first_cut_div" class="indicators-label">
-                    <input type="radio" id="first_cut_div" class="indicators-radio" name="indicators" checked hidden>
-                </label>
-                <label for="second_cut_div" class="indicators-label">
-                    <input type="radio" id="second_cut_div" class="indicators-radio" name="indicators" hidden>
-                </label>
-                <label for="third_cut_div" class="indicators-label">
-                    <input type="radio" id="third_cut_div" class="indicators-radio" name="indicators" hidden>
-                </label>
             </div>
         </div>
         </div>

@@ -13,6 +13,7 @@
 
 main {
     font-family: 'HakgyoansimWoojuR';
+    padding: 0 5px;
 }
 
 .recomm_outline {
@@ -57,7 +58,6 @@ main {
     align-items: center;
     /* 가운데 정렬 */
     height: 100%;
-    border: 0.5px solid #F9ECDB;
     width: 50%;
     text-align: center;
     vertical-align: middle;
@@ -72,7 +72,6 @@ main {
 
 /* 분야별 칼럼 분류 item div */
 .class_item {
-    border: 0.5px solid #F9ECDB;
     width: 150px;
     height: 150px;
     text-align: center;
@@ -110,6 +109,7 @@ h3 {
     text-align: left;
     font-family: 'HakgyoansimWoojuR';
     letter-spacing: -.05em;
+    padding-left: 1%;
 
 }
 
@@ -125,6 +125,7 @@ h3 {
     line-height: 46px;
     margin-top: -3px;
     padding-bottom: 16px;
+    padding-left: 1%;
 
 }
 
@@ -161,7 +162,7 @@ hr {
     cursor: pointer;
     z-index: 5;
     transition: color 0.3s;
-    color: #7e7e7e;
+    color: #D3B396;
 }
 
 .bi-chevron-left {
@@ -174,10 +175,9 @@ hr {
 
 .bi-chevron-left:hover,
 .bi-chevron-right:hover {
-    color: black;
+    color: #764127;
 }
 
-/* 부트스트랩 아이콘 css 변경 */
 .bi-chevron-left::before,
 .bi-chevron-right::before {
     content: "\f284";
@@ -211,7 +211,7 @@ hr {
 }
 
 .indicators-label {
-    background-color: #7e7e7e;
+    background-color: #D3B396;
     margin: 5px 7px;
     padding: 3px 22px;
     cursor: pointer;
