@@ -94,4 +94,14 @@ h1 {
 /* 이름, 아이디 input 디자인 크기 맞춤 */
 .name_input {
     width: 70%;
-}    
+}
+
+.validation-message{
+    border: 1.5px solid;
+    padding: 5px;
+}
+
+.message-outline{
+    border: 1.3px solid blue;
+    padding: 15px;
+}
