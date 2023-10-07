@@ -39,3 +39,8 @@ footer>div {
   display: inline-block;
   font-family: 'GmarketSansMedium';
 }
+
+footer a{
+  color: #764127;
+  text-decoration: none;
+}

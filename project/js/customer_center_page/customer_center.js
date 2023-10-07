@@ -11,6 +11,6 @@ $(document).ready(function () {
             bodyTextarea.val(text.slice(0, maxCharacterCount));
             currentCharacterCount = maxCharacterCount;
         }
-        characterCountDisplay.text(currentCharacterCount + '자');
+        characterCountDisplay.text(currentCharacterCount);
     });
 });
