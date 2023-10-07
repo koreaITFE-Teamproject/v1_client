@@ -5,6 +5,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +24,7 @@
 }
 
 .logo {
-    font-family: 'HakgyoansimWoojuR';
+    font-family: 'GmarketSansMedium';
     text-decoration: none;
     color: #764127;
     font-size: 22px;
@@ -39,8 +46,8 @@ h1 {
 
 .login-form {
     width: 500px;
-    border: 1.5px solid #764127;
-    border-radius: 5px;
+    border: 2px solid #764127;
+    border-radius: 10px;
     padding: 20px;
     margin: 30px auto;
 }
@@ -64,7 +71,7 @@ form {
 /* 수정 요청한 부분 추가 */
 .login-id,
 .login-pw {
-    border: 1px solid;
+    border: 1.5px solid #764127;
     border-radius: 5px;
     background-color: #F9ECDB;
     margin: 7px 0;
@@ -72,7 +79,6 @@ form {
     align-items: center;
     justify-content: center;
     font-size: 1.1rem;
-    font-weight: bold;
 }
 
 .text-field,
@@ -80,7 +86,7 @@ form {
 .qr-btn {
     font-family: 'HakgyoansimWoojuR';
     font-size: 1.1rem;
-    border: 1px solid black;
+    border: 1.5px solid #764127;
     border-radius: 5px;
     margin: 7px 0;
     padding: 18px 12px;
@@ -89,6 +95,7 @@ form {
 .text-field {
     letter-spacing: 1.5px;
     font-weight: bold;
+    border: 1.5px solid #764127;
 }
 
 .submit-btn,

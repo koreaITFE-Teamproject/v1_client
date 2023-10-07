@@ -11,7 +11,7 @@
 
 /* div 공통 */
 div {
-    border-radius: 10px;
+    border-radius: 5px;
     font-family: 'HakgyoansimWoojuR';
 }
 
@@ -34,8 +34,9 @@ main{
     flex-direction: column; /* 컨텐츠를 세로로 정렬하기 위해 flex-direction을 column으로 설정 */
     align-items: center; /* 가로 정렬을 중앙으로 조정 */
     padding: 20px;
-    border: 1.5px solid #764127;
+    border: 2px solid #764127;
     width: 600px;
+    border-radius: 10px;
 }
 
 /* main_div 안의 내용들 위치 크기 맞춤 */
@@ -86,7 +87,7 @@ h1 {
     background-color: #F9ECDB;
 }
 
-#ck_button:hover{
+#ck_num_box:hover, #ck_button:hover{
     background-color: #F6E3CE;
 }
 
@@ -100,4 +101,13 @@ h1 {
 /* 이름, 아이디 input 디자인 크기 맞춤 */
 .name_input {
     width: 80%;
+}
+
+input{
+    border: 1.5px solid #764127;
+    border-radius: 5px;
+}
+
+.required{
+    color: red;
 }

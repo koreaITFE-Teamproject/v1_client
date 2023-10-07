@@ -4,29 +4,30 @@
     font-weight: normal;
     font-style: normal;
 }
-.search_div .search_results{
+
+main{
     font-family: 'HakgyoansimWoojuR';
 }
+
 #srch_select{
     border: 1.5px solid #764127;
+    text-align: center;
 }
 .search_div {
     background-color: #F9ECDB;
     border: 1.5px solid #764127;
-    padding: 10px;
-    margin: 0 auto;
     border-radius: 5px;
+    height: 60%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 input {
     border: 1.5px solid #764127;
-    width: 500px;
-    padding: 10px;
-}
-
-#srch_select input div {
-    display: inline-block;
-
+    width: 80%;
+    margin: 0 1%;
 }
 
 .outline {
@@ -36,27 +37,13 @@ input {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
-#x_div {
-    display: flex;
-    justify-content: flex-end;
+#srch_select, #search_input, #search_icon{
+    height: 60%;
+    border-radius: 5px;
 }
 
-#x_icon {
-    font-size: 50px;
-    font-weight: bold;
-
-}
-
-#search_icon {
-    font-size: 20px;
-}
-
-#srch_select {
-    height: 35px;
-}
 /* 검색 결과 표 */
 table {
     width: 70%;

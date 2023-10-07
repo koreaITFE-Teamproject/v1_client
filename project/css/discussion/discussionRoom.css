@@ -153,6 +153,13 @@ li {
     padding: 8px 5px;
     font-size: 1.1rem;
     background-color: #F9ECDB;
+    border: 1.5px solid #764127;
+}
+
+.search-input:hover,
+.room-search-wrap>button:hover{
+    background-color: #F6E3CE;
+
 }
 
 .search-input {

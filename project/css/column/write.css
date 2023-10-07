@@ -23,19 +23,24 @@ main {
 
 button {
   background-color: #F9ECDB;
-  height: 40px;
-  width: 80px;
-  border-radius: 1.5px;
-  margin-left: 5px;
-  color: #764127;
+  height: 60px;
+  width: 100px;
+  border-radius: 5px;
+  margin-left: 10px;
+  border: 1.5px solid #764127;
 }
 .name {
-  height: 40px;
-  width: 250px;
+  height: 60px;
+  width: 500px;
   margin-left: 5px;
+  border: 1.5px solid #764127;
+  border-radius: 5px;
 }
 
 #column {
-  width: 120px;
-  margin-left: 5px;
+  width: 130px;
+  margin-left: 10px;
+  text-align: center;
+  border: 1.5px solid #764127;
+  border-radius: 5px;
 }
