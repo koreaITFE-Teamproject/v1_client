@@ -4,6 +4,37 @@ $(function () {
         $(".user-rooms-wrap").append(`<ul><li>${i + 1}</li><li>방이름${i + 1}</li><li>방장이름${i + 1}</li></ul>`)
     }
 
+    $(".select-discussion-rooms li").click(function () {
+        discussPath($(this).index(), $(this).text());;
+
+        $(".select-discussion-rooms li").css({
+            "fontWeight": "normal",
+            "borderBottom": 0,
+        });
+        $(this).css({
+            "fontWeight": "bold",
+            "borderBottom": "2px solid #764127",
+        });
+    });
+
+    discussPath(0, "전체 토론방");
+
+    function discussPath(idx, $text) {
+        var discuss = "#";
+        var rooms = "#";
+
+        var pathText = `<i class="fa-solid fa-house"></i> > <a href='${discuss}'>토론방</a> > ${$text}`;
+        if (idx == 0) {
+            discuss = "#";
+        } else if (idx == 1) {
+            discuss = "#";
+        } else {
+            discuss = "#";
+        }
+
+        $(".path").html(pathText);
+    }
+
     // var listHeight = parseInt($(".discussion-rooms-list").css("maxHeight"));
     // var ulHeight = 0;
 
