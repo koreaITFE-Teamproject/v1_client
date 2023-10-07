@@ -160,7 +160,7 @@ hr {
     top: 50%;
     margin-top: -25px;
     cursor: pointer;
-    z-index: 5;
+    z-index: 2;
     transition: color 0.3s, background-color 0.3s;
     color: #F6E3CE;
     background-color: rgba(246, 227, 206, 0.3);
