@@ -8,13 +8,27 @@
     <title>로그인 페이지</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <link rel="stylesheet" href="/project/css/user/userLogin.css">
+    <script src="https://kit.fontawesome.com/7a79c7be2a.js" crossorigin="anonymous"></script>
     <script src="/project/js/common/common.js"></script>
+    <script src="/project/js/user/userLogin.js"></script>
 </head>
 
 <body>
     <header id="header"></header>
 
     <main>
+        <div class="modal">
+            <div class="modal-container">
+                <div class="qr-wrap">
+                    <i class="fa-solid fa-xmark"></i>
+                    <div class="qr">qr코드</div>
+                    <div class="remaining-time">
+                        남은시간
+                        <p class="time">02분 59초</p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="login-form">
             <h1>로그인</h1>
             <form action="#">
@@ -27,6 +41,7 @@
                     <input type="password" name="password" class="text-field" placeholder="비밀번호를 입력해주세요" maxlength="30">
                 </div>
                 <input type="submit" value="로그인" class="submit-btn">
+                <input type="button" value="QR 로그인" class="qr-btn">
 
                 <div class="links">
                     <a href="/project/views/user/join/join.html">회원가입</a>
@@ -41,7 +56,6 @@
                     <img src="/project/img/login-button/네이버로그인.png" alt="">
                     <!-- <input type="submit" value="구글 로그인" class="submit-btn"> -->
                     <img src="/project/img/login-button/구글로그인.png" alt="">
-                    <input type="submit" value="QR 로그인" class="qr-btn">
                 </div>
             </form>
         </div>

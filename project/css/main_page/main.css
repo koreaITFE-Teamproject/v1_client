@@ -161,8 +161,10 @@ hr {
     margin-top: -25px;
     cursor: pointer;
     z-index: 5;
-    transition: color 0.3s;
+    transition: color 0.3s, background-color 0.3s;
     color: #F6E3CE;
+    background-color: rgba(246, 227, 206, 0.3);
+    border-radius: 50%;
 }
 
 .bi-chevron-left {
@@ -176,6 +178,7 @@ hr {
 .bi-chevron-left:hover,
 .bi-chevron-right:hover {
     color: #764127;
+    background-color: rgba(246, 227, 206, 0.5);
 }
 
 .bi-chevron-left::before,
@@ -183,7 +186,8 @@ hr {
     content: "\f284";
     content: "\f285";
     font-family: bootstrap-icons;
-    font-size: 50px;
+    font-size: 40px;
+    padding: 7px;
 }
 
 .slide_bar {

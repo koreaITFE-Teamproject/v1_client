@@ -27,7 +27,7 @@ h1 {
     margin: 30px auto;
 }
 
-.login-form>h1{
+.login-form>h1 {
     text-align: center;
 }
 
@@ -37,7 +37,7 @@ form {
 }
 
 /* 수정 요청한 부분 추가 */
-.login-wrap{
+.login-wrap {
     display: grid;
     grid-template-columns: 1.5fr 8.5fr;
     grid-gap: 15px;
@@ -45,7 +45,7 @@ form {
 
 /* 수정 요청한 부분 추가 */
 .login-id,
-.login-pw{
+.login-pw {
     border: 1px solid;
     border-radius: 5px;
     background-color: #F9ECDB;
@@ -58,7 +58,9 @@ form {
 }
 
 .text-field,
-.submit-btn {
+.submit-btn,
+.qr-btn {
+    font-family: 'HakgyoansimWoojuR';
     font-size: 1.1rem;
     border: 1px solid black;
     border-radius: 5px;
@@ -71,7 +73,8 @@ form {
     font-weight: bold;
 }
 
-.submit-btn {
+.submit-btn,
+.qr-btn {
     padding: 12px 0;
     background-color: #F9ECDB;
     cursor: pointer;
@@ -88,30 +91,86 @@ form {
     color: black;
 }
 
-.login-btn-container{
+.login-btn-container {
     text-align: center;
 }
 
-.login-btn-container img{
+.login-btn-container img {
     width: 100%;
     height: 65px;
     margin: 5px auto;
-}
-/* 439 70 */
-
-.qr-btn {
-    font-size: 1.2rem;
-    background-color: #F9ECDB;
-    border-radius: 5px;
-    width: 120px;
-    height: 110px;
-    border: 1px solid black;
-    margin: 0 auto;
-    margin-top: 10px;
     cursor: pointer;
 }
+
+/* 439 70 */
 
 .submit-btn:hover,
 .qr-btn:hover {
     background-color: #F6E3CE;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #dadada80;
+}
+
+.modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 35%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid black;
+}
+
+.qr-wrap,
+.qr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qr-wrap {
+    width: 100%;
+    height: 100%;
+}
+
+.fa-xmark {
+    position: fixed;
+    top: 3%;
+    right: 5%;
+    cursor: pointer;
+    font-size: 30px;
+    color: rgb(104, 104, 104);
+    transition: color 0.3s;
+}
+
+.fa-xmark:hover {
+    color: black;
+}
+
+.qr {
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+}
+
+.remaining-time {
+    position: fixed;
+    bottom: 30%;
+    right: 50%;
+    transform: translateX(50%);
+    font-size: 1.2rem;
+}
+
+.time {
+    text-align: center;
 }
