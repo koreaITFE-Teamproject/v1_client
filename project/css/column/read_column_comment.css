@@ -1,18 +1,32 @@
+@font-face {
+    font-family: 'HakgyoansimWoojuR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+main{
+    font-family: 'HakgyoansimWoojuR';
+}
 div {
     display: inline-block;
 }
 
 .title_bar {
     display: block;
-    background-color: #F9ECDB;
+    border-top: 3px solid #F6E3CE;
+    border-bottom: 3px solid #F6E3CE;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1.5px solid #764127;    
+    padding: 10px 0;
 
 }
 
 .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 80%;
     height: 80px;
     text-align: center;
@@ -28,8 +42,16 @@ div {
 
 }
 
-.icon i {
-    font-size: 30px;
+.icon>i{
+    cursor: pointer;
+}
+
+.icon>:first-child{
+    margin-right: 15px;
+}
+
+.bi-heart, .bi-heart-fill, .bi-bell, .bi-bell-fill{
+    color: #764127;
 }
 
 .contents_bar {
@@ -44,8 +66,9 @@ div {
 /* 칼럼 들어올 자리 */
 .column_contents {
     margin-top: 30px;
-    width: 100%;
+    width: 70%;
     min-height: 100%;
+    /* 구분선. db들어오고 글 들어오면 없어질 border */
     border: 1.5px solid #764127;
 }
 
@@ -53,7 +76,7 @@ div {
 /* 큰 틀 */
 .comment_bar {
     margin-top: 5px;
-    width: 100%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     border: 1.5px solid #764127;
@@ -64,9 +87,10 @@ div {
 }
 
 .comment_num {
-    width: 20%;
+    width: 15%;
     background-color: #F9ECDB;
     color: #764127;
+    padding: 5px;
 }
 
 .comment_input {

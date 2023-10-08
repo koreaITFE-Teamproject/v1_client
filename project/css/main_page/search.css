@@ -14,8 +14,8 @@ main{
     text-align: center;
 }
 .search_div {
-    background-color: #F9ECDB;
-    border: 1.5px solid #764127;
+    border-top: 3px solid #F6E3CE;
+    border-bottom: 3px solid #F6E3CE;
     border-radius: 5px;
     height: 60%;
     width: 50%;

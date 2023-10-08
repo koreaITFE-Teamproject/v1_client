@@ -28,23 +28,22 @@ main{
     width: 200px;
     height: 95%;
     margin: 1%;
-    display: inline-block;
     display: flex;
     flex-direction: column;
-    border: 1.5px solid #764127; 
-    border-radius: 5px;
-    background-color: #F9ECDB;
-     
+    border-left:  2px solid #764127; 
+    border-right: 2px solid #764127;
+    /* border-left:  3px solid #F6E3CE; 
+    border-right: 3px solid #F6E3CE;  */ 
     }
 .chat_q{
     font-family: 'HakgyoansimWoojuR';
     width: 90%;
-    display: inline-block;
     height: 80%;
-    border: 1.5px solid #764127; 
-    background-color: white;
+    border-top: 2px solid #F6E3CE; 
+    border-bottom: 2px solid #F6E3CE; 
+    /* border-top: 2px solid #764127; 
+    border-bottom: 2px solid #764127;  */
     margin: 3% 5%;
-    border-radius: 10px;
     text-align: center;
     display: flex;
     justify-content: center; 
@@ -52,30 +51,29 @@ main{
  }
 
  .chat_q:hover{
-   background-color: #F6E3CE;
+   /* background-color: #F6E3CE; */
+    
  }
 
  .chat_talk{
     width: 75%;
     height: 95%;
     margin: 1%;
-    border: 1px solid purple; 
+    border: 2px solid #764127;
+    border-radius: 10px; 
+    padding: 5px;
  }
 
- .top_div{
-    background-color: #F9ECDB;
-    /* height: 10%; */
-    margin-bottom: 10px;
+ .page_title{
+   font-size: 2.5rem;
+   font-family: 'HakgyoansimWoojuR';
+   border-top: 3px solid #F6E3CE;
+   border-bottom: 3px solid #F6E3CE;
  }
-
  /* 챗봇 대화 퍼블리싱으로 박은거 css */
 
  .chat-bubble{
     color: #764127;
     background-color: #F9ECDB;
     margin-top: 10px;
- }
- .page_title{
-   font-size: 2.5rem;
-   font-family: 'HakgyoansimWoojuR';
  }
