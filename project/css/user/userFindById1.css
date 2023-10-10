@@ -114,3 +114,7 @@ input, select{
     border: 1.5px solid #764127;
     border-radius: 5px;
 }
+
+.validation-message{
+    padding: 0px 70px;
+}
