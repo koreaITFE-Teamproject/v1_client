@@ -111,6 +111,25 @@ h3 {
     letter-spacing: -.05em;
     padding-left: 1%;
 
+    border-right: 3px solid #764127;
+    animation: blink .5s infinite, typing 2s steps(30);
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@keyframes blink {
+    50%{
+        border-color: transparent;
+    }
+}
+
+@keyframes typing {
+    from{
+        width: 0;
+    }
+    to{
+        width: 700px;
+    }
 }
 
 .desc_brunch {
