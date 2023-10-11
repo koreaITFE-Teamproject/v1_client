@@ -13,6 +13,12 @@ main {
   margin-top: 30px;
 }
 
+.menu_outline{
+  width: 50%;
+  margin: 0 auto;
+}
+
+
 .layouts{
   display: inline-flex;
   margin: 5px;
@@ -37,8 +43,14 @@ button {
 
 #column {
   width: 130px;
+  height: 60px;
   margin-left: 10px;
   text-align: center;
   border: 1.5px solid #764127;
   border-radius: 5px;
+}
+
+.buttons{
+  display: flex;
+  justify-content: row;
 }

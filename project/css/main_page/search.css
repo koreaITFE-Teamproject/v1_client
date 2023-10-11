@@ -17,8 +17,8 @@ main{
     border-top: 3px solid #F6E3CE;
     border-bottom: 3px solid #F6E3CE;
     border-radius: 5px;
-    height: 60%;
-    width: 50%;
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,12 +31,9 @@ input {
 }
 
 .outline {
-    width: 100%;
-    height: 15vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    width: 50%;
+    height: 10vh;
+    margin: 0 auto;
 }
 
 #srch_select, #search_input, #search_icon{

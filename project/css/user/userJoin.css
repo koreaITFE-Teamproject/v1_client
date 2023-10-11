@@ -53,8 +53,9 @@ button:hover {
 }
 
 .user-join-wrap {
+    width: 50%;
     min-width: 400px;
-    margin: 30px auto;
+    margin: 0 auto;
     border: 2px solid #764127;
     border-radius: 10px;
     text-align: center;

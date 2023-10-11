@@ -17,9 +17,11 @@ main {
 }
 
 .recomm_outline {
-    width: 100%;
+    width: 50%;
     height: 60%;
+    margin: 0 auto;
 }
+
 
 .recomm {
     height: 50px;
@@ -85,7 +87,8 @@ main {
 }
 
 .class_frame {
-    width: 100%;
+    width: 50%;
+    margin: 0 auto;
 }
 
 /* 마우스 호버 시 포인터 모양으로 변경 + border랑 글자 색 변환 */
@@ -117,7 +120,7 @@ h3 {
     overflow: hidden;
 }
 
-@keyframes blink {
+/* @keyframes blink {
     50%{
         border-color: transparent;
     }
@@ -130,7 +133,7 @@ h3 {
     to{
         width: 700px;
     }
-}
+} */
 
 .desc_brunch {
     -webkit-font-smoothing: antialiased;

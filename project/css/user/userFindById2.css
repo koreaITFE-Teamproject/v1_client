@@ -60,7 +60,15 @@ main {
     padding: 15px;
 }
 
+.click_btn:hover{
+    background-color: #F6E3CE;
+}
 .click_btn:first-child{
     margin-right: 10px;
 }
 
+/* a태그로 인한 글자 색상 변화와 밑줄 생성 안생기게 하기 위해 만듦 */
+a {
+    color: black;
+    text-decoration: none;
+}
