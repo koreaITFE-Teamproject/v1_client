@@ -9,9 +9,7 @@ main{
     justify-content: center;
 }
 .outline{
-    /* margin-top: 30px; */
-    width: 80%;
-    /* border: 1px solid blue; */ /*구분하려고 한선 이라서 주석처리함.*/
+    width: 50%;
     flex-direction: row; 
     justify-content: center; 
     align-items: center; 
