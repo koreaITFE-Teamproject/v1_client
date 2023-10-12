@@ -23,8 +23,10 @@ main {
     margin-bottom: 20px;
     padding: 10px 15px;
     border-bottom: 0;
-    background-color: #F9ECDB;
-}
+    /* background-color: #F9ECDB; */
+    border-top: 3px solid #F6E3CE;
+    border-bottom: 3px solid #F6E3CE;
+} 
 
 .users-info-wrap {
     width: 60%;
@@ -46,6 +48,7 @@ main {
     width: 10%;
     text-align: center;
     border: 1.5px solid #764127;
+    background-color: #F9ECDB;
     border-radius: 5px;
     margin: 0 12px 0 8px;
     padding: 5px 0;
@@ -72,10 +75,15 @@ main {
     margin: 0;
     padding: 0;
     border: 1.5px solid #764127;
+    background-color: #F9ECDB;
     border-radius: 5px;
     font-size: 1.2rem;
     width: 20%;
     height: 35px;
+}
+
+.search-btn:hover{
+    background-color: #F6E3CE;
 }
 
 /* 유저 정보 테이블 */

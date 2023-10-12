@@ -30,8 +30,6 @@ main{
     flex-direction: column;
     border-left:  2px solid #764127; 
     border-right: 2px solid #764127;
-    /* border-left:  3px solid #F6E3CE; 
-    border-right: 3px solid #F6E3CE;  */ 
     }
 .chat_q{
     font-family: 'HakgyoansimWoojuR';
@@ -39,8 +37,6 @@ main{
     height: 80%;
     border-top: 2px solid #F6E3CE; 
     border-bottom: 2px solid #F6E3CE; 
-    /* border-top: 2px solid #764127; 
-    border-bottom: 2px solid #764127;  */
     margin: 3% 5%;
     text-align: center;
     display: flex;
@@ -49,8 +45,10 @@ main{
  }
 
  .chat_q:hover{
-   /* background-color: #F6E3CE; */
-    
+  text-decoration: underline;
+  text-decoration-color: #764127;
+  text-decoration-thickness: 2px;
+  
  }
 
  .chat_talk{
