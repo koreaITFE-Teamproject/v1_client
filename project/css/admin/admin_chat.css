@@ -9,7 +9,7 @@ main>h1 {
     background-color: #F9ECDB;
     padding: 10px;
     margin: 20px auto;
-    width: 70%;
+    width: 60%;
     font-family: 'HakgyoansimWoojuR';
     font-size: 2.5rem;
 }
@@ -22,8 +22,13 @@ main>.out_line {
     align-items: center;
 }
 
+.out_line{
+    width: 60%;
+    margin: 0 auto;
+}
+
 .input_div {
-    width: 70%;
+    width: 100%;
     display: flex;
     border: 1.5px solid #764127;
     border-top: none;
@@ -55,7 +60,7 @@ main>.out_line {
 }
 
 .chat_screen {
-    width: 70%;
+    width: 100%;
     font-family: 'HakgyoansimWoojuR';
     flex-grow: 1;
     /* 남은 공간을 채우도록 설정 */

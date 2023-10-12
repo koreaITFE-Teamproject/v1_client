@@ -9,7 +9,7 @@ h1{
     background-color: #F9ECDB;
     padding: 10px;
     margin: 20px auto;
-    width: 70%;
+    width: 60%;
     font-family: 'HakgyoansimWoojuR';
 }
 
@@ -33,7 +33,7 @@ li {
 
 /* postTable(게시글 목록 요소 스타일) */
 table {
-  width: 70%;
+  width: 60%;
   margin: 20px auto;
   border-collapse: collapse;
   font-family: 'HakgyoansimWoojuR';

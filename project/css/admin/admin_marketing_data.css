@@ -12,7 +12,7 @@
 }
 
 .button-wrap {
-    width: 70%;
+    width: 60%;
     margin: 30px auto;
     padding: 10px 15px;
     display: flex;
@@ -35,9 +35,10 @@
 }
 
 .marketing-chart {
-    width: 70%;
+    width: 60%;
     margin: 30px auto;
     padding: 10px;
     border: 2px solid;
+    height: 40%;
 }
   
