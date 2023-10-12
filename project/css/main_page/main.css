@@ -113,6 +113,7 @@ h3 {
     font-family: 'HakgyoansimWoojuR';
     letter-spacing: -.05em;
     padding-left: 1%;
+    float: left;
 
     border-right: 3px solid #764127;
     animation: blink .5s infinite, typing 2s steps(30);
@@ -120,7 +121,7 @@ h3 {
     overflow: hidden;
 }
 
-/* @keyframes blink {
+@keyframes blink {
     50%{
         border-color: transparent;
     }
@@ -133,7 +134,7 @@ h3 {
     to{
         width: 700px;
     }
-} */
+}
 
 .desc_brunch {
     -webkit-font-smoothing: antialiased;
