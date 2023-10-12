@@ -116,9 +116,10 @@ h3 {
     float: left;
 
     border-right: 3px solid #764127;
-    animation: blink .5s infinite, typing 2s steps(30);
+    animation: blink .5s infinite, typing 2s steps(30), stop-cursor 1s forwards;
     white-space: nowrap;
     overflow: hidden;
+    
 }
 
 @keyframes blink {
@@ -132,7 +133,13 @@ h3 {
         width: 0;
     }
     to{
-        width: 700px;
+        width: 701px;
+    }
+}
+
+@keyframes stop-cursor {
+    to {
+        border-color: #764127;
     }
 }
 
