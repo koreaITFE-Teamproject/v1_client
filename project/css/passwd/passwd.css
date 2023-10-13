@@ -9,105 +9,74 @@
     margin: 0;
 }
 
-/* div 공통 */
-div {
-    border-radius: 5px;
+.main_div{
+    width: 50%;
+    margin: 0 auto;
+    border: 2px solid #764127;
+    border-radius: 10px;
+    padding: 20px;
     font-family: 'HakgyoansimWoojuR';
 }
 
-/* input 요소 */
-input {
-    padding: 10px;
-    display: inline-block;
-}
-/* 제일 문서 내용 */
-main{
+h1{
     display: flex;
     justify-content: center;
+    margin: 10px 0 20px 0;
 }
 
-/* contents들 모아놓은 div */
-.main_div {
-    margin-top: 30px;
-    background-color: white;
-    display: flex;
-    flex-direction: column; /* 컨텐츠를 세로로 정렬하기 위해 flex-direction을 column으로 설정 */
-    align-items: center; /* 가로 정렬을 중앙으로 조정 */
-    padding: 20px;
-    border: 2px solid #764127;
-    width: 600px;
-    border-radius: 10px;
-}
-
-/* main_div 안의 내용들 위치 크기 맞춤 */
-.contents {
-    padding: 5px;
-    width: 600px;
-
-}
-
-/* 이름, 아이디 등 구분하는 div */
-.division_name {
+.division_name{
     display: inline-block;
+    height: 10%;
+    width: 10%;
+    min-width: 110px;
     border: 1.5px solid #764127;
-    padding: 10px;
+    text-align: center;
     background-color: #F9ECDB;
-    text-align: center;
-}
-
-/* 이름 구분 div 크기 맞춤 */
-#name_div {
-    width: 45px;
-}
-
-/* 비밀번호 찾기 문구 */
-h1 {
-    text-align: center;
-}
-
-/* 인증번호 확인 div */
-#ck_num {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-/* 인증번호 input */
-#ck_num_input {
-    width: 300px;
-    margin-right: 10px;
-}
-
-/* 확인 버튼 div */
-#ck_button {
-    width: 400px;
-    padding: 15px;
-    text-align: center;
-    display: inline-block;
-    background-color: #F9ECDB;
-}
-
-#ck_num_box:hover, #ck_button:hover{
-    background-color: #F6E3CE;
-}
-
-/* 확인 버튼 위치 가운데로 */
-#ck_button_outdiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* 이름, 아이디 input 디자인 크기 맞춤 */
-.name_input {
-    width: 80%;
-}
-
-input{
-    border: 1.5px solid #764127;
     border-radius: 5px;
+    padding: 10px;
+    margin-right: 1%;
+}
+
+.name_input{
+    display: inline-block;
+    height: 10%;
+    width: 75%;
+    min-width: 110px;
+    border: 1.5px solid #764127;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.user-email-input, select{
+    display: inline-block;
+    height: 10%;
+    width: 30%;
+    min-width: 110px;
+    border: 1.5px solid #764127;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.contents{
+    margin-bottom: 2%;
+}
+
+#ck_button_outdiv{
+    display: flex;
+    justify-content: center;
+}
+
+#ck_num_input{
+    margin-right: 1%;
 }
 
 .required{
     color: red;
+}
+
+#ck_button:hover, #ck_num_box:hover{
+    background-color: #F6E3CE
+
 }
