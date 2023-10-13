@@ -11,35 +11,71 @@
     box-sizing: border-box;
 }
 
-.button-wrap {
-    width: 60%;
-    margin: 30px auto;
-    padding: 10px 15px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.button-wrap>button {
-    width: 22%;
-    padding: 20px 0;
-    border: 1.5px solid;
-    border-radius: 10px;
-    font-size: 1.2rem;
-    background-color: #F6E3CE;
-    cursor: pointer;
+main {
     font-family: 'HakgyoansimWoojuR';
 }
 
-.button-wrap>button:hover {
-    background-color: #F6E3CE;
+a {
+    color: black;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.path-wrap {
+    position: relative;
+    width: 70%;
+    max-width: 1020px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.path {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 1rem;
+}
+
+.marketing-data-graph {
+    width: 70%;
+    height: 100%;
+    max-width: 1020px;
+    margin: 0 auto;
+}
+
+.select-marketing-data-graph {
+    padding-top: 20px;
+    border-top: 3px solid #F6E3CE;
+    border-bottom: 2px solid #F6E3CE;
+}
+
+
+.select-marketing-data-graph>ul {
+    display: flex;
+    justify-content: center;
+}
+
+.select-marketing-data-graph>ul>li {
+    margin: 0 15px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.select-marketing-data-graph>ul>li:first-child {
+    font-weight: bold;
+    border-bottom: 2px solid #764127;
 }
 
 .marketing-chart {
     width: 60%;
-    margin: 0 auto;
+    margin: 30px auto;
     padding: 10px;
     border: 2px solid #764127;
     height: 40%;
     border-radius: 5px;
 }
-  

@@ -30,7 +30,6 @@ li {
     max-width: 1020px;
     margin: 0 auto;
     padding-top: 40px;
-    display: flex;
 }
 
 .path{
@@ -65,8 +64,8 @@ li {
 
 .select-discussion-rooms>ul>li {
     margin: 0 15px;
-    font-size: 1.2rem;
     margin-bottom: 10px;
+    font-size: 1.2rem;
     cursor: pointer;
 }
 
