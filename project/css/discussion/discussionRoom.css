@@ -24,6 +24,10 @@ li {
     list-style: none;
 }
 
+p {
+    margin: 0;
+}
+
 .path-wrap {
     position: relative;
     width: 70%;
@@ -32,7 +36,7 @@ li {
     padding-top: 40px;
 }
 
-.path{
+.path {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -40,6 +44,7 @@ li {
 
 .discussion-rooms-article {
     width: 70%;
+    min-width: 620px;
     height: 100%;
     max-width: 1020px;
     margin: 0 auto;
@@ -99,7 +104,66 @@ li {
 }
 
 /* 토론방 목록 */
-.user-rooms-wrap>ul {
+.user-rooms-wrap {}
+
+.user-rooms-wrap>.room {
+    height: 200px;
+    border: 1.5px solid #F2F2F2;
+    margin: 20px 50px;
+    padding: 30px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.room-explain,
+.room-img{
+    cursor: pointer;
+}
+
+.room-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.room-name:hover{
+    text-decoration: underline;
+    text-underline-position : under;
+}
+
+.intro {
+    margin: 0 50px 0 5px;
+    padding: 10px 0;
+    font-size: 1.2rem;
+}
+
+.room-bottom-wrap {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.fa-user {
+    padding: 5px;
+    border: 1.5px solid;
+    border-radius: 5px;
+}
+
+.headcount {
+    margin-left: 10px;
+    font-size: 1.1rem;
+}
+
+.room-bottom-wrap>span {
+    margin: 0 4px;
+}
+
+.moderator {
+    font-size: 1.1rem;
+}
+
+
+/* .user-rooms-wrap>ul {
     display: grid;
     grid-template-columns: 1fr 6fr 3fr;
     grid-auto-rows: minmax(40px, auto);
@@ -125,7 +189,7 @@ li {
 
 .user-rooms-wrap>ul>li:not(:last-child) {
     border-right: 1px solid #ddd;
-}
+} */
 
 
 
@@ -156,7 +220,7 @@ li {
 }
 
 .search-input:hover,
-.room-search-wrap>button:hover{
+.room-search-wrap>button:hover {
     background-color: #F6E3CE;
 
 }
