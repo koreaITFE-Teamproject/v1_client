@@ -36,9 +36,10 @@
 
 .marketing-chart {
     width: 60%;
-    margin: 30px auto;
+    margin: 0 auto;
     padding: 10px;
-    border: 2px solid;
+    border: 2px solid #764127;
     height: 40%;
+    border-radius: 5px;
 }
   

@@ -4,9 +4,12 @@
     font-weight: normal;
     font-style: normal;
 }
-
+*{
+    margin: 0;
+}
 main>h1 {
-    background-color: #F9ECDB;
+    border-top: 3px solid #F6E3CE;
+    border-bottom: 3px solid #F6E3CE;
     padding: 10px;
     margin: 20px auto;
     width: 60%;
@@ -30,7 +33,7 @@ main>.out_line {
 .input_div {
     width: 100%;
     display: flex;
-    border: 1.5px solid #764127;
+    border: 2px solid #764127;
     border-top: none;
     height: 200px;
     border-radius: 0 0 10px 10px;
@@ -66,6 +69,6 @@ main>.out_line {
     /* 남은 공간을 채우도록 설정 */
     overflow-y: auto;
     /* 내용이 넘칠 경우 스크롤 표시 */
-    border: 1.5px solid #764127;
+    border: 2px solid #764127;
     border-radius: 10px 10px 0 0;
 }

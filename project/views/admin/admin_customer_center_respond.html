@@ -8,44 +8,56 @@
   <script src="/project/js/admin/adminModule.js"></script>
   <link rel="stylesheet" href="/project/css/admin/admin_customer_center_respond.css">
 </head>
-
-
 <body>
   <header id="header"></header>
 
   <main>
-    <div class="container">
-      <h2>1:1 고객상담 응답</h2>
-      <div class="section_container">
-        <!-- 회원 이메일 섹션 -->
+    <h1>1:1 고객상담 응답</h2>
+      <div class="container">
+        <div class="customer_box_inner">
+          <div class="row">
+              <div class="name"><span class="red">*</span>제목</div>
+              <input class="div_input"></input>
+          </div>
+          <div class="row">
+              <div class="name"><span class="red">*</span>내용</div>
+              <textarea class="content_input"></textarea>
+          </div>
+          <div class="count_bar"><span class="textCount">0</span>/1000</div>
+          <div class="row">
+              <div class="name">첨부사진</div>
+              <div class="file_input"></div>
+              <div class="name file_btn">파일선택</div>
+              <div class="name file_btn">삭제</div>
+          </div>
+          <div class="btn_bar">
+                  <div class="name check_btn">취소</div>
+                  <div class="name check_btn" id="check">확인</div>
+          </div>
+      </div>
+      
+      <!-- <div class="section_container">
         <div class="section">
           <label for="email">회원 이메일:</label>
           <input type="email" id="email" name="email" required>
         </div>
-
-        <!-- 고객의 문의내용 섹션 -->
         <div class="section">
           <label for="inquiry">고객의 문의내용:</label>
           <textarea id="inquiry" name="inquiry" rows=5 required></textarea>
         </div>
-
-        <!-- 답변섹션 -->
         <div class="section">
           <label for="inquiry">답변:</label>
           <input type="text" class="respond">
         </div>
-
-        <!-- 첨부파일 섹션 -->
         <div class= "section">
           <label for= "attachment">첨부파일:</label> 
           <input type= "file" id= "attachment" name= "attachment"> 
         </div>
       </div>
-       <!-- 전송하기, 취소 버튼 -->
       <div class= "buttons">
         <button type= "submit">전송하기</button> 
         <button type= "reset">취소</button> 
-      </div> 
+      </div>  -->
       
     </div>
   </main>

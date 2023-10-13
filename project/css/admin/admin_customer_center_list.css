@@ -5,30 +5,30 @@
   font-style: normal;
 }
 
-h1{
-    background-color: #F9ECDB;
-    padding: 10px;
-    margin: 20px auto;
-    width: 60%;
-    font-family: 'HakgyoansimWoojuR';
+h1 {
+  border-top: 3px solid #F6E3CE;
+  border-bottom: 3px solid #F6E3CE;
+  padding: 10px;
+  margin: 20px auto;
+  width: 60%;
+  font-family: 'HakgyoansimWoojuR';
 }
 
 /* 지호님 pagination 스타일 가져온 거 */
 .pagination-container {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   font-family: 'HakgyoansimWoojuR';
 }
 
-.pagination{
-  
-}
+.pagination {}
 
 .page-link {
   color: black;
 }
+
 li {
-    list-style: none;
+  list-style: none;
 }
 
 /* postTable(게시글 목록 요소 스타일) */
@@ -39,7 +39,8 @@ table {
   font-family: 'HakgyoansimWoojuR';
 }
 
-th, td {
+th,
+td {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: center;

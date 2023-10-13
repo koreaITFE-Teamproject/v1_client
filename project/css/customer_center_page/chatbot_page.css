@@ -47,7 +47,7 @@ main{
  .chat_q:hover{
   text-decoration: underline;
   text-decoration-color: #764127;
-  text-decoration-thickness: 2px;
+  text-decoration-thickness: 1.5px;
   
  }
 
