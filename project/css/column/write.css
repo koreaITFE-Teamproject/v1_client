@@ -33,6 +33,11 @@ button {
   margin-left: 10px;
   border: 1.5px solid #764127;
 }
+
+button:hover{
+  background-color: #F6E3CE;
+}
+
 .name {
   height: 60px;
   width: 500px;
