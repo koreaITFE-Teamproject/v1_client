@@ -104,3 +104,38 @@ h1{
   background-color: #F6E3CE;   
 }
 
+/* 파일 스타일 테스트 */
+
+/* label tag 이용(예제에서는 첨부한 파일이 무슨 파일인지 확인이 불가함.) */
+/* .btn-upload {
+  width: 150px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F9ECDB;
+  text-align: center;
+  border: 1.5px solid #764127;
+  border-radius: 5px;
+}
+
+#file {
+  display: none;
+} */
+
+/* 방법 2: 파일 셀럭터 버튼 사용 */
+/* 하지만 여기는 텍스트 변경이 불가함(임의로 때려박으면 가능은 함 */
+
+input[type=file]::file-selector-button {
+  width: 150px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F9ECDB;
+  text-align: center;
+  border: 1.5px solid #764127;
+  border-radius: 5px;
+  font-family: 'HakgyoansimWoojuR';
+
+}
