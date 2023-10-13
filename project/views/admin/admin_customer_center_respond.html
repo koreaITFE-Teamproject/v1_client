@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,36 +9,36 @@
   <script src="/project/js/admin/adminModule.js"></script>
   <link rel="stylesheet" href="/project/css/admin/admin_customer_center_respond.css">
 </head>
+
 <body>
   <header id="header"></header>
 
   <main>
     <h1>1:1 고객상담 응답</h2>
       <div class="container">
-      <div class="section_container">
-        <div class="section">
-          <label for="email">회원 이메일</label>
-          <input type="email" id="email" name="email" required>
+        <div class="row">
+          <div class="name">회원 이메일</div>
+          <div class="div_input">sample1013@gmail.com</div> <!--나올 모양 퍼블리싱 : 실제로는 서버에서 받은게 들어갈 예정입니다.-->
         </div>
-        <div class="section">
-          <label for="inquiry">고객의 문의내용</label>
-          <textarea id="inquiry" name="inquiry" rows=5 required></textarea>
+        <div class="row">
+          <div class="name">고객의 문의내용</div>
+          <div class="div_input">사이트 내에서 판매하지 않나요? 찾는 책이 없습니다. 어디있을까요? 업데이트 예정은 언제일까요?</div>
+          <!--문의 내용 퍼블리싱 : 실제로는 서버에서 받은 내용이 들어갈 예정-->
         </div>
-        <div class="section">
-          <label for="inquiry">답변</label>
-          <input type="text" class="respond">
+        <div class="row">
+          <div class="name">답변</div>
+          <textarea class="content_input" name="inquiry" rows=5 required></textarea>
         </div>
-        <div class= "section">
-          <label for= "attachment">첨부파일</label> 
-          <input type= "file" id= "attachment" name= "attachment"> 
+        <div class="row">
+          <div class="name">첨부파일</div>
+          <input type="file" id="file_input" name="attachment">
+        </div>
+        <div class="btn_bar">
+          <div class="name check_btn">전송하기</div>
+          <div class="name check_btn" id="check">취소</div>
         </div>
       </div>
-      <div class= "buttons">
-        <button type= "submit">전송하기</button> 
-        <button type= "reset">취소</button> 
-      </div> 
-      
-    </div>
   </main>
 </body>
+
 </html>

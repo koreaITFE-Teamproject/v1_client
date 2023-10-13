@@ -30,18 +30,17 @@
 
 .site_name {
   display: inline-block;
-  /* border: 3px solid black; */
   padding: 10px;
   font-family: 'GmarketSansMedium';
 }
 
 .site_name a {
-  color: black; /* 링크의 색상을 검정으로 설정 */
+  color: #764127; /* 링크의 색상을 검정으로 설정 */
   text-decoration: none; /* 밑줄 제거 */
 }
 
 .site_name a:hover {
-  color: black; /* 호버 시에도 색상을 검정으로 유지 */
+  color: #764127; /* 호버 시에도 색상을 검정으로 유지 */
 }
 
 /* 로고 */
@@ -50,7 +49,6 @@
 }
 
 .menu_bar {
-  /* border: 3px solid black; */
   padding: 10px;
   position: relative;
   display: flex;
@@ -61,7 +59,6 @@
   padding: 10px;
   font-size: 20px;
   width: 200px;
-  /* border: 3px solid black; */
   display: inline-block;
   position: relative;
   text-align: center;
@@ -73,7 +70,7 @@
 
 .menu_bar_item a {
   font-family: 'HakgyoansimWoojuR';
-  color: black; /* 링크의 색상을 검정으로 설정 */
+  color: #764127; /* 링크의 색상을 검정으로 설정 */
   text-decoration: none; /* 밑줄 제거 */
 }
 .menu_bar_item a:hover {
