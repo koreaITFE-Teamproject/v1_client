@@ -29,4 +29,21 @@ $(document).ready(function () {
         // 로봇 상담 페이지와 연결해야함.
     })
 
+    // 기본 위치(top)값
+    var floatPosition = parseInt($("#banner_div").css('top'))
+
+    // scroll 인식
+    $(window).scroll(function () {
+
+        // 현재 스크롤 위치
+        var currentTop = $(window).scrollTop();
+        var bannerTop = currentTop + floatPosition + "px";
+
+        //이동 애니메이션
+        $("#banner_div").stop().animate({
+            "top": bannerTop
+        }, 500);
+
+    }).scroll();
+
 })
