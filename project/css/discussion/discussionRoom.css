@@ -197,17 +197,14 @@ p {
 
 /* 토론방 검색, 만들기 */
 .room-search-wrap {
-    width: 70%;
+    width: 100%;
     max-width: 1020px;
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
-    justify-content: space-between;
-    text-align: center;
-    margin: 20px auto;
+    grid-template-columns: 6fr 1.5fr 2.5fr;
     font-size: 20px;
+    margin-top: 30px;
 }
 
-.room-search-wrap>p,
 .search-input,
 .room-search-wrap>button {
     border: 1px solid;
@@ -219,14 +216,11 @@ p {
     border: 1.5px solid #764127;
 }
 
-.search-input:hover,
 .room-search-wrap>button:hover {
     background-color: #F6E3CE;
-
 }
 
 .search-input {
-    /* width: 500px; */
     background-color: white;
     padding: 0 8px;
 }
@@ -237,7 +231,6 @@ p {
 .pagination-container {
     display: flex;
     justify-content: center;
-    margin-top: 70px;
 }
 
 .pagination {}
