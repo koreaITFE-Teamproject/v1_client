@@ -120,26 +120,16 @@ button:hover {
     display: none;
 }
 
-/* 전화번호 */
-.input-numbers {
-    display: flex;
-}
 
-.user-phone-number-input {
-    text-align: center;
-}
-
-.user-phone-number-input:first-child {
-    width: 50%;
-    text-align: center;
-}
-
-
-/* 회원가입 버튼 */
+/* 로그인 버튼 */
 .user-join-wrap-btn {
     width: 88%;
     height: 50px;
     margin: 20px 5px;
+}
+
+#login-id-duplicate-check-btn{
+    width:30%;
 }
 
 
