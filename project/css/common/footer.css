@@ -21,6 +21,7 @@ span {
 }
 
 footer {
+  width: 100%;
   bottom: 0;
   left: 0;
   right: 0;
@@ -28,6 +29,7 @@ footer {
   font-size: 20px;
   background-color: #F9ECDB;
   color: #764127;
+  margin-top: 40px;
 }
 
 footer span {

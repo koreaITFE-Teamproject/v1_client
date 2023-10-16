@@ -1,8 +1,30 @@
 $(function () {
     // 테스트용 방 생성
-    for (var i = 0; i < 10; i++) {
-        $(".user-rooms-wrap").append(`<ul><li>${i + 1}</li><li>방이름${i + 1}</li><li>방장이름${i + 1}</li></ul>`)
+
+    for (var i = 0; i < 15; i++) {
+        var rand = Math.round(Math.random() * 8);
+        $(".user-rooms-wrap").append(
+            `
+            <div class="room">
+                <div class="room-explain">
+                    <p class="room-name">안녕하세요. 테스트 방입니다.${i + 1}</p>
+                    <p class="intro">안녕하세요. 같이 토론해요. 테스트 소개글입니다.</p>
+                    <div class="room-bottom-wrap">
+                        <i class="fa-solid fa-user"></i>
+                        <p class="headcount">${rand}명</p>
+                        <span>•</span>
+                        <p class="moderator">성훈${i}</p>
+                    </div>
+                </div>
+                <div class="room-img">
+                    <img src="http://placehold.it/120x120" alt=""></img>
+                </div>
+            </div>
+            `
+        )
     }
+
+    
 
     $(".select-discussion-rooms li").click(function () {
         discussPath($(this).index(), $(this).text());;
@@ -34,18 +56,5 @@ $(function () {
 
         $(".path").html(pathText);
     }
-
-    // var listHeight = parseInt($(".discussion-rooms-list").css("maxHeight"));
-    // var ulHeight = 0;
-
-    // $(".user-rooms-wrap>ul").each(function () {
-    //     ulHeight += parseInt($(this).css("height"));
-    // });
-
-
-    // if (listHeight < ulHeight) {
-    //     $(".room-title-wrap>ul:last-child").css("paddingRight", "5px");
-    // } else {
-    //     $(".room-title-wrap>ul:last-child").css("paddingRight", "0");
-    // }
+    
 });

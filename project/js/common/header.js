@@ -8,6 +8,13 @@ $(document).ready(function () {
         $(this).find('.dropdown-content').css('display', 'none');
     });
 
+
+    // 브라우저 창 크기 변경될 때
+    // 전체화면 상태가 아닐때 스크롤이 생기는데 이떄 내리면 헤더가 사라짐, 전체화면으로 바꿔도 헤더가 사라져 있어서 추가함
+    $(window).on("resize", function () {
+        $('header').removeClass('nav-up').addClass('nav-down');
+    });
+
     // 헤더가 숨겨지거나 나타나는 동작을 구현하는 변수들
     var didScroll;
     var lastScrollTop = 0;

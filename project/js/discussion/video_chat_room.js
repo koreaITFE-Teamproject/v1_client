@@ -1,31 +1,20 @@
 $(function () {
     $(".options>div>i:nth-child(2)").hide();
 
+    $(".toggle-swt").click(function (event) {
+        toggleSWT($(this), event)
+    })
 
-    // $(".options>div").click(function () {
-    //     $(this).children("i").toggle();
-    // });
-
-
-    // 일단 중복되게 구현함, 시간나면 수정 예정
-    $("#notification-toggle-switch-1").click(function () {
-        toggleSWT($(this));
+    $(".toggle-btn").click(function (event) {
+        toggleSWT($(this).parent(), event)
     });
 
-    $(".room-video").click(function(){
-        toggleSWT($(this).children($("notification-toggle-switch-1")));
+    $(".options>div").click(function (event) {
+        toggleSWT($(this).children().eq(3), event);
     });
 
-    $("#notification-toggle-switch-2").click(function () {
-        toggleSWT($(this));
-    });
-
-    $(".room-microphone").click(function(){
-        toggleSWT($(this).children($("notification-toggle-switch-2")));
-    });
-    
-
-    function toggleSWT($this) {
+    function toggleSWT($this, e) {
+        e.stopPropagation(); // 이벤트 버블링 중단, 겹쳐서 눌려지는거 방지
         $this.toggleClass("toggle-swt-checked");
         $this.children().toggleClass("toggle-btn-checked");
     }

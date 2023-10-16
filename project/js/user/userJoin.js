@@ -205,7 +205,7 @@ $(function () {
             successCss($this, msg);                                             // 성공 시
         } else if (idx === 6) {                                                 // 전화번호 정규표현식
             if (!pnRegex.test(phoneNumber) || (phoneNumber.length > 2 && phoneNumber.length < 13)) {        // 실패 시
-                msg.text("*전화번호 형식을 확인해주세요. ex) OOO-OOOO-OOOO");
+                msg.text("*전화번호 형식을 확인해주세요. ex) 010-1234-5678");
                 failCss($this, msg);
                 return true;
             }

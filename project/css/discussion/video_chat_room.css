@@ -33,6 +33,7 @@ i {
 
 /* 제목 부분 */
 .room-head {
+    width: 100%;
     border-bottom: 1.5px solid #764127;
 }
 
@@ -104,9 +105,9 @@ i {
 
 /* 화상캠, 마이크 on/off */
 .options {
-    width: 50%;
+    width: 80%;
     margin: 0 auto;
-    padding: 30px;
+    padding: 30px 0;
     display: flex;
     align-items: center;
     justify-content: space-evenly;

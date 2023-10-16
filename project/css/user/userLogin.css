@@ -116,6 +116,10 @@ form {
     color: black;
 }
 
+.find-wrap a:first-child {
+    margin-right: 10px;
+}
+
 .login-btn-container {
     text-align: center;
 }

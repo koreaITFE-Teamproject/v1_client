@@ -36,20 +36,58 @@
                 </ul>
             </div>
 
+            <!-- 토론방 검색, 만들기 -->
+            <div class="room-search-wrap">
+                <input class="search-input" type="text" placeholder="검색창">
+                <button class="room-search-btn">검색</button>
+                <button class="add-room-btn" onclick="">토론방 생성</button>
+            </div>
+
             <!-- 토론방 타이틀 모음 -->
-            <div class="room-title-wrap">
+            <!-- <div class="room-title-wrap">
                 <ul>
                     <li class="room-number">No</li>
                     <li class="room-name">토론방 이름</li>
                     <li class="room-manager">방장</li>
                 </ul>
-            </div>
+            </div> -->
 
 
             <!-- 토론방 목록 -->
             <div class="discussion-rooms-list">
                 <div class="user-rooms-wrap">
+                    <div class="room">
+                        <div class="room-explain">
+                            <p class="room-name">안녕하세요. 테스트 방입니다.</p>
+                            <p class="intro">안녕하세요. 같이 토론해요. 테스트 소개글입니다.</p>
+                            <div class="room-bottom-wrap">
+                                <i class="fa-solid fa-user"></i>
+                                <p class="headcount">3명</p>
+                                <span>•</span> <!-- • ∙ -->
+                                <p class="moderator">장성훈</p>
+                            </div>
+                        </div>
+                        <div class="room-img">
+                            <img src="http://placehold.it/120x120" alt=""></img>
+                        </div>
+                    </div>
+                    <div class="room">
+                        <div class="room-explain">
+                            <p class="room-name">최대길이?</p>
+                            <p class="intro">가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타...</p>
+                            <div class="room-bottom-wrap">
+                                <i class="fa-solid fa-user"></i>
+                                <p class="headcount">2명</p>
+                                <span>•</span> <!-- • ∙ -->
+                                <p class="moderator">성훈</p>
+                            </div>
+                        </div>
+                        <div class="room-img">
+                            <img src="http://placehold.it/120x120" alt=""></img>
+                        </div>
+                    </div>
                     <!-- 테스트용 -->
+
                 </div>
             </div>
         </article>
@@ -64,15 +102,6 @@
                 <li class="page-item"><a class="page-link" href="#">다음</a></li>
             </ul>
         </nav>
-
-        <!-- 토론방 검색, 만들기 -->
-        <div class="room-search-wrap">
-            <p>토론방 이름 검색</p>
-            <input class="search-input" type="text" placeholder="검색창">
-            <button class="room-search-btn">검색</button>
-            <div></div> <!-- grid용 div -->
-            <button class="add-room-btn">새 토론방 만들기</button>
-        </div>
 
 
     </main>

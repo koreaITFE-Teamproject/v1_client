@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="/project/css/user/userLogin.css">
     <script src="https://kit.fontawesome.com/7a79c7be2a.js" crossorigin="anonymous"></script>
     <script src="/project/js/user/userLogin.js"></script>
+    <script src="/project/js/common/common.js"></script>
+    <script>
+        $(function () {
+            $("main").css("margin-top", "60px");
+        });
+    </script>
 </head>
 
 <body>
@@ -44,7 +50,10 @@
 
                 <div class="links">
                     <a href="/project/views/user/join/join.html">회원가입</a>
-                    <a href="/project/views/user/id/userFindById1.html">계정찾기</a>
+                    <div class="find-wrap">
+                        <a href="/project/views/user/id/userFindById1.html">아이디 찾기</a>
+                        <a href="/project/views/user/passwd/passwd.html">비밀번호 찾기</a>
+                    </div>
                 </div>
 
 

@@ -3,138 +3,69 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>아이디 찾기</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <title>아이디찾기</title>
     <link rel="stylesheet" href="/project/css/user/userFindById1.css">
-    <script src="/project/js/passwd/passwd.js"></script>
+    <script src="https://kit.fontawesome.com/7a79c7be2a.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="/project/js/common/common.js"></script>
+    <script src="/project/js/user/userFindById1.js"></script>
 </head>
-<style>
-
-</style>
-<script>
-    $(function () {
-        // 이름 입력란의 내용이 바뀔 시
-        $("#name_input").change(function () {
-            var val = $(this).val().trim(); // 입력값 양옆 공백 제거
-            var errorDiv = $(this).siblings(".validation-message"); // 에러 메시지 출력 요소
-
-            if (!val) { // 이름이 공백일 때
-                errorDiv.text("빈칸을 채워주세요."); // 에러 메시지를 "이름을 입력해주세요."로 변경
-                errorDiv.css({ "color": "red" }); // 에러 메시지를 빨간색으로 변경
-                $(this).css({ "border": "2px solid red" }); // 테두리 빨간색으로 변경
-            } else if (val.length < 7 || val.length > 20) { // 이름 길이가 조건에 맞지 않을 때
-                errorDiv.text("이름을 형식에맞게 입력해주세요.");
-                errorDiv.css({ "color": "red" }); // 에러 메시지를 빨간색으로 변경
-                $(this).css({ "border": "2px solid red" }); // 테두리 빨간색으로 변경
-            } else {
-                errorDiv.text(""); // 에러 메시지 초기화
-                $(this).css({ "border": "1px solid black" }); // 테두리 원래 스타일로 변경
-            }
-        });
-
-        $(".user-email-input").change(function () {
-            var emailInput = $(this);
-            var val = emailInput.val().trim();
-            var errorDiv = emailInput.siblings(".validation-message");
-            var customInput = emailInput.next(".custom-input");
-            var selectOption = emailInput.siblings("#select-email-option");
-
-            if (!val) {
-                errorDiv.text("이메일을 입력해주세요.");
-                errorDiv.css({ "color": "red" });
-                emailInput.css({ "border": "2px solid red" });
-            } else if (!/^[A-Za-z]+$/.test(val)) {
-                errorDiv.text("이메일은 영어만 입력 가능합니다.");
-                errorDiv.css({ "color": "red" });
-                emailInput.css({ "border": "2px solid red" });
-            } else if (!isValidEmail(val)) { // 이메일 형식 검사
-                errorDiv.text("이메일 형식에 맞게 입력해주세요. 예: example@domain.com");
-                errorDiv.css({ "color": "red" });
-                emailInput.css({ "border": "2px solid red" });
-            } else {
-                errorDiv.text("");
-                emailInput.css({ "border": "1px solid black" }); // 테두리를 검은색으로 변경
-
-                // 선택된 옵션이 "직접입력"이 아닌 경우 custom-input 비활성화
-                if (selectOption.val() !== "userInput") {
-                    customInput.prop("disabled", true);
-                } else {
-                    customInput.prop("disabled", false);
-                }
-            }
-        });
-
-        $("#select-email-option").change(function () {
-            var selectOption = $(this);
-            var customInput = selectOption.siblings(".custom-input");
-            var errorDiv = selectOption.siblings(".validation-message");
-
-            if (selectOption.val() === "userInput") {
-                customInput.prop("disabled", false);
-            } else {
-                customInput.prop("disabled", true);
-            }
-
-            // 선택된 옵션이 "직접입력"이 아닌 경우, custom-input에 값을 지움
-            if (selectOption.val() !== "userInput") {
-                customInput.val("");
-            }
-
-            errorDiv.text("");
-        });
-    });
-
-    function isValidEmail(email) {
-        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-        return emailPattern.test(email);
-    }
-</script>
 
 <body>
     <header id="header"></header>
+
     <main>
-        <div class="main_div">
-            <div class="contents">
-                <h1>아이디 찾기</h1>
-            </div>
-            <div class="contents">
-                <div class="division_name" id="name_div">이름</div>
-                <input type="text" class="name_input" id="name_input">
-                <div type="button" class="validation-message"></div>
-            </div>
-            <div class="contents">
-                <tr class="user-email">
-                    <td>
-                        <div class="division_name"><span class="required"></span>이메일</div>
-                    </td>
-                    <td>
-                        <input type="text" class="user-email-input">
-                        <span>@</span>
-                        <input type="text" class="custom-input">
-                        <select name="" id="select-email-option">
-                            <option value="none">===선택===</option>
-                            <option value="userInput">직접입력</option>
-                            <option value="google.com">google.com</option>
-                            <option value="naver.com">naver.com</option>
-                            <option value="naver.com">nate.com</option>
-                            <option value="">카카오</option>
-                        </select>
-                        <div type="button" class="validation-message"></div>
-                    </td>
-                    <td class="validation-message"></td>
-                </tr>
-            </div>
-            <div class="contents" id="ck_num">
-                <input type="text" id="ck_num_input" placeholder="인증번호 6자리 입력해 주세요">
-                <div class="division_name" id="ck_num_box">인증번호 확인</div>
-            </div>
-            <div class="contents" id="ck_button_outdiv">
-                <div class="division_name" id="ck_button">확인</div>
-            </div>
-        </div>
+        <form action="#">
+            <article class="user-join-wrap">
+                <h1 id="user-join-title">아이디 찾기</h1>
+                <div>
+                    <!-- 이름 -->
+                    <div class="user-name">
+                        <div><span class="required">*</span>이름</div>
+                        <div>
+                            <input type="text" class="user-name-input" maxlength="10">
+                        </div>
+                        <div class="validation-message"></div>
+                    </div>
+
+                    <!-- 이메일 -->
+                    <div class="user-email">
+                        <div><span class="required">*</span>이메일</div>
+                        <div>
+                            <input type="text" class="user-email-input">
+                            <span>@</span>
+                            <input type="text" class="custom-input">
+                            <select name="" id="select-email-option">
+                                <option value="none">==선택==</option>
+                                <option value="userInput">직접입력</option>
+                                <option value="google.com">google.com</option>
+                                <option value="naver.com">naver.com</option>
+                                <option value="nate.com">nate.com</option>
+                                <option value="daum.net">daum.net</option>
+                                <!-- <option value="">카카오</option> -->
+                            </select>
+                        </div>
+                        <div class="validation-message"></div>
+                    </div>
+
+                    <!-- 본인인증 -->
+                    <div class="user-id-check">
+                        <div> <span class="required">*</span>인증번호</div>
+                        <div>
+                            <input type="text" class="user-id-check-input">
+                            <button id="login-id-duplicate-check-btn" class="user-join-wrap-btn">인증번호 받기</button>
+                        </div>
+                        <div class="validation-message"></div>
+                    </div>
+                </div>
+                <button type="submit" id="user-join-btn" class="user-join-wrap-btn">확인</button>
+            </article>
+        </form>
     </main>
+
+    <!-- <footer id="footer"></footer> -->
 </body>
 
 </html>

@@ -7,114 +7,140 @@
 
 * {
     margin: 0;
-}
-
-div {
-    border-radius: 5px;
-    font-family: 'HakgyoansimWoojuR';
-}
-
-
-input {
-    padding: 10px;
-    display: inline-block;
-    width: 210px;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 main {
-    display: flex;
-    justify-content: center;
+    font-family: 'HakgyoansimWoojuR';
 }
 
-.main_div {
-    margin-top: 30px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    border: 2px solid #764127;
-    width: 600px;
-    border-radius: 10px;
+span {
+    font-size: 1.4rem;
 }
 
-.contents {
-    padding: 5px;
-    width: 600px;
-
-}
-
-.division_name {
-    display: inline-block;
+input,
+select {
+    width: 100%;
+    height: 100%;
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
     border: 1.5px solid #764127;
-    padding: 10px;
+    border-radius: 5px;
+    margin: 0 5px;
+    padding: 0 10px;
+}
+
+select{
+    text-align: center;
+}
+
+button {
+    font-family: 'HakgyoansimWoojuR';
+    min-width: 70px;
+    width: 100%;
+    height: 100%;
+    font-size: 1.1rem;
+    border: 1.5px solid #764127;
+    border-radius: 5px;
     background-color: #F9ECDB;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #F6E3CE;
+}
+
+.user-join-wrap {
+    width: 50%;
+    min-width: 400px;
+    margin: 0 auto;
+    border: 2px solid #764127;
+    border-radius: 10px;
     text-align: center;
-    width: 45px;
 }
 
-#name_div {
-    width: 45px;
+.brief {
+    text-align: left;
+    padding: 15px 50px;
 }
 
-h1 {
-    text-align: center;
+#user-join-title{
+    width: 85%;
+    border-radius: 5px;
+    padding: 8px 0;
+    margin: 30px 0 20px 40px;
+    font-size: 32px;
 }
 
-#ck_num {
-    display: flex;
-    justify-content: flex-end;
+.user-join-wrap>div>div {
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    grid-template-rows: 50px 30px;
     align-items: center;
 }
 
-#ck_num_input {
-    width: 361px;
-    margin-right: 10px;
-}
-
-#ck_button {
-    width: 400px;
-    padding: 15px;
-    text-align: center;
-    display: inline-block;
-
-}
-
-#ck_button_outdiv {
+.user-join-wrap>div>div>div {
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-}
-
-.name_input {
-    width: 80%;
-}
-
-#select-email-option{
-    padding:10px;
-    width: 250px;
     text-align: center;
-
 }
 
-#ck_num_box{
-    width: 82px;
-    margin-right: 5%;
-}   
-
-#ck_num_box:hover{
-    background-color: #F6E3CE;
-}
-
-#ck_button:hover{
-    background-color: #F6E3CE;
-}
-
-input, select{
+.user-join-wrap>div>div>div:first-child {
+    min-width: 70px;
+    height: 100%;
+    font-size: 1.1rem;
+    background-color: #F9ECDB;
+    margin: 0 10px 0 40px;
     border: 1.5px solid #764127;
     border-radius: 5px;
 }
 
-.validation-message{
-    padding: 0px 70px;
+.required {
+    color: red;
+}
+
+.user-join-wrap>div>div>div:nth-child(2) {
+    height: 100%;
+    margin: 0 40px 0 0;
+}
+
+/* 유효성 검사 메시지 */
+.validation-message {
+    grid-column: 2 / 3;
+    font-size: 12px;
+    justify-self: left;
+    padding: 0 15px;
+}
+
+/* 이메일 */
+.custom-input {
+    display: none;
+}
+
+
+/* 로그인 버튼 */
+.user-join-wrap-btn {
+    width: 88%;
+    height: 50px;
+    margin: 20px 5px;
+}
+
+#login-id-duplicate-check-btn{
+    width:30%;
+}
+
+
+@media screen and (max-width: 1250px) {
+    .user-join-wrap{
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .user-join-wrap{
+        width: 35%;
+    }
 }

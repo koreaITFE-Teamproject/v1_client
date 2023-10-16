@@ -3,34 +3,48 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자 계정 로그인</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <title>관리자 로그인</title>
     <link rel="stylesheet" href="/project/css/admin/admin_login.css">
+    <script src="https://kit.fontawesome.com/7a79c7be2a.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="/project/js/common/common.js"></script>
     <script src="/project/js/admin/admin_login.js"></script>
-
 </head>
+
 <body>
-    <header id="header"></header>
     <main>
-        <div class="main_div">
-            <div class="contents">
-                <h1>관리자 로그인</h1>
-            </div>
-            <div class="contents">
-                <div class="division_name" id="id">아이디</div>
-                <input type="password" class="input_bar" id="id_bar">
-            </div>
-            <div class="contents">
-                <div class="division_name" id="Pw">비밀번호</div>
-                <input type="password" class="input_bar" id="pw_bar">
-            </div>
-            <div class="contents" id="ck_button_outdiv">
-                <button class="division_name" id="login_Btn">로그인</button>
-            </div>
-        </div>
+        <form action="#">
+            <article class="user-join-wrap">
+                <h1 id="user-join-title">관리자 로그인</h1>
+                <div>
+                    <!-- 아이디 -->
+                    <div class="user-login-id">
+                        <div><span class="required">*</span>아이디</div>
+                        <div>
+                            <input type="text" class="user-login-id-input" maxlength="20">
+                        </div>
+                        <div type="button" class="validation-message"></div>
+                    </div>
+
+                    <!-- 비밀번호 -->
+                    <div class="user-login-pw">
+                        <div><span class="required">*</span>비밀번호</div>
+                        <div>
+                            <input type="password" class="user-login-pw-input" maxlength="30">
+                            <!-- <i id="show-eyes" class="fa-solid fa-eye" style="color: #474747;"></i> -->
+                            <!-- <i id="hide-eyes" class="fa-solid fa-eye-slash" style="color: #474747;"></i> -->
+                        </div>
+                        <div class="validation-message"></div>
+                    </div>
+                </div>
+                <button type="submit" id="user-join-btn" class="user-join-wrap-btn">로그인</button>
+            </article>
+        </form>
     </main>
+
+    <!-- <footer id="footer"></footer> -->
 </body>
 
 </html>

@@ -5,54 +5,137 @@
   font-style: normal;
 }
 
-/* * {
+* {
   margin: 0;
 }
 
-main {
-  margin-top: 30px;
-} */
-
-/* 왜 헤더가 난리인걸까....? */
-
-
-
-.container {
-  width: 60%;
-  margin: 0 auto;
-  padding: 20px;
+main{
   font-family: 'HakgyoansimWoojuR';
 }
+.container {
+  padding: 20px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #764127;
+  width: 60%;
+  border-radius: 10px;
+  margin: 0 auto;
+}
 
-h2 {
+h1{
+  width: 60%;
+  margin: 20px auto;
+  padding: 10px;
+  border-top: 3px solid #F6E3CE;
+  border-bottom: 3px solid #F6E3CE;
+  font-family: 'HakgyoansimWoojuR';
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.row {
+  display: flex;
+  color: #764127;
+  padding: 10px;
+}
+
+.content_input, .div_input {
+  border: 1.5px solid #764127;
+  width: 100%;
+  margin-left: 5px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.div_input, .file_input{
+  height: 60px;
+}
+
+.div_input{
+  display: flex;
+  align-items: center;
+}
+
+.file_input{
+  width: 80%;
+  border: 1.5px solid #764127;
+  margin-left: 5px;
+  border-radius: 5px;
+}
+
+.content_input{
+  height: 200px;
+}
+
+.file_btn, #check{
+  margin-left: 5px;
+}
+
+.file_btn, .check_btn{
+  cursor: pointer;
+}
+
+.name {
+  width: 150px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #F9ECDB;
   text-align: center;
-  padding: 10px;
-  /* margin: 10px auto; */
-  margin-bottom: 20px;
+  border: 1.5px solid #764127;
+  border-radius: 5px;
 }
 
-.section_container {
-  border: 1px solid black;
-  height: 400px;
-  max-height: 500px;
+.btn_bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.section {
-  margin-bottom: 20px;
+.count_bar{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-label {
-  display: block;
+.file_btn:hover, .btn_bar :hover{
+  background-color: #F6E3CE;   
 }
 
-.respond,
-input[type='email'],
-textarea {
-  width: 100%;
-  
+/* 파일 스타일 테스트 */
+
+/* label tag 이용(예제에서는 첨부한 파일이 무슨 파일인지 확인이 불가함.) */
+/* .btn-upload {
+  width: 150px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F9ECDB;
+  text-align: center;
+  border: 1.5px solid #764127;
+  border-radius: 5px;
 }
 
-.buttons button {
- margin-right :10px;  
+#file {
+  display: none;
+} */
+
+/* 방법 2: 파일 셀럭터 버튼 사용 */
+/* 하지만 여기는 텍스트 변경이 불가함(임의로 때려박으면 가능은 함 */
+
+input[type=file]::file-selector-button {
+  width: 150px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F9ECDB;
+  text-align: center;
+  border: 1.5px solid #764127;
+  border-radius: 5px;
+  font-family: 'HakgyoansimWoojuR';
+
 }

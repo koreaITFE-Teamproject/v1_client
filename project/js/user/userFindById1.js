@@ -1,16 +1,23 @@
 $(function () {
+    /* 회원가입 시 전화번호 입력 값이 올바르지 않을 떄 회원가입 불가능 하도록 수정예정 */
+
     // 테스트용 생성자 --------
     // 사용자 객체 생성을 위한 생성자 함수 정의
-    function User(id, loginId, loginPw) {
+    function User(id, loginId, loginPw, name, nickname, email, phoneNumber, address) {
         this.id = id;
         this.loginId = loginId;
         this.loginPw = loginPw;
+        this.name = name;
+        this.nickname = nickname;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
     }
 
     // 사용자 객체 생성
     var id = 1;
-    var user1 = new User(id++, "testId01", "testPw01");
-    var user2 = new User(id++, "testId02", "testPw02");
+    var user1 = new User(id++, "testId01", "testPw01", "testName01", "testNickname01", "test01@test.com", "010 1234 5671", "대전");
+    var user2 = new User(id++, "testId02", "testPw02", "testName02", "testNickname02", "test02@test.com", "010 1234 5672", "서울");
 
     // 사용자 배열에 추가
     var users = [user1, user2];
@@ -18,12 +25,12 @@ $(function () {
     console.log(users);
     // 테스트용 --------
 
+    // [*아이디, *비밀번호, *비밀번호 확인, *이름, *닉네임, *이메일, 전화번호, 주소, *본인인증]
+    // [0        1         2              3      4       5        7        8     9      ]
+    var inputs = [$(".user-login-id-input"), $(".user-login-pw-input"), $(".user-login-pw-ck-input"), $(".user-name-input"),
+    $(".user-nickname-input"), $(".user-email-input"), $(".user-phone-number-input"), $(".user-address-input"), $(".user-id-check-input")];
 
-    // [*아이디, *비밀번호, ]
-    // [0        1         ]
-    var inputs = [$(".user-login-id-input"), $(".user-login-pw-input")];
-
-    var $joinBtn = $("#user-join-btn");         // 로그인 버튼
+    var $joinBtn = $("#user-join-btn");         // 회원가입 버튼
 
     // 정규표현식
     const spacePattern = /\s/;                            // 공백 체크
@@ -49,10 +56,41 @@ $(function () {
         }
     });
 
+    // 이메일 옵션 바꿀 시
+    var userEmail = "";      // 이메일
+    $(".user-email-input").change(function () {
+        // 직접입력 일때
+        if ($("#select-email-option").val() === "userInput") {
+            userEmail = `${$(".user-email-input").val()}@${$(".custom-input").val()}`;
+        } else {
+            userEmail = `${$(".user-email-input").val()}@${$("#select-email-option").val()}`;
+        }
+        console.log(userEmail);
+        isValid(inputs[5], $(this).val(), $(this).parent().next(), 5);
+    });
+
+    $("#select-email-option").change(function () {
+        if ($(this).val() == "userInput") {
+            $(".custom-input").show();
+            userEmail = `${$(".user-email-input").val()}@${$(this).val()}`;
+        } else {
+            $(".custom-input").hide();
+            $(".custom-input").val("");
+            userEmail = `${$(".user-email-input").val()}@${$(this).val()}`;
+        }
+        isValid(inputs[5], $(this).val(), $(this).parent().next(), 5);
+    });
+
+    // 이메일 직접입력란 값 바뀔 시
+    $(".custom-input").change(function () {
+        userEmail = `${$(".user-email-input").val()}@${$(".custom-input").val()}`;
+        isValid(inputs[5], $(this).val(), $(this).parent().next(), 5);
+    });
+
     $joinBtn.click(function () {
         var isTrue = false;
 
-        if (!confirm("로그인하시겠습니까?")) {
+        if (!confirm("아이디 찾기를 하시겠습니까?")) {
             return alert("취소합니다.");
         }
 
@@ -67,20 +105,15 @@ $(function () {
         }
         if (isTrue) { return alert("작성한 정보를 다시 확인해주세요."); }
 
-        checkDuplicate[0] = false;
-        checkDuplicate[1] = false;
-
-        var newUser = new User(id++, inputs[0].val(), inputs[1].val());
+       
+        var newUser = new User(id++, inputs[0].val(), inputs[1].val(), inputs[3].val(), inputs[4].val(), userEmail, phoneNumber, inputs[7].val());
         users.push(newUser);
         console.log(users);
-        alert("르그인이 완료되었습니다.");
+        alert("아이디 찾기를 찾기를 시작하겠습니다.");
     });
 
-
-
     /* =====함수===== */
-
-
+    
     // 유효성 검사
     function isValid($this, val, msg, idx) {
 
@@ -101,13 +134,6 @@ $(function () {
         } else if (idx === 5) {                                  // 이메일 정규표현식
             if (!emailRegex.test(userEmail)) {                   // 실패 시
                 msg.text("*이메일 형식을 확인해주세요. ex) test@test.com");
-                failCss($this, msg);
-                return true;
-            }
-            successCss($this, msg);                                             // 성공 시
-        } else if (idx === 6) {                                                 // 전화번호 정규표현식
-            if (!pnRegex.test(phoneNumber) || (phoneNumber.length > 2 && phoneNumber.length < 13)) {        // 실패 시
-                msg.text("*전화번호 형식을 확인해주세요. ex) 010-1234-5678");
                 failCss($this, msg);
                 return true;
             }
@@ -169,7 +195,11 @@ $(function () {
             successCss($this, msg);
         } else if ($this.is(inputs[1]) && pwRegex.test(val)) {          // 비  번: 10 ~ 30, 한글x, 대소영o, 숫자o, 특수문자(.,/?!@#$%^&*)허용, 
             successCss($this, msg)
-        }else {                                                        // 아닐 시
+        } else if ($this.is(inputs[3]) && nameRegex.test(val)) {        // 이  름: 02 ~ 10, 한글o, 대소영o, 숫자x
+            successCss($this, msg)
+        } else if ($this.is(inputs[4]) && nicknameRegex.test(val)) {    // 닉네임: 02 ~ 14, 한글o, 대소영o, 숫자o
+            successCss($this, msg)
+        } else {                                                        // 아닐 시
             failText(msg, userInfo, msgLength)
             failCss($this, msg);
             return true;
@@ -184,8 +214,13 @@ $(function () {
             msg.text(`${message}, 한글x, 특수문자x`);
         } else if (userInfo === "*비밀번호") {
             msg.text(`${message}, 한글x, 특수문자 (.,/?!@#$%^&*) 허용`);
-        } 
+        } else if (userInfo === "*이름") {
+            msg.text(`${message}, 숫자x`);
+        } else if (userInfo === "*닉네임") {
+            msg.text(`${message}`);
+        }
     }
+
 
     /* ===== css style 변경 ===== */
     var wrongStyle = { "border": "2px solid red" };     // input 실패 시 스타일

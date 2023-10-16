@@ -10,47 +10,57 @@
 }
 
 main {
-  margin-top: 30px;
-}
-
-.menu_outline{
-  width: 50%;
-  margin: 0 auto;
-}
-
-
-.layouts{
-  display: inline-flex;
-  margin: 5px;
   font-family: 'HakgyoansimWoojuR';
 }
 
-button {
+/* 썸머노트 내용 입력란에있는 p태그에 마진이 있어서 제거 */
+p {
+  margin: 0;
+}
+
+.layouts {
+  width: 50%;
+  min-width: 730px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 5fr 2.5fr 2.5fr;
+  grid-auto-rows: minmax(50px, auto);
+  grid-gap: 10px;
+  font-size: 1.7rem;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.buttons>button {
+  width: 100%;
   background-color: #F9ECDB;
-  height: 60px;
-  width: 100px;
   border-radius: 5px;
-  margin-left: 10px;
   border: 1.5px solid #764127;
 }
+
+.buttons>button:hover {
+  background-color: #F6E3CE;
+}
+
 .name {
-  height: 60px;
-  width: 500px;
-  margin-left: 5px;
   border: 1.5px solid #764127;
   border-radius: 5px;
+  padding: 0 10px;
 }
 
 #column {
-  width: 130px;
-  height: 60px;
-  margin-left: 10px;
   text-align: center;
   border: 1.5px solid #764127;
   border-radius: 5px;
 }
 
-.buttons{
-  display: flex;
-  justify-content: row;
+#write-wrap {
+  width: 50%;
+  min-width: 730px;
+  margin: 0 auto;
 }
