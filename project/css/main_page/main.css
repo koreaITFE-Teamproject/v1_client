@@ -138,8 +138,11 @@ h3 {
 }
 
 @keyframes stop-cursor {
-    to {
+    from {
         border-color: #764127;
+    }
+    to {
+        border-color: white;
     }
 }
 
@@ -156,6 +159,34 @@ h3 {
     margin-top: -3px;
     padding-bottom: 16px;
     padding-left: 1%;
+
+    animation: blink 0.5s infinite, typing 2s steps(30),
+    stop-cursor 1s forwards 3s; /* 3초 뒤에 애니메이션 시작 */
+    white-space: nowrap;
+    overflow: hidden;
+
+    @keyframes blink {
+        50%{
+            border-color: transparent;
+        }
+    }
+    
+    @keyframes typing {
+        from{
+            width: 0;
+        }
+        to{
+            width: 701px;
+        }
+    }
+    
+    @keyframes stop-cursor {
+        from {
+            border-color: #764127;
+        }
+        to {
+            border-color: white;
+        }
 
 }
 
